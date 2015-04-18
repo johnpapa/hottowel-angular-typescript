@@ -1,5 +1,5 @@
 var Customer = (function () {
-    function Customer(name) {
+    function Customer(name, x) {
         this.name = name;
     }
     Customer.prototype.getName = function () {

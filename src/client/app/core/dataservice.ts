@@ -1,36 +1,30 @@
 module app.core {
     'use strict';
 
-    angular
-        .module('app.core')
-        .factory('dataservice', dataservice);
+    export class DataService {
+        static $inject = ['$http', '$q', 'logger'];
+        constructor(private $http: ng.IHttpService,
+            private $q: ng.IQService,
+            private logger: blocks.logger.Logger) {
+        }
 
-    dataservice.$inject = ['$http', '$q', 'logger'];
-    /* @ngInject */
-    function dataservice($http, $q, logger) {
-        var service = {
-            getPeople: getPeople,
-            getMessageCount: getMessageCount
-        };
+        getMessageCount: () => ng.IPromise<number> = () => this.$q.when(72);
 
-        return service;
+        getPeople: () => ng.IPromise<any> = () =>
+            this.$http.get('/api/people')
+                .then(this.success)
+                .catch(this.fail);
 
-        function getMessageCount() { return $q.when(72); }
-
-        function getPeople() {
-            return $http.get('/api/people')
-                .then(success)
-                .catch(fail);
-
-            function success(response) {
-                return response.data;
-            }
-
-            function fail(error) {
-                var msg = 'query for people failed. ' + error.data.description;
-                logger.error(msg);
-                return $q.reject(msg);
-            }
+        private success: (any) => {} = (response) => response.data;
+        
+        private fail: (any) => {} = (error) => {
+            var msg = 'query for people failed. ' + error.data.description;
+            this.logger.error(msg);
+            return this.$q.reject(msg);
         }
     }
+
+    angular
+        .module('app.core')
+        .service('dataservice', DataService);
 }

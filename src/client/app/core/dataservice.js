@@ -3,30 +3,22 @@ var app;
     var core;
     (function (core) {
         'use strict';
-        angular.module('app.core').factory('dataservice', dataservice);
-        dataservice.$inject = ['$http', '$q', 'logger'];
-        /* @ngInject */
-        function dataservice($http, $q, logger) {
-            var service = {
-                getPeople: getPeople,
-                getMessageCount: getMessageCount
-            };
-            return service;
-            function getMessageCount() {
-                return $q.when(72);
+        var DataService = (function () {
+            function DataService($http, $q, logger) {
+                var _this = this;
+                this.$http = $http;
+                this.$q = $q;
+                this.logger = logger;
+                this.getMessageCount = function () { return _this.$q.when(72); };
+                this.getPeople = function () { return _this.$http.get('/api/people').then(_this.success); };
+                //                .catch(fail);
+                this.success = function (response) { return response.data; };
             }
-            function getPeople() {
-                return $http.get('/api/people').then(success).catch(fail);
-                function success(response) {
-                    return response.data;
-                }
-                function fail(error) {
-                    var msg = 'query for people failed. ' + error.data.description;
-                    logger.error(msg);
-                    return $q.reject(msg);
-                }
-            }
-        }
+            DataService.$inject = ['$http', '$q', 'logger'];
+            return DataService;
+        })();
+        core.DataService = DataService;
+        angular.module('app.core').service('dataservice', DataService);
     })(core = app.core || (app.core = {}));
 })(app || (app = {}));
 

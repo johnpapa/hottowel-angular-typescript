@@ -1,0 +1,57 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "jquery/jquery.d.ts": {
+      "commit": "52fa2b9ce36f2c5843204e9bfbaada7cded9b47a"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "52fa2b9ce36f2c5843204e9bfbaada7cded9b47a"
+    },
+    "chai/chai.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "sinon/sinon.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "node/node.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "express/express.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "bootstrap/bootstrap.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "moment/moment.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "toastr/toastr.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "angularjs/angular-animate.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "angularjs/angular-sanitize.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "morgan/morgan.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "serve-favicon/serve-favicon.d.ts": {
+      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "52fa2b9ce36f2c5843204e9bfbaada7cded9b47a"
+    }
+  }
+}

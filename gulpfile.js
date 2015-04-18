@@ -1,4 +1,4 @@
-/// <reference path="typings/gulp/gulp.d.ts" />
+/// <reference path="typings/server/gulp/gulp.d.ts" />
 
 var args = require('yargs').argv;
 var browserSync = require('browser-sync');
@@ -77,7 +77,7 @@ gulp.task('ts-compile', ['ts-clean'], function () {
         ts.dts.pipe(gulp.dest(config.ts.output)),
         ts.js
             .pipe($.sourcemaps.write('.'))
-            .pipe(gulp.dest(config.ts.output))
+            .pipe(gulp.dest('./src/'))
     ]);
 });
 

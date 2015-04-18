@@ -2,6 +2,7 @@ var app;
 (function (app) {
     var admin;
     (function (admin) {
+        'use strict';
         angular.module('app.admin').controller('AdminController', AdminController);
         var AdminController = (function () {
             function AdminController(logger) {

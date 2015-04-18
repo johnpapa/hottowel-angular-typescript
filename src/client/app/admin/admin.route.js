@@ -1,4 +1,4 @@
-(function () {
+module app.admin {
     'use strict';
 
     angular
@@ -29,4 +29,4 @@
             }
         ];
     }
-})();
+}

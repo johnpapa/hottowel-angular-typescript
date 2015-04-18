@@ -20,6 +20,8 @@ module.exports = function() {
         /**
          * File paths
          */
+        
+        // All typescript settings
         ts: {
             // all typescript that we want to vet
             allts: [
@@ -27,7 +29,7 @@ module.exports = function() {
                 './*.ts'
             ],
             defs: typings + '**/*.ts',
-            output: './src/out',
+            output: './dist',
             refs: typings + 'app.d.ts',
             transformFn: function (filepath) {
                 return '/// <reference path="..' + filepath + '" />';

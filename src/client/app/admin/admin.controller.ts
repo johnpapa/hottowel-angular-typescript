@@ -1,4 +1,6 @@
-module app.admin {    
+module app.admin {
+    'use strict';
+
     angular
         .module('app.admin')
         .controller('AdminController', AdminController);

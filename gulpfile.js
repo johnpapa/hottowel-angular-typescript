@@ -69,13 +69,13 @@ gulp.task('ts-compile', ['ts-clean'], function () {
     var source = [].concat(config.ts.allts, config.ts.defs, config.ts.refs);
 
     var ts = gulp.src(source)
-        .pipe($.if(args.verbose, $.print()))
         .pipe($.sourcemaps.init())
         .pipe($.typescript(config.ts.tscOptions));
 
     return merge([
         ts.dts.pipe(gulp.dest(config.ts.output)),
         ts.js
+            .pipe($.if(args.verbose, $.print()))
             .pipe($.sourcemaps.write('.'))
             .pipe(gulp.dest('./src/'))
     ]);

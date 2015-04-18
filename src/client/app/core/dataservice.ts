@@ -16,7 +16,7 @@ module app.core {
                 .catch(this.fail);
 
         private success: (any) => {} = (response) => response.data;
-        
+
         private fail: (any) => {} = (error) => {
             var msg = 'query for people failed. ' + error.data.description;
             this.logger.error(msg);

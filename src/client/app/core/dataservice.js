@@ -10,9 +10,13 @@ var app;
                 this.$q = $q;
                 this.logger = logger;
                 this.getMessageCount = function () { return _this.$q.when(72); };
-                this.getPeople = function () { return _this.$http.get('/api/people').then(_this.success); };
-                //                .catch(fail);
+                this.getPeople = function () { return _this.$http.get('/api/people').then(_this.success).catch(_this.fail); };
                 this.success = function (response) { return response.data; };
+                this.fail = function (error) {
+                    var msg = 'query for people failed. ' + error.data.description;
+                    _this.logger.error(msg);
+                    return _this.$q.reject(msg);
+                };
             }
             DataService.$inject = ['$http', '$q', 'logger'];
             return DataService;

@@ -30,5 +30,3 @@
 //        ];
 //    }
 //}
-
-//# sourceMappingURL=../../../client/app/admin/admin.route.js.map

@@ -3,12 +3,10 @@ var blocks;
     var logger;
     (function (logger) {
         'use strict';
-        angular.module('blocks.logger').factory('logger', Logger);
         var Logger = (function () {
             function Logger($log, toastr) {
                 this.$log = $log;
                 this.toastr = toastr;
-                this.showToasts = true;
             }
             // straight to console; bypass toastr
             Logger.prototype.log = function () {
@@ -37,6 +35,8 @@ var blocks;
             Logger.$inject = ['$log', 'toastr'];
             return Logger;
         })();
+        logger.Logger = Logger;
+        angular.module('blocks.logger').service('logger', Logger);
     })(logger = blocks.logger || (blocks.logger = {}));
 })(blocks || (blocks = {}));
 

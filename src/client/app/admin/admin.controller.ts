@@ -1,20 +1,16 @@
 module app.admin {
     'use strict';
 
-    angular
-        .module('app.admin')
-        .controller('AdminController', AdminController);
-
-    class AdminController {
+    export class AdminController {
         public title = 'Admin';
-        
-        static $inject = ['logger'];
-        constructor(private logger) {
-            this.activate();
-        }
 
-        private activate() {
+        static $inject = ['logger'];
+        constructor(private logger: blocks.logger.Logger) {
             this.logger.info('Activated Admin View');
         }
     }
+
+    angular
+        .module('app.admin')
+        .controller('AdminController', AdminController);
 }

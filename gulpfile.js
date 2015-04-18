@@ -65,7 +65,7 @@ gulp.task('ts-create-refs', function () {
         .pipe(gulp.dest(config.ts.typings));
 });
 
-gulp.task('ts-compile', ['ts-clean'], function () {
+gulp.task('ts-compile', ['ts-vet', 'ts-clean'], function () {
     var source = [].concat(config.ts.allts, config.ts.defs, config.ts.refs);
 
     var ts = gulp.src(source)
@@ -150,6 +150,10 @@ gulp.task('images', ['clean-images'], function() {
 
 gulp.task('less-watcher', function() {
     gulp.watch([config.less], ['styles']);
+});
+
+gulp.task('ts-watcher', function() {
+    gulp.watch(config.ts.allts, ['ts-compile', 'ts-create-refs']);
 });
 
 /**

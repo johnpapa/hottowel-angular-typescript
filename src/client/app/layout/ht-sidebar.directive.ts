@@ -1,29 +1,32 @@
 module app.layout {
     'use strict';
 
-    angular
-        .module('app.layout')
-        .directive('htSidebar', htSidebar);
+    interface IHtSidebarScope {
+        whenDoneAnimating: string;
+    }
 
-    /* @ngInject */
-    function htSidebar () {
-        // Opens and closes the sidebar menu.
-        // Usage:
-        //  <div ht-sidebar">
-        //  <div ht-sidebar whenDoneAnimating="vm.sidebarReady()">
-        // Creates:
-        //  <div ht-sidebar class="sidebar">
-        var directive = {
-            bindToController: true,
-            link: link,
-            restrict: 'EA',
-            scope: {
-                whenDoneAnimating: '&?'
-            }
+    // Opens and closes the sidebar menu.
+    // Usage:
+    //  <div ht-sidebar">
+    //  <div ht-sidebar whenDoneAnimating="vm.sidebarReady()">
+    // Creates:
+    //  <div ht-sidebar class="sidebar">
+    class HtSidebar implements ng.IDirective {
+        static $inject = [''];
+        constructor() { }
+
+        static instance(): ng.IDirective {
+            return new HtSidebar();
+        }
+
+        bindToController: boolean = true;
+        link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void = this.linkFn;
+        restrict: string = 'EA';
+        scope: IHtSidebarScope = {
+            whenDoneAnimating: '&?'
         };
-        return directive;
 
-        function link(scope, element, attrs) {
+        private linkFn(scope, element, attrs) {
             var $sidebarInner = element.find('.sidebar-inner');
             var $dropdownElement = element.find('.sidebar-dropdown a');
             element.addClass('sidebar');
@@ -42,4 +45,8 @@ module app.layout {
             }
         }
     }
+
+    angular
+        .module('app.layout')
+        .directive('htSidebar', HtSidebar.instance);
 }

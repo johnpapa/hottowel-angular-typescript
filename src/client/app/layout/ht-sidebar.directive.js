@@ -3,18 +3,19 @@ var app;
     var layout;
     (function (layout) {
         'use strict';
-        angular.module('app.layout').directive('htSidebar', htSidebar);
-        function htSidebar() {
-            var directive = {
-                bindToController: true,
-                link: link,
-                restrict: 'EA',
-                scope: {
+        var HtSidebar = (function () {
+            function HtSidebar() {
+                this.bindToController = true;
+                this.link = this.linkFn;
+                this.restrict = 'EA';
+                this.scope = {
                     whenDoneAnimating: '&?'
-                }
+                };
+            }
+            HtSidebar.instance = function () {
+                return new HtSidebar();
             };
-            return directive;
-            function link(scope, element, attrs) {
+            HtSidebar.prototype.linkFn = function (scope, element, attrs) {
                 var $sidebarInner = element.find('.sidebar-inner');
                 var $dropdownElement = element.find('.sidebar-dropdown a');
                 element.addClass('sidebar');
@@ -31,8 +32,11 @@ var app;
                         $sidebarInner.slideUp(350, scope.whenDoneAnimating);
                     }
                 }
-            }
-        }
+            };
+            HtSidebar.$inject = [''];
+            return HtSidebar;
+        })();
+        angular.module('app.layout').directive('htSidebar', HtSidebar.instance);
     })(layout = app.layout || (app.layout = {}));
 })(app || (app = {}));
 

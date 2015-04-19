@@ -7,14 +7,14 @@ module app.admin {
 
     configureStates.$inject = ['$stateProvider'];
     /* @ngInject */
-    function configureStates($stateProvider) {
-        var states = getStates();
+    function configureStates($stateProvider: ng.ui.IStateProvider) {
+        var states: any[] = getStates();
         states.forEach(function (state) {
             $stateProvider.state(state.state, state.config);
         });
     }
 
-    function getStates() {
+    function getStates(): any[] {
         return [
             {
                 state: 'admin',

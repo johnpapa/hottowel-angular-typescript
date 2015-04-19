@@ -1,9 +1,16 @@
 module app.core {
     'use strict';
 
-    var core = angular.module('app.core');
+    var config = {
+        appErrorPrefix: '[helloworld Error] ',
+        appTitle: 'helloworld'
+    };
 
-    core.config(toastrConfig);
+    angular
+        .module('app.core')
+        .config(toastrConfig)
+        .config(configure)
+        .value('config', config);
 
     toastrConfig.$inject = ['toastr'];
     /* @ngInject */
@@ -12,15 +19,6 @@ module app.core {
         toastr.options.positionClass = 'toast-bottom-right';
     }
 
-    var config = {
-        appErrorPrefix: '[helloworld Error] ',
-        appTitle: 'helloworld'
-    };
-
-    core.value('config', config);
-
-    core.config(configure);
-
     configure.$inject = ['$logProvider', 'exceptionHandlerProvider'];
     /* @ngInject */
     function configure($logProvider, exceptionHandlerProvider) {
@@ -28,6 +26,5 @@ module app.core {
             $logProvider.debugEnabled(true);
         }
         exceptionHandlerProvider.configure(config.appErrorPrefix);
-        //routerHelperProvider.configure({docTitle: config.appTitle + ': '});
     }
 }

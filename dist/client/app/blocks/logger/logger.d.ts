@@ -4,6 +4,7 @@ declare module blocks.logger {
         error: (message: string, data?: {}, title?: string) => void;
         success: (message: string, data?: {}, title?: string) => void;
         warning: (message: string, data?: {}, title?: string) => void;
+        log: (...args: any[]) => void;
     }
     class Logger implements ILogger {
         private $log;

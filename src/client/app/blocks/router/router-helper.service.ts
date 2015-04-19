@@ -13,7 +13,7 @@ module blocks.router {
         }
 
         stateCounts = { errors: 0, changes: 0 };
-        private handlingStateChangeError = false;
+        private handlingStateChangeError: boolean = false;
 
         private handleRoutingErrors() {
             //TODO: must inject $state so we can kick off routing

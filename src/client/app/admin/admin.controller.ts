@@ -2,7 +2,7 @@ module app.admin {
     'use strict';
 
     export class AdminController {
-        public title = 'Admin';
+        public title: string = 'Admin';
 
         static $inject = ['logger'];
         constructor(private logger: blocks.logger.Logger) {

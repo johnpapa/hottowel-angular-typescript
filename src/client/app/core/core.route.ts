@@ -1,4 +1,9 @@
 module app.core {
+// ((): void => {
+// })();
+// What: Creates an IIFE
+// When: Use when you have no TypeScript components to export
+// Less function wrapping
     'use strict';
 
     angular
@@ -7,7 +12,7 @@ module app.core {
         .run(appRun);
 
     appRun.$inject = ['RouterHelper'];
-    function appRun(RouterHelper: blocks.router.IRouterHelper) {}
+    function appRun(RouterHelper: blocks.router.IRouterHelper) { }
 
     configureStates.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
     /* @ngInject */

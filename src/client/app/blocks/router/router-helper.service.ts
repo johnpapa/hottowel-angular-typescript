@@ -1,14 +1,18 @@
 module blocks.router {
     'use strict';
 
-    export class RouterHelper {
+    export interface IRouterHelper {
+        stateCounts: { errors: number; changes: number};
+    }
+    
+    export class RouterHelper implements IRouterHelper {
         static $inject = ['$location', '$rootScope', '$state', 'logger'];
         constructor(private $location, private $rootScope, private $state, private logger) {
             this.handleRoutingErrors();
             this.handleStateChanges();
         }
 
-        private stateCounts = { errors: 0, changes: 0 };
+        stateCounts = { errors: 0, changes: 0 };
         private handlingStateChangeError = false;
 
         private handleRoutingErrors() {

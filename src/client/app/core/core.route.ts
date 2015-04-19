@@ -7,7 +7,7 @@ module app.core {
         .run(appRun);
 
     appRun.$inject = ['RouterHelper'];
-    function appRun(RouterHelper) {}
+    function appRun(RouterHelper: blocks.router.IRouterHelper) {}
 
     configureStates.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
     /* @ngInject */

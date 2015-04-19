@@ -1,7 +1,11 @@
-module app.layout {
+module applayout {
     'use strict';
 
-    export class HtTopNav implements ng.IDirective {
+    interface IHtTopNavScope {
+        navline: string
+    }
+
+    class HtTopNav implements ng.IDirective {
         static $inject = [''];
         constructor() { }
 
@@ -9,22 +13,15 @@ module app.layout {
             return new HtTopNav();
         }
 
-        public bindToController: boolean = true;
-        public controller: TopNavController = TopNavController;
-        public controllerAs: string = 'vm';
-        public link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
-        public restrict: string = 'EA';
-        public scope: any = {
+        bindToController: boolean = true;
+        controller: TopNavController = TopNavController;
+        controllerAs: string = 'vm';
+        link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
+        restrict: string = 'EA';
+        scope: IHtTopNavScope = {
             'navline': '='
         };
-        public templateUrl: string = 'app/layout/ht-top-nav.html';
-//        public static Factory() {
-//            var directive = () => {
-//                return new HtTopNav();
-//            };
-//            directive['$inject'] = [''];
-//            return directive;
-//        }        
+        templateUrl: string = 'app/layout/ht-top-nav.html';
     }
 
     export class TopNavController {

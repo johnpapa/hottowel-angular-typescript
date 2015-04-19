@@ -3,31 +3,28 @@ var app;
     var layout;
     (function (layout) {
         'use strict';
-        angular.module('app.layout').controller('SidebarController', SidebarController);
-        SidebarController.$inject = ['$state'];
-        function SidebarController($state) {
-            var vm = this;
-            vm.isCurrent = isCurrent;
-            var states = $state.get();
-            activate();
-            function activate() {
-                getNavRoutes();
+        var SidebarController = (function () {
+            function SidebarController($state) {
+                this.$state = $state;
+                this.states = this.$state.get();
+                this.getNavRoutes();
             }
-            function getNavRoutes() {
-                vm.navRoutes = states.filter(function (r) {
-                    return r.settings && r.settings.nav;
-                }).sort(function (r1, r2) {
-                    return r1.settings.nav - r2.settings.nav;
-                });
-            }
-            function isCurrent(route) {
-                if (!route.title || !$state.current || !$state.current.title) {
+            SidebarController.prototype.getNavRoutes = function () {
+                this.navRoutes = this.states.filter(function (state) { return state.settings && state.settings.nav; }).sort(function (state1, state2) { return state1.settings.nav - state2.settings.nav; });
+            };
+            SidebarController.prototype.isCurrent = function (route) {
+                var currentState = this.$state.current;
+                if (!route.title || !currentState || !currentState.title) {
                     return '';
                 }
                 var menuName = route.title;
-                return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
-            }
-        }
+                return currentState.title.substr(0, menuName.length) === menuName ? 'current' : '';
+            };
+            SidebarController.$inject = ['$state'];
+            return SidebarController;
+        })();
+        layout.SidebarController = SidebarController;
+        angular.module('app.layout').controller('SidebarController', SidebarController);
     })(layout = app.layout || (app.layout = {}));
 })(app || (app = {}));
 

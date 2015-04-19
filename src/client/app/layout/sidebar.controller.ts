@@ -1,36 +1,36 @@
 module app.layout {
     'use strict';
 
+    export interface IStateExtra extends ng.ui.IState {
+        settings: any;
+    }
+
+    export class SidebarController {
+        static $inject = ['$state'];
+        constructor(private $state: ng.ui.IStateService) {
+            this.getNavRoutes();
+        }
+
+        navRoutes: IStateExtra[];
+        states: IStateExtra[] = <IStateExtra[]>this.$state.get();
+
+        private getNavRoutes() {
+            this.navRoutes = this.states
+                .filter((state) => state.settings && state.settings.nav)
+                .sort((state1, state2) => state1.settings.nav - state2.settings.nav);
+        }
+
+        isCurrent(route) {
+            var currentState: any = this.$state.current;
+            if (!route.title || !currentState || !currentState.title) {
+                return '';
+            }
+            var menuName: string = route.title;
+            return currentState.title.substr(0, menuName.length) === menuName ? 'current' : '';
+        }
+    }
+
     angular
         .module('app.layout')
         .controller('SidebarController', SidebarController);
-
-    SidebarController.$inject = ['$state'];
-    /* @ngInject */
-    function SidebarController($state) {
-        var vm = this;
-        vm.isCurrent = isCurrent;
-
-        var states = $state.get();
-
-        activate();
-
-        function activate() { getNavRoutes(); }
-
-        function getNavRoutes() {
-            vm.navRoutes = states.filter(function(r) {
-                return r.settings && r.settings.nav;
-            }).sort(function(r1, r2) {
-                return r1.settings.nav - r2.settings.nav;
-            });
-        }
-
-        function isCurrent(route) {
-            if (!route.title || !$state.current || !$state.current.title) {
-                return '';
-            }
-            var menuName = route.title;
-            return $state.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
-        }
-    }
 }

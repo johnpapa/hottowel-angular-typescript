@@ -1,7 +1,6 @@
 module app.layout {
     'use strict';
 
-    /* @ngInject */
     export class ShellController {
         static $inject = ['$rootScope', '$timeout', 'config', 'logger'];
         constructor(private $rootScope: any,

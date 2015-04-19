@@ -23,7 +23,6 @@ var applayout;
         }
         return TopNavController;
     })();
-    applayout.TopNavController = TopNavController;
     angular.module('app.layout').directive('htTopNav', HtTopNav.instance);
 })(applayout || (applayout = {}));
 

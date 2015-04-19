@@ -24,7 +24,7 @@ module applayout {
         templateUrl: string = 'app/layout/ht-top-nav.html';
     }
 
-    export class TopNavController {
+    class TopNavController {
         constructor() {}
     }
 

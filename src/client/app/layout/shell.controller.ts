@@ -1,35 +1,32 @@
 module app.layout {
     'use strict';
 
-    angular
-        .module('app.layout')
-        .controller('ShellController', ShellController);
-
-    ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger'];
     /* @ngInject */
-    function ShellController($rootScope, $timeout, config, logger) {
-        var vm = this;
-        vm.busyMessage = 'Please wait ...';
-        vm.isBusy = true;
-        $rootScope.showSplash = true;
-        vm.navline = {
-            title: config.appTitle,
+    export class ShellController {
+        static $inject = ['$rootScope', '$timeout', 'config', 'logger'];
+        constructor(private $rootScope: any,
+            private $timeout: ng.ITimeoutService,
+            private config,
+            private logger: blocks.logger.Logger) {
+            this.logger.success(config.appTitle + ' loaded!', null);
+            this.hideSplash();
+            this.$rootScope.showSplash = true;
+        }
+        busyMessage = 'Please wait ...';
+        isBusy = true;
+        navline = {
+            title: this.config.appTitle,
             text: 'Created by John Papa',
             link: 'http://twitter.com/john_papa'
         };
 
-        activate();
-
-        function activate() {
-            logger.success(config.appTitle + ' loaded!', null);
-            hideSplash();
-        }
-
-        function hideSplash() {
+        hideSplash() {
             //Force a 1 second delay so we can see the splash.
-            $timeout(function() {
-                $rootScope.showSplash = false;
-            }, 1000);
+            this.$timeout(() => this.$rootScope.showSplash = false, 1000);
         }
     }
+
+    angular
+        .module('app.layout')
+        .controller('ShellController', ShellController);
 }

@@ -12,4 +12,6 @@
 /// <reference path="../src/client/app/dashboard/dashboard.route.ts" />
 /// <reference path="../src/client/app/blocks/logger/logger.module.ts" />
 /// <reference path="../src/client/app/blocks/logger/logger.ts" />
+/// <reference path="../src/client/app/blocks/router/router-helper.module.ts" />
+/// <reference path="../src/client/app/blocks/router/router-helper.service.ts" />
 //}

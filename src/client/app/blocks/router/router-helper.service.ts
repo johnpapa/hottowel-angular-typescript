@@ -4,7 +4,7 @@ module blocks.router {
     export interface IRouterHelper {
         stateCounts: { errors: number; changes: number};
     }
-    
+
     export class RouterHelper implements IRouterHelper {
         static $inject = ['$location', '$rootScope', '$state', 'logger'];
         constructor(private $location, private $rootScope, private $state, private logger) {

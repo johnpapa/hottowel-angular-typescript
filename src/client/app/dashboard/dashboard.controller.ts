@@ -12,7 +12,7 @@ module app.dashboard {
 
         static $inject = ['$q', 'dataservice', 'logger'];
         constructor(private $q: ng.IQService,
-            private dataservice: any,
+            private dataservice: app.core.IDataService,
             private logger: blocks.logger.Logger) {
             var promises = [this.getMessageCount(), this.getPeople()];
             this.$q.all(promises).then(function () {

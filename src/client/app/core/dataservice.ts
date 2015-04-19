@@ -1,7 +1,12 @@
 module app.core {
     'use strict';
 
-    export class DataService {
+    export interface IDataService {
+        getMessageCount: () => ng.IPromise<number>;
+        getPeople: () => ng.IPromise<any>;
+    }
+
+    export class DataService implements IDataService {
         static $inject = ['$http', '$q', 'logger'];
         constructor(private $http: ng.IHttpService,
             private $q: ng.IQService,

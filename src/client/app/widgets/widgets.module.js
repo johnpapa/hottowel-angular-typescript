@@ -1,5 +1,10 @@
-(function() {
-    'use strict';
+var app;
+(function (app) {
+    var widgets;
+    (function (widgets) {
+        'use strict';
+        angular.module('app.widgets', []);
+    })(widgets = app.widgets || (app.widgets = {}));
+})(app || (app = {}));
 
-    angular.module('app.widgets', []);
-})();
+//# sourceMappingURL=../../../client/app/widgets/widgets.module.js.map

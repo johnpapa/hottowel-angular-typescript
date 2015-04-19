@@ -1,28 +1,23 @@
-(function() {
-    'use strict';
+var app;
+(function (app) {
+    var widgets;
+    (function (widgets) {
+        'use strict';
+        function htWidgetHeader() {
+            var directive = {
+                scope: {
+                    'title': '@',
+                    'subtitle': '@',
+                    'rightText': '@',
+                    'allowCollapse': '@'
+                },
+                templateUrl: 'app/widgets/widget-header.html',
+                restrict: 'EA'
+            };
+            return directive;
+        }
+        angular.module('app.widgets').directive('htWidgetHeader', htWidgetHeader);
+    })(widgets = app.widgets || (app.widgets = {}));
+})(app || (app = {}));
 
-    angular
-        .module('app.widgets')
-        .directive('htWidgetHeader', htWidgetHeader);
-
-    /* @ngInject */
-    function htWidgetHeader() {
-        //Usage:
-        //<div ht-widget-header title="vm.map.title"></div>
-        // Creates:
-        // <div ht-widget-header=""
-        //      title="Movie"
-        //      allow-collapse="true" </div>
-        var directive = {
-            scope: {
-                'title': '@',
-                'subtitle': '@',
-                'rightText': '@',
-                'allowCollapse': '@'
-            },
-            templateUrl: 'app/widgets/widget-header.html',
-            restrict: 'EA'
-        };
-        return directive;
-    }
-})();
+//# sourceMappingURL=../../../client/app/widgets/ht-widget-header.directive.js.map

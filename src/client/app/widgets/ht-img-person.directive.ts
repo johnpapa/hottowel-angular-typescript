@@ -1,8 +1,15 @@
 (function () {
     'use strict';
-    angular.module('app.widgets').directive('htImgPerson', htImgPerson);
+
+    angular
+        .module('app.widgets')
+        .directive('htImgPerson', htImgPerson);
+
     htImgPerson.$inject = ['config'];
-    function htImgPerson(config) {
+    /* @ngInject */
+    function htImgPerson (config) {
+        //Usage:
+        //<img ht-img-person="{{person.imageSource}}"/>
         var basePath = config.imageBasePath;
         var unknownImage = config.unknownPersonImageSource;
         var directive = {
@@ -10,6 +17,7 @@
             restrict: 'A'
         };
         return directive;
+
         function link(scope, element, attrs) {
             attrs.$observe('htImgPerson', function (value) {
                 value = basePath + (value || unknownImage);
@@ -18,5 +26,3 @@
         }
     }
 })();
-
-//# sourceMappingURL=../../../client/app/widgets/ht-img-person.directive.js.map

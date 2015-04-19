@@ -17,19 +17,19 @@ var blocks;
             };
             Logger.prototype.error = function (message, data, title) {
                 this.toastr.error(message, title);
-                this.$log.error('Error: ' + message, data);
+                this.$log.error('Error: ' + message, '\nSummary:', title, '\nDetails:', data);
             };
             Logger.prototype.info = function (message, data, title) {
                 this.toastr.info(message, title);
-                this.$log.info('Info: ' + message, data);
+                this.$log.info('Info: ' + message, '\nSummary:', title, '\nDetails:', data);
             };
             Logger.prototype.success = function (message, data, title) {
                 this.toastr.success(message, title);
-                this.$log.info('Success: ' + message, data);
+                this.$log.info('Success: ' + message, '\nSummary:', title, '\nDetails:', data);
             };
             Logger.prototype.warning = function (message, data, title) {
                 this.toastr.warning(message, title);
-                this.$log.warn('Warning: ' + message, data);
+                this.$log.warn('Warning: ' + message, '\nSummary:', title, '\nDetails:', data);
             };
             Logger.$inject = ['$log', 'toastr'];
             return Logger;

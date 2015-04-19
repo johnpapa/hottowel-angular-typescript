@@ -6,9 +6,10 @@ declare module app.core {
     class DataService implements IDataService {
         private $http;
         private $q;
+        private exception;
         private logger;
         static $inject: string[];
-        constructor($http: ng.IHttpService, $q: ng.IQService, logger: blocks.logger.Logger);
+        constructor($http: ng.IHttpService, $q: ng.IQService, exception: blocks.exception.IException, logger: blocks.logger.Logger);
         getMessageCount: () => ng.IPromise<number>;
         getPeople: () => ng.IPromise<any>;
         private success;

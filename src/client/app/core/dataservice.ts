@@ -7,9 +7,10 @@ module app.core {
     }
 
     export class DataService implements IDataService {
-        static $inject = ['$http', '$q', 'logger'];
+        static $inject = ['$http', '$q', 'exception', 'logger'];
         constructor(private $http: ng.IHttpService,
             private $q: ng.IQService,
+            private exception: blocks.exception.IException,
             private logger: blocks.logger.Logger) {
         }
 
@@ -23,8 +24,9 @@ module app.core {
         private success: (any) => {} = (response) => response.data;
 
         private fail: (any) => {} = (error) => {
-            var msg = 'query for people failed. ' + error.data.description;
-            this.logger.error(msg);
+            var msg = error.data.description;
+            var reason = 'query for people failed.';
+            this.exception.catcher(msg)(reason);
             return this.$q.reject(msg);
         }
     }

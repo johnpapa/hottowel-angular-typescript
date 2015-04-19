@@ -4,7 +4,7 @@ module app.core {
     angular
         .module('app.core', [
             'ngAnimate', 'ngSanitize',
-            'blocks.exception', 'blocks.logger', 'blocks.router',
+            'blocks.exception', 'blocks.logger',
             'ui.router', 'ngplus'
         ]);
 }

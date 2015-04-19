@@ -8,7 +8,6 @@ var blocks;
                 this.$log = $log;
                 this.toastr = toastr;
             }
-            // straight to console; bypass toastr
             Logger.prototype.log = function () {
                 var args = [];
                 for (var _i = 0; _i < arguments.length; _i++) {

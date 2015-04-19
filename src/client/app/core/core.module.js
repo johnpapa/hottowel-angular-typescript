@@ -8,7 +8,6 @@ var app;
             'ngSanitize',
             'blocks.exception',
             'blocks.logger',
-            'blocks.router',
             'ui.router',
             'ngplus'
         ]);

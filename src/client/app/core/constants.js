@@ -1,4 +1,3 @@
-/* global toastr:false, moment:false */
 var app;
 (function (app) {
     var core;

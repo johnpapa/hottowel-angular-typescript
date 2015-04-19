@@ -3,11 +3,13 @@ var app;
     var dashboard;
     (function (dashboard) {
         'use strict';
-        angular.module('app.dashboard').run(appRun);
-        appRun.$inject = ['routerHelper'];
-        /* @ngInject */
-        function appRun(routerHelper) {
-            routerHelper.configureStates(getStates());
+        angular.module('app.dashboard').config(configureStates);
+        configureStates.$inject = ['$stateProvider'];
+        function configureStates($stateProvider) {
+            var states = getStates();
+            states.forEach(function (state) {
+                $stateProvider.state(state.state, state.config);
+            });
         }
         function getStates() {
             return [

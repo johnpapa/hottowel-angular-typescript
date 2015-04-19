@@ -38,7 +38,8 @@ module.exports = function() {
                 target: 'ES5',
                 declarationFiles: true,
                 noExternalResolve: true,
-                module: 'commonjs'
+                module: 'commonjs',
+                removeComments: true
             },
             typings: typings
         },

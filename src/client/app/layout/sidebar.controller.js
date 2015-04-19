@@ -5,12 +5,13 @@
         .module('app.layout')
         .controller('SidebarController', SidebarController);
 
-    SidebarController.$inject = ['$state', 'routerHelper'];
+    SidebarController.$inject = ['$state'];
     /* @ngInject */
-    function SidebarController($state, routerHelper) {
+    function SidebarController($state) {
         var vm = this;
-        var states = routerHelper.getStates();
         vm.isCurrent = isCurrent;
+        
+        var states = $state.get();
 
         activate();
 

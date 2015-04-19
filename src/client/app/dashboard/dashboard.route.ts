@@ -3,12 +3,15 @@ module app.dashboard {
 
     angular
         .module('app.dashboard')
-        .run(appRun);
+        .config(configureStates);
 
-    appRun.$inject = ['routerHelper'];
+    configureStates.$inject = ['$stateProvider'];
     /* @ngInject */
-    function appRun(routerHelper) {
-        routerHelper.configureStates(getStates());
+    function configureStates($stateProvider) {
+        var states = getStates();
+        states.forEach(function (state) {
+            $stateProvider.state(state.state, state.config);
+        });
     }
 
     function getStates() {

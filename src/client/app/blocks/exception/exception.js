@@ -1,23 +1,20 @@
-(function () {
-    'use strict';
+var blocks;
+(function (blocks) {
+    var exception;
+    (function (exception) {
+        'use strict';
+        var Exception = (function () {
+            function Exception(logger) {
+                var _this = this;
+                this.logger = logger;
+                this.catcher = function (message) { return function (reason) { return _this.logger.error(message, reason); }; };
+            }
+            Exception.$inject = ['logger'];
+            return Exception;
+        })();
+        exception.Exception = Exception;
+        angular.module('blocks.exception').service('exception', Exception);
+    })(exception = blocks.exception || (blocks.exception = {}));
+})(blocks || (blocks = {}));
 
-    angular
-        .module('blocks.exception')
-        .factory('exception', exception);
-
-    exception.$inject = ['logger'];
-
-    /* @ngInject */
-    function exception(logger) {
-        var service = {
-            catcher: catcher
-        };
-        return service;
-
-        function catcher(message) {
-            return function(reason) {
-                logger.error(message, reason);
-            };
-        }
-    }
-})();
+//# sourceMappingURL=../../../../client/app/blocks/exception/exception.js.map

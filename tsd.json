@@ -21,10 +21,10 @@
       "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
     },
     "node/node.d.ts": {
-      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+      "commit": "609c6a7a11a79e0e831a301f1def7b581853216f"
     },
     "express/express.d.ts": {
-      "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
+      "commit": "609c6a7a11a79e0e831a301f1def7b581853216f"
     },
     "angular-ui-router/angular-ui-router.d.ts": {
       "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
@@ -52,6 +52,9 @@
     },
     "angularjs/angular-mocks.d.ts": {
       "commit": "52fa2b9ce36f2c5843204e9bfbaada7cded9b47a"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "609c6a7a11a79e0e831a301f1def7b581853216f"
     }
   }
 }

@@ -3,20 +3,24 @@ var app;
     var widgets;
     (function (widgets) {
         'use strict';
-        function htWidgetHeader() {
-            var directive = {
-                scope: {
+        var HtWidgetHeader = (function () {
+            function HtWidgetHeader() {
+                this.scope = {
                     'title': '@',
                     'subtitle': '@',
                     'rightText': '@',
                     'allowCollapse': '@'
-                },
-                templateUrl: 'app/widgets/widget-header.html',
-                restrict: 'EA'
+                };
+                this.templateUrl = 'app/widgets/widget-header.html';
+                this.restrict = 'EA';
+            }
+            HtWidgetHeader.instance = function () {
+                return new HtWidgetHeader();
             };
-            return directive;
-        }
-        angular.module('app.widgets').directive('htWidgetHeader', htWidgetHeader);
+            HtWidgetHeader.$inject = [''];
+            return HtWidgetHeader;
+        })();
+        angular.module('app.widgets').directive('htWidgetHeader', HtWidgetHeader.instance);
     })(widgets = app.widgets || (app.widgets = {}));
 })(app || (app = {}));
 

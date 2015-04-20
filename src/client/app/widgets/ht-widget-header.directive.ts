@@ -30,7 +30,7 @@ module app.widgets {
         templateUrl: string = 'app/widgets/widget-header.html';
         restrict: string = 'EA';
     }
-    
+
     angular
         .module('app.widgets')
         .directive('htWidgetHeader', HtWidgetHeader.instance);

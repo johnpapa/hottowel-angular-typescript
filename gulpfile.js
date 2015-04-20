@@ -85,16 +85,16 @@ gulp.task('ts-compile', ['ts-vet', 'ts-clean'], function () {
  * vet the code and create coverage report
  * @return {Stream}
  */
-gulp.task('vet', function() {
-    log('Analyzing source with JSHint and JSCS');
+gulp.task('vet', ['ts-vet'], function() {
+    log('Analyzing source with TSLint, JSHint and JSCS');
 
     return gulp
         .src(config.alljs)
         .pipe($.if(args.verbose, $.print()))
-        .pipe($.jshint())
-        .pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
-        .pipe($.jshint.reporter('fail'))
-        .pipe($.jscs());
+        .pipe($.if(args.js, $.jshint()))
+        .pipe($.if(args.js, $.jshint.reporter('jshint-stylish', {verbose: true})))
+        .pipe($.if(args.js, $.jshint.reporter('fail')))
+        .pipe($.if(args.js, $.jscs()));
 });
 
 /**

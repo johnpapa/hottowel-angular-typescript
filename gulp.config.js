@@ -39,7 +39,7 @@ module.exports = function() {
                 declarationFiles: true,
                 noExternalResolve: true,
                 module: 'commonjs',
-                removeComments: true
+                removeComments: false
             },
             typings: typings
         },

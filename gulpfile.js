@@ -185,7 +185,7 @@ gulp.task('templatecache', ['clean-code'], function() {
  * Wire-up the bower dependencies
  * @return {Stream}
  */
-gulp.task('wiredep', function() {
+gulp.task('wiredep', ['ts-compile'], function() {
     log('Wiring the bower dependencies into the html');
 
     var wiredep = require('wiredep').stream;

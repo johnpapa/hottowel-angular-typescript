@@ -6,13 +6,13 @@ module app.layout {
     }
 
     export class SidebarController {
-        static $inject = ['$state'];
+        static $inject: Array<string> = ['$state'];
         constructor(private $state: ng.ui.IStateService) {
             this.getNavRoutes();
         }
 
-        navRoutes: IStateExtra[];
-        states: IStateExtra[] = <IStateExtra[]>this.$state.get();
+        public navRoutes: IStateExtra[];
+        public states: IStateExtra[] = <IStateExtra[]>this.$state.get();
 
         private getNavRoutes() {
             this.navRoutes = this.states
@@ -20,7 +20,7 @@ module app.layout {
                 .sort((state1, state2) => state1.settings.nav - state2.settings.nav);
         }
 
-        isCurrent(route) {
+        public isCurrent(route) {
             var currentState: any = this.$state.current;
             if (!route.title || !currentState || !currentState.title) {
                 return '';

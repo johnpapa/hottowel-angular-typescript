@@ -7,16 +7,16 @@ module app.core {
     }
 
     export class DataService implements IDataService {
-        static $inject = ['$http', '$q', 'exception', 'logger'];
+        static $inject: Array<string> = ['$http', '$q', 'exception', 'logger'];
         constructor(private $http: ng.IHttpService,
             private $q: ng.IQService,
             private exception: blocks.exception.IException,
             private logger: blocks.logger.Logger) {
         }
 
-        getMessageCount: () => ng.IPromise<number> = () => this.$q.when(72);
+        public getMessageCount: () => ng.IPromise<number> = () => this.$q.when(72);
 
-        getPeople: () => ng.IPromise<any> = () =>
+        public getPeople: () => ng.IPromise<any> = () =>
             this.$http.get('/api/people')
                 .then(this.success)
                 .catch(this.fail);

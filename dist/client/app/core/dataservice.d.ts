@@ -8,7 +8,7 @@ declare module app.core {
         private $q;
         private exception;
         private logger;
-        static $inject: string[];
+        static $inject: Array<string>;
         constructor($http: ng.IHttpService, $q: ng.IQService, exception: blocks.exception.IException, logger: blocks.logger.Logger);
         getMessageCount: () => ng.IPromise<number>;
         getPeople: () => ng.IPromise<any>;

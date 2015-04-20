@@ -9,7 +9,7 @@ declare module blocks.logger {
     class Logger implements ILogger {
         private $log;
         private toastr;
-        static $inject: string[];
+        static $inject: Array<string>;
         constructor($log: ng.ILogService, toastr: Toastr);
         log(...args: any[]): void;
         error(message: string, data?: {}, title?: string): void;

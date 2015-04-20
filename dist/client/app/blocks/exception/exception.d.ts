@@ -4,7 +4,7 @@ declare module blocks.exception {
     }
     class Exception implements IException {
         private logger;
-        static $inject: string[];
+        static $inject: Array<string>;
         constructor(logger: blocks.logger.Logger);
         catcher: (string) => (string) => void;
     }

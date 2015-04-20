@@ -2,7 +2,7 @@ module app.layout {
     'use strict';
 
     export class ShellController {
-        static $inject = ['$rootScope', '$timeout', 'config', 'logger'];
+        static $inject: Array<string> = ['$rootScope', '$timeout', 'config', 'logger'];
         constructor(private $rootScope: any,
             private $timeout: ng.ITimeoutService,
             private config,
@@ -11,15 +11,15 @@ module app.layout {
             this.hideSplash();
             this.$rootScope.showSplash = true;
         }
-        busyMessage = 'Please wait ...';
-        isBusy = true;
-        navline = {
+        public busyMessage = 'Please wait ...';
+        public isBusy = true;
+        public navline = {
             title: this.config.appTitle,
             text: 'Created by John Papa',
             link: 'http://twitter.com/john_papa'
         };
 
-        hideSplash() {
+        public hideSplash() {
             //Force a 1 second delay so we can see the splash.
             this.$timeout(() => this.$rootScope.showSplash = false, 1000);
         }

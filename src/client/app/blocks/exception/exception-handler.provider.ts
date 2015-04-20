@@ -7,16 +7,16 @@ module blocks.exception {
         appErrorPrefix: string
     }
     export class ExceptionHandlerProvider {
-        static $inject = [];
+        static $inject: Array<string> = [];
         constructor() { }
-        config: IExceptionHandlerConfig = {
+        public config: IExceptionHandlerConfig = {
             appErrorPrefix: undefined
         }
 
-        configure(appErrorPrefix) {
+        public configure(appErrorPrefix) {
             this.config.appErrorPrefix = appErrorPrefix;
         }
-        $get: () => { config: IExceptionHandlerConfig } = () => { return { config: this.config }; }
+        public $get: () => { config: IExceptionHandlerConfig } = () => { return { config: this.config }; }
     }
 
     config.$inject = ['$provide'];

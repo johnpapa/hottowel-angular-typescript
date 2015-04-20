@@ -10,7 +10,7 @@ module app.dashboard {
         public people: Array<any> = [];
         public title: string = 'Dashboard';
 
-        static $inject = ['$q', 'dataservice', 'logger'];
+        static $inject: Array<string> = ['$q', 'dataservice', 'logger'];
         constructor(private $q: ng.IQService,
             private dataservice: app.core.IDataService,
             private logger: blocks.logger.Logger) {
@@ -20,14 +20,14 @@ module app.dashboard {
             });
         }
 
-        getMessageCount() {
+        public getMessageCount() {
             return this.dataservice.getMessageCount().then((data) => {
                 this.messageCount = data;
                 return this.messageCount;
             });
         }
 
-        getPeople() {
+        public getPeople() {
             return this.dataservice.getPeople().then((data) => {
                 this.people = data;
                 return this.people;

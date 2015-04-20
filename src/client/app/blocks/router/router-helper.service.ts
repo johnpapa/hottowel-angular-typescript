@@ -6,13 +6,13 @@ module blocks.router {
     }
 
     export class RouterHelper implements IRouterHelper {
-        static $inject = ['$location', '$rootScope', '$state', 'logger'];
+        static $inject: Array<string> = ['$location', '$rootScope', '$state', 'logger'];
         constructor(private $location, private $rootScope, private $state, private logger) {
             this.handleRoutingErrors();
             this.handleStateChanges();
         }
 
-        stateCounts = { errors: 0, changes: 0 };
+        public stateCounts = { errors: 0, changes: 0 };
         private handlingStateChangeError: boolean = false;
 
         private handleRoutingErrors() {

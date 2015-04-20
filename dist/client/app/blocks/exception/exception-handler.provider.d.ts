@@ -3,7 +3,7 @@ declare module blocks.exception {
         appErrorPrefix: string;
     }
     class ExceptionHandlerProvider {
-        static $inject: any[];
+        static $inject: Array<string>;
         constructor();
         config: IExceptionHandlerConfig;
         configure(appErrorPrefix: any): void;

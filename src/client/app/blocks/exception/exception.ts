@@ -6,10 +6,10 @@ module blocks.exception {
     }
 
     export class Exception implements IException {
-        static $inject = ['logger'];
+        static $inject: Array<string> = ['logger'];
         constructor(private logger: blocks.logger.Logger) {}
 
-        catcher: (string) => (string) => void =
+        public catcher: (string) => (string) => void =
             (message) => (reason) => this.logger.error(message, reason);
     }
 

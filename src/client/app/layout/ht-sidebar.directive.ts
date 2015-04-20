@@ -12,17 +12,17 @@ module app.layout {
     // Creates:
     //  <div ht-sidebar class="sidebar">
     class HtSidebar implements ng.IDirective {
-        static $inject = [''];
+        static $inject: Array<string> = [''];
         constructor() { }
 
         static instance(): ng.IDirective {
             return new HtSidebar();
         }
 
-        bindToController: boolean = true;
-        link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void = this.linkFn;
-        restrict: string = 'EA';
-        scope: IHtSidebarScope = {
+        public bindToController: boolean = true;
+        public link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void = this.linkFn;
+        public restrict: string = 'EA';
+        public scope: IHtSidebarScope = {
             whenDoneAnimating: '&?'
         };
 

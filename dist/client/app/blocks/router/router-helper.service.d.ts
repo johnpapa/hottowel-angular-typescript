@@ -10,7 +10,7 @@ declare module blocks.router {
         private $rootScope;
         private $state;
         private logger;
-        static $inject: string[];
+        static $inject: Array<string>;
         constructor($location: any, $rootScope: any, $state: any, logger: any);
         stateCounts: {
             errors: number;

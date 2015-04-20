@@ -4,7 +4,7 @@ declare module app.layout {
     }
     class SidebarController {
         private $state;
-        static $inject: string[];
+        static $inject: Array<string>;
         constructor($state: ng.ui.IStateService);
         navRoutes: IStateExtra[];
         states: IStateExtra[];

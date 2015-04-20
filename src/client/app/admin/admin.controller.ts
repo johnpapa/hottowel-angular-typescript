@@ -4,7 +4,7 @@ module app.admin {
     export class AdminController {
         public title: string = 'Admin';
 
-        static $inject = ['logger'];
+        static $inject: Array<string> = ['logger'];
         constructor(private logger: blocks.logger.Logger) {
             this.logger.info('Activated Admin View');
         }

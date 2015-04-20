@@ -4,7 +4,7 @@ declare module app.layout {
         private $timeout;
         private config;
         private logger;
-        static $inject: string[];
+        static $inject: Array<string>;
         constructor($rootScope: any, $timeout: ng.ITimeoutService, config: any, logger: blocks.logger.Logger);
         busyMessage: string;
         isBusy: boolean;

@@ -6,22 +6,22 @@ module applayout {
     }
 
     class HtTopNav implements ng.IDirective {
-        static $inject = [''];
+        static $inject: Array<string> = [''];
         constructor() { }
 
         static instance() : ng.IDirective {
             return new HtTopNav();
         }
 
-        bindToController: boolean = true;
-        controller: TopNavController = TopNavController;
-        controllerAs: string = 'vm';
-        link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
-        restrict: string = 'EA';
-        scope: IHtTopNavScope = {
+        public bindToController: boolean = true;
+        public controller: TopNavController = TopNavController;
+        public controllerAs: string = 'vm';
+        public link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
+        public restrict: string = 'EA';
+        public scope: IHtTopNavScope = {
             'navline': '='
         };
-        templateUrl: string = 'app/layout/ht-top-nav.html';
+        public templateUrl: string = 'app/layout/ht-top-nav.html';
     }
 
     class TopNavController {

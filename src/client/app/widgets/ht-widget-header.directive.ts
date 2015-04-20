@@ -14,21 +14,21 @@ module app.widgets {
     //      title="Movie"
     //      allow-collapse="true" </div>
     class HtWidgetHeader implements ng.IDirective {
-        static $inject = [''];
+        static $inject: Array<string> = [''];
         constructor() {}
 
         static instance(): ng.IDirective {
             return new HtWidgetHeader();
         }
 
-        scope: IHtWidgetHeaderScope = {
+        public scope: IHtWidgetHeaderScope = {
             'title': '@',
             'subtitle': '@',
             'rightText': '@',
             'allowCollapse': '@'
         };
-        templateUrl: string = 'app/widgets/widget-header.html';
-        restrict: string = 'EA';
+        public templateUrl: string = 'app/widgets/widget-header.html';
+        public restrict: string = 'EA';
     }
 
     angular

@@ -10,7 +10,7 @@ declare module app.dashboard {
         messageCount: number;
         people: Array<any>;
         title: string;
-        static $inject: string[];
+        static $inject: Array<string>;
         constructor($q: ng.IQService, dataservice: app.core.IDataService, logger: blocks.logger.Logger);
         getMessageCount(): ng.IPromise<number>;
         getPeople(): ng.IPromise<any[]>;

@@ -18,11 +18,11 @@
 /// <reference path="../src/client/app/layout/sidebar.controller.ts" />
 /// <reference path="../src/client/app/widgets/ht-widget-header.directive.ts" />
 /// <reference path="../src/client/app/widgets/widgets.module.ts" />
-/// <reference path="../src/client/app/blocks/router/router-helper.module.ts" />
-/// <reference path="../src/client/app/blocks/router/router-helper.service.ts" />
 /// <reference path="../src/client/app/blocks/exception/exception-handler.provider.ts" />
 /// <reference path="../src/client/app/blocks/exception/exception.module.ts" />
 /// <reference path="../src/client/app/blocks/exception/exception.ts" />
+/// <reference path="../src/client/app/blocks/router/router-helper.module.ts" />
+/// <reference path="../src/client/app/blocks/router/router-helper.service.ts" />
 /// <reference path="../src/client/app/blocks/logger/logger.module.ts" />
 /// <reference path="../src/client/app/blocks/logger/logger.ts" />
 //}

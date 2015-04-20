@@ -29,8 +29,9 @@ module.exports = function() {
                 './*.ts'
             ],
             defs: typings + '**/*.ts',
-            output: './dist',
+            output: '.tmp',
             refs: typings + 'app.d.ts',
+            appRefs: '.tmp/typings/app-dts/',
             transformFn: function (filepath) {
                 return '/// <reference path="..' + filepath + '" />';
             },
@@ -39,9 +40,10 @@ module.exports = function() {
                 declarationFiles: true,
                 noExternalResolve: true,
                 module: 'commonjs',
-                removeComments: false
+                removeComments: false,
+                sortOutput: true
             },
-            typings: typings
+            typings: typings            
         },
 
         // all javascript that we want to vet

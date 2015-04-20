@@ -73,8 +73,9 @@ gulp.task('ts-compile', ['ts-vet', 'ts-clean'], function () {
         .pipe($.typescript(config.ts.tscOptions));
 
     return merge([
-        ts.dts.pipe(gulp.dest(config.ts.output)),
+        ts.dts.pipe(gulp.dest(config.ts.appRefs)),
         ts.js
+            .pipe($.concat('somefile.js'))
             .pipe($.if(args.verbose, $.print()))
             .pipe($.sourcemaps.write('.'))
             .pipe(gulp.dest('./src/'))

@@ -148,10 +148,16 @@ gulp.task('images', ['clean-images'], function() {
         .pipe(gulp.dest(config.build + 'images'));
 });
 
+/**
+ * Watch LESS and recompile the CSS
+ */
 gulp.task('less-watcher', function() {
     gulp.watch([config.less], ['styles']);
 });
 
+/**
+ * Watch TypeScript and recompile and create refs
+ */
 gulp.task('ts-watcher', function() {
     gulp.watch(config.ts.allts, ['ts-compile', 'ts-create-refs']);
 });

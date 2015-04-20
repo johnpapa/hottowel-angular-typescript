@@ -21,7 +21,7 @@ module app.layout {
 
         public hideSplash() {
             //Force a 1 second delay so we can see the splash.
-            this.$timeout(() => this.$rootScope.showSplash = false, 1000);
+            this.$timeout(() => { this.$rootScope.showSplash = false; }, 1000);
         }
     }
 

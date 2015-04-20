@@ -22,4 +22,4 @@ function utils (app) {
             .send(data)
             .end();
     }
-};
+}

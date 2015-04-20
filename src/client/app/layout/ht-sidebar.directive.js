@@ -3,6 +3,12 @@ var app;
     var layout;
     (function (layout) {
         'use strict';
+        // Opens and closes the sidebar menu.
+        // Usage:
+        //  <div ht-sidebar">
+        //  <div ht-sidebar whenDoneAnimating="vm.sidebarReady()">
+        // Creates:
+        //  <div ht-sidebar class="sidebar">
         var HtSidebar = (function () {
             function HtSidebar() {
                 this.bindToController = true;

@@ -5,6 +5,7 @@ var app;
         'use strict';
         angular.module('app.dashboard').config(configureStates);
         configureStates.$inject = ['$stateProvider'];
+        /* @ngInject */
         function configureStates($stateProvider) {
             var states = getStates();
             states.forEach(function (state) {

@@ -22,7 +22,10 @@ var app;
             }
             ShellController.prototype.hideSplash = function () {
                 var _this = this;
-                this.$timeout(function () { return _this.$rootScope.showSplash = false; }, 1000);
+                //Force a 1 second delay so we can see the splash.
+                this.$timeout(function () {
+                    _this.$rootScope.showSplash = false;
+                }, 1000);
             };
             ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger'];
             return ShellController;

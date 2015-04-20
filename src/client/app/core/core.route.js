@@ -2,12 +2,18 @@ var app;
 (function (app) {
     var core;
     (function (core) {
+        // ((): void => {
+        // })();
+        // What: Creates an IIFE
+        // When: Use when you have no TypeScript components to export
+        // Less function wrapping
         'use strict';
         angular.module('app.core').config(configureStates).run(appRun);
         appRun.$inject = ['RouterHelper'];
         function appRun(RouterHelper) {
         }
         configureStates.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
+        /* @ngInject */
         function configureStates($stateProvider, $locationProvider, $urlRouterProvider) {
             var otherwise = '/404';
             var states = getStates();

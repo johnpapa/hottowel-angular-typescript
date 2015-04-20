@@ -9,11 +9,13 @@ var app;
         };
         angular.module('app.core').config(toastrConfig).config(configure).value('config', config);
         toastrConfig.$inject = ['toastr'];
+        /* @ngInject */
         function toastrConfig(toastr) {
             toastr.options.timeOut = 4000;
             toastr.options.positionClass = 'toast-bottom-right';
         }
         configure.$inject = ['$logProvider', 'exceptionHandlerProvider'];
+        /* @ngInject */
         function configure($logProvider, exceptionHandlerProvider) {
             if ($logProvider.debugEnabled) {
                 $logProvider.debugEnabled(true);

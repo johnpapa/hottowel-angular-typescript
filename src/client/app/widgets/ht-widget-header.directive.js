@@ -3,6 +3,12 @@ var app;
     var widgets;
     (function (widgets) {
         'use strict';
+        //Usage:
+        //<div ht-widget-header title="vm.map.title"></div>
+        // Creates:
+        // <div ht-widget-header=""
+        //      title="Movie"
+        //      allow-collapse="true" </div>
         var HtWidgetHeader = (function () {
             function HtWidgetHeader() {
                 this.scope = {

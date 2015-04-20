@@ -12,7 +12,8 @@ module blocks.router {
             this.handleStateChanges();
         }
 
-        public stateCounts = { errors: 0, changes: 0 };
+        stateCounts = { errors: 0, changes: 0 };
+
         private handlingStateChangeError: boolean = false;
 
         private handleRoutingErrors() {

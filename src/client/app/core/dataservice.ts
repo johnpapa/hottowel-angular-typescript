@@ -14,9 +14,9 @@ module app.core {
             private logger: blocks.logger.Logger) {
         }
 
-        public getMessageCount: () => ng.IPromise<number> = () => this.$q.when(72);
+        getMessageCount: () => ng.IPromise<number> = () => this.$q.when(72);
 
-        public getPeople: () => ng.IPromise<any> = () =>
+        getPeople: () => ng.IPromise<any> = () =>
             this.$http.get('/api/people')
                 .then(this.success)
                 .catch(this.fail);

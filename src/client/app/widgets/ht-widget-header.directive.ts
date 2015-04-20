@@ -21,14 +21,14 @@ module app.widgets {
             return new HtWidgetHeader();
         }
 
-        public scope: IHtWidgetHeaderScope = {
+        scope: IHtWidgetHeaderScope = {
             'title': '@',
             'subtitle': '@',
             'rightText': '@',
             'allowCollapse': '@'
         };
-        public templateUrl: string = 'app/widgets/widget-header.html';
-        public restrict: string = 'EA';
+        templateUrl: string = 'app/widgets/widget-header.html';
+        restrict: string = 'EA';
     }
 
     angular

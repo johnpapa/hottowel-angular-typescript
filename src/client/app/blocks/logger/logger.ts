@@ -14,26 +14,26 @@ module blocks.logger {
         constructor(private $log: ng.ILogService, private toastr: Toastr) {}
 
         // straight to console; bypass toastr
-        public log(...args: any[]) {
+        log(...args: any[]) {
             this.$log.log(args);
         }
 
-        public error(message: string, data?: {}, title?: string) {
+        error(message: string, data?: {}, title?: string) {
             this.toastr.error(message, title);
             this.$log.error('Error: ' + message, '\nSummary:', title, '\nDetails:', data);
         }
 
-        public info(message: string, data?: {}, title?: string) {
+        info(message: string, data?: {}, title?: string) {
             this.toastr.info(message, title);
             this.$log.info('Info: ' + message, '\nSummary:', title, '\nDetails:', data);
         }
 
-        public success(message: string, data?: {}, title?: string) {
+        success(message: string, data?: {}, title?: string) {
             this.toastr.success(message, title);
             this.$log.info('Success: ' + message, '\nSummary:', title, '\nDetails:', data);
         }
 
-        public warning(message: string, data?: {}, title?: string) {
+        warning(message: string, data?: {}, title?: string) {
             this.toastr.warning(message, title);
             this.$log.warn('Warning: ' + message, '\nSummary:', title, '\nDetails:', data);
         }

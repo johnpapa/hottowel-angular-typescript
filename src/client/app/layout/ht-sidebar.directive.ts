@@ -19,10 +19,10 @@ module app.layout {
             return new HtSidebar();
         }
 
-        public bindToController: boolean = true;
-        public link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void = this.linkFn;
-        public restrict: string = 'EA';
-        public scope: IHtSidebarScope = {
+        bindToController: boolean = true;
+        link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void = this.linkFn;
+        restrict: string = 'EA';
+        scope: IHtSidebarScope = {
             whenDoneAnimating: '&?'
         };
 

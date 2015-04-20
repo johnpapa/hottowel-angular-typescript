@@ -13,15 +13,15 @@ module applayout {
             return new HtTopNav();
         }
 
-        public bindToController: boolean = true;
-        public controller: TopNavController = TopNavController;
-        public controllerAs: string = 'vm';
-        public link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
-        public restrict: string = 'EA';
-        public scope: IHtTopNavScope = {
+        bindToController: boolean = true;
+        controller: TopNavController = TopNavController;
+        controllerAs: string = 'vm';
+        link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
+        restrict: string = 'EA';
+        scope: IHtTopNavScope = {
             'navline': '='
         };
-        public templateUrl: string = 'app/layout/ht-top-nav.html';
+        templateUrl: string = 'app/layout/ht-top-nav.html';
     }
 
     class TopNavController {

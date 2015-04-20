@@ -2,14 +2,6 @@ module app.dashboard {
     'use strict';
 
     export class DashboardController {
-        public news = {
-            title: 'helloworld',
-            description: 'Hot Towel Angular is a SPA template for Angular developers.'
-        };
-        public messageCount: number = 0;
-        public people: Array<any> = [];
-        public title: string = 'Dashboard';
-
         static $inject: Array<string> = ['$q', 'dataservice', 'logger'];
         constructor(private $q: ng.IQService,
             private dataservice: app.core.IDataService,
@@ -20,14 +12,22 @@ module app.dashboard {
             });
         }
 
-        public getMessageCount() {
+        news = {
+            title: 'helloworld',
+            description: 'Hot Towel Angular is a SPA template for Angular developers.'
+        };
+        messageCount: number = 0;
+        people: Array<any> = [];
+        title: string = 'Dashboard';
+
+        getMessageCount() {
             return this.dataservice.getMessageCount().then((data) => {
                 this.messageCount = data;
                 return this.messageCount;
             });
         }
 
-        public getPeople() {
+        getPeople() {
             return this.dataservice.getPeople().then((data) => {
                 this.people = data;
                 return this.people;

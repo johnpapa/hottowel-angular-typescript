@@ -9,7 +9,7 @@ module blocks.exception {
         static $inject: Array<string> = ['logger'];
         constructor(private logger: blocks.logger.Logger) {}
 
-        public catcher: (string) => (string) => void =
+        catcher: (string) => (string) => void =
             (message) => (reason) => this.logger.error(message, reason);
     }
 

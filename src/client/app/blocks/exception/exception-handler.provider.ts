@@ -9,14 +9,14 @@ module blocks.exception {
     export class ExceptionHandlerProvider {
         static $inject: Array<string> = [];
         constructor() { }
-        public config: IExceptionHandlerConfig = {
+        config: IExceptionHandlerConfig = {
             appErrorPrefix: undefined
         }
 
-        public configure(appErrorPrefix) {
+        configure(appErrorPrefix) {
             this.config.appErrorPrefix = appErrorPrefix;
         }
-        public $get: () => { config: IExceptionHandlerConfig } = () => { return { config: this.config }; }
+        $get: () => { config: IExceptionHandlerConfig } = () => { return { config: this.config }; }
     }
 
     config.$inject = ['$provide'];

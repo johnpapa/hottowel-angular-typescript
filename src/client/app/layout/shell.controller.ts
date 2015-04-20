@@ -11,15 +11,16 @@ module app.layout {
             this.hideSplash();
             this.$rootScope.showSplash = true;
         }
-        public busyMessage = 'Please wait ...';
-        public isBusy = true;
-        public navline = {
+
+        busyMessage = 'Please wait ...';
+        isBusy = true;
+        navline = {
             title: this.config.appTitle,
             text: 'Created by John Papa',
             link: 'http://twitter.com/john_papa'
         };
 
-        public hideSplash() {
+        hideSplash() {
             //Force a 1 second delay so we can see the splash.
             this.$timeout(() => { this.$rootScope.showSplash = false; }, 1000);
         }

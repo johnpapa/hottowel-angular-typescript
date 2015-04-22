@@ -1,5 +1,5 @@
 /*jshint node:true*/
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../../typings/tsd-server.d.ts" />
 
 'use strict';
 
@@ -7,10 +7,7 @@ import express = require('express');
 import favicon = require('serve-favicon');
 import logger = require('morgan');
 import bodyParser = require('body-parser');
-
-var four0fourModule = require('./utils/404');
-
-var four0four = four0fourModule();
+import { send404 } from './utils/404';  // use latest TS 1.5, inspired from ES6
 
 var app = express();
 var port: number = process.env.PORT || 8001;
@@ -32,8 +29,8 @@ switch (environment) {
         console.log('** BUILD **');
         app.use(express.static('./build/'));
         // Any invalid calls for templateUrls are under app/* and should return 404
-        app.use('/app/*', (req: express.Request, res: express.Response, next) => {
-            four0four.send404(req, res);
+        app.use('/app/*', (req: express.Request, res: express.Response, next: any) => {
+            send404(req, res);
         });
         // Any deep link calls should return index.html
         app.use('/*', express.static('./build/index.html'));
@@ -44,8 +41,8 @@ switch (environment) {
         app.use(express.static('./'));
         app.use(express.static('./tmp'));
         // Any invalid calls for templateUrls are under app/* and should return 404
-        app.use('/app/*', (req: express.Request, res: express.Response, next) =>  {
-            four0four.send404(req, res);
+        app.use('/app/*', (req: express.Request, res: express.Response, next: any) =>  {
+            send404(req, res);
         });
         // Any deep link calls should return index.html
         app.use('/*', express.static('./src/client/index.html'));

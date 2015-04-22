@@ -1,4 +1,6 @@
 /* global toastr:false, moment:false */
+/// <reference path="../../../../typings/tsd.d.ts" />
+
 module app.core {
     'use strict';
 

@@ -1,4 +1,4 @@
-# papa-bell-test
+# HotTowel: Angular with TypeScript
 
 **Generated from HotTowel Angular**
 
@@ -23,6 +23,10 @@
     >Refer to these [instructions on how to not require sudo](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
 
 ## Running HotTowel
+
+### TypeScript tasks
+
+**TODO**
 
 ### Linting
  - Run code analysis using `gulp vet`. This runs jshint, jscs, and plato.

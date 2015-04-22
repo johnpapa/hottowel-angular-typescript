@@ -1,4 +1,4 @@
-/// <reference path="typings/server/gulp/gulp.d.ts" />
+/// <reference path="typings/gulp/gulp.d.ts" />
 
 var args = require('yargs').argv;
 var browserSync = require('browser-sync');
@@ -558,7 +558,7 @@ function startBrowserSync(isDev, specRunner) {
         gulp.watch([config.less], ['styles'])
             .on('change', changeEvent);
     } else {
-        gulp.watch([config.less, config.js, config.html], ['optimize', browserSync.reload])
+        gulp.watch([].concat(config.less, config.js, config.html), ['optimize', browserSync.reload])
             .on('change', changeEvent);
     }
 

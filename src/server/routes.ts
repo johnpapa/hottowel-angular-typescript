@@ -1,13 +1,13 @@
 /*jshint node:true*/
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../../typings/tsd-server.d.ts" />
 
 'use strict';
 
 import express = require('express');
 
 var router = express.Router();
-var four0four = require('./utils/404')();
-var data = require('./data');
+import four0four = require('./utils/404');
+import data = require('./data');
 
 router.get('/people', getPeople);
 router.get('/person/:id', getPerson);
@@ -17,13 +17,14 @@ module.exports = router;
 
 //////////////
 
-function getPeople(req: express.Request, res: express.Response, next) {
-    res.status(200).send(data.people);
+//EG TODO: find type for next argument
+function getPeople(req: express.Request, res: express.Response, next: any) {
+    res.status(200).send(data.getPeople());
 }
 
-function getPerson(req: express.Request, res: express.Response, next) {
+function getPerson(req: express.Request, res: express.Response, next: any) {
     var id = +req.params.id;
-    var person = data.people.filter(function(p) {
+    var person = data.getPeople().filter(function(p) {
         return p.id === id;
     })[0];
 

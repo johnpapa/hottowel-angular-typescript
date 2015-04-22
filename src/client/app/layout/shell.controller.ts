@@ -1,3 +1,5 @@
+/// <reference path="../../../../typings/tsd.d.ts" />
+
 module app.layout {
     'use strict';
 

@@ -1,3 +1,4 @@
+/// <reference path="../../../../typings/tsd.d.ts" />
 var applayout;
 (function (applayout) {
     'use strict';

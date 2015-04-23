@@ -40,6 +40,7 @@ module.exports = function() {
                 declarationFiles: true,
                 noExternalResolve: true,
                 module: 'commonjs',
+                noImplicitAny: true,
                 removeComments: false,
                 sortOutput: true
             },

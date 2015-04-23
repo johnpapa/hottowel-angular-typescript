@@ -1,25 +1,20 @@
 /*jshint node:true*/
-/// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../../../typings/tsd-server.d.ts" />
 'use strict';
-module.exports = utils;
-function utils(app) {
-    var service = {
-        notFoundMiddleware: notFoundMiddleware,
-        send404: send404
-    };
-    return service;
-    function notFoundMiddleware(req, res, next) {
-        send404(req, res, 'API endpoint not found');
-    }
-    function send404(req, res, description) {
-        var data = {
-            status: 404,
-            message: 'Not Found',
-            description: description,
-            url: req.url
-        };
-        res.status(data.status).send(data).end();
-    }
+//TODO EG type next argument
+function notFoundMiddleware(req, res, next) {
+    send404(req, res, 'API endpoint not found');
 }
+exports.notFoundMiddleware = notFoundMiddleware;
+function send404(req, res, description) {
+    var data = {
+        status: 404,
+        message: 'Not Found',
+        description: description,
+        url: req.url
+    };
+    res.status(data.status).send(data).end();
+}
+exports.send404 = send404;
 
 //# sourceMappingURL=../../server/utils/404.js.map

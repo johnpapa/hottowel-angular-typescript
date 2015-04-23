@@ -20,5 +20,4 @@ export function send404(req: express.Request, res: express.Response, description
     res.status(data.status)
         .send(data)
         .end();
-
 }

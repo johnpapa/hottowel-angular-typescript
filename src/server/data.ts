@@ -3,7 +3,6 @@
 
 'use strict';
 
-
 export function getPeople() {
     return [
         {id: 1, firstName: 'John', lastName: 'Papa', age: 25, location: 'Florida'},

@@ -1,21 +1,22 @@
 /*jshint node:true*/
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../../typings/tsd-server.d.ts" />
 'use strict';
 var express = require('express');
 var router = express.Router();
-var four0four = require('./utils/404')();
+var four0four = require('./utils/404');
 var data = require('./data');
 router.get('/people', getPeople);
 router.get('/person/:id', getPerson);
 router.get('/*', four0four.notFoundMiddleware);
 module.exports = router;
 //////////////
+//EG TODO: find type for next argument
 function getPeople(req, res, next) {
-    res.status(200).send(data.people);
+    res.status(200).send(data.getPeople());
 }
 function getPerson(req, res, next) {
     var id = +req.params.id;
-    var person = data.people.filter(function (p) {
+    var person = data.getPeople().filter(function (p) {
         return p.id === id;
     })[0];
     if (person) {

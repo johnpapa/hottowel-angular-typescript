@@ -1,4 +1,5 @@
 /* global toastr:false, moment:false */
+/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var core;

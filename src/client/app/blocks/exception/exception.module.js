@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 var blocks;
 (function (blocks) {
     var exception;

@@ -1,0 +1,38 @@
+{
+    "version": "0.1.0",
+    "command": "gulp",
+    "isShellCommand": true,
+    "args": [
+        "--no-color"
+    ],
+    "tasks": [
+        {
+            "taskName": "build",
+            "args": [],
+            "isBuildCommand": true,
+            "isWatching": false,
+            "problemMatcher": [
+                "$lessCompile",
+                "$tsc",
+                "$gulp-tsc",
+                "$jshint",
+                {
+                    "owner": "typescript",
+                    "pattern": {
+                        //   Failed to lint: client/app/admin/admin.controller.ts[6, 12]: missing semicolon.
+                        "regexp": "^.*:\\s+(.*)\\[(\\d+,\\s*\\d+)\\]:\\s*(.*)$",
+                        "file": 1,
+                        "location": 2,
+                        "message": 3
+                    },
+                    "fileLocation": ["relative", "${cwd}/src"]
+                }
+            ]
+        },
+        {
+            "taskName": "test",
+            "args": [],
+            "isTestCommand": true
+        }
+    ]
+}

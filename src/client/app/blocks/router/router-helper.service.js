@@ -35,7 +35,7 @@ var blocks;
             };
             RouterHelper.prototype.handleStateChanges = function () {
                 var _this = this;
-                this.$rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+                this.$rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams, error) {
                     _this.stateCounts.changes++;
                     _this.handlingStateChangeError = false;
                     //var title = config.docTitle + ' ' + (toState.title || '');

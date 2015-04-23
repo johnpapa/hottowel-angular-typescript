@@ -46,6 +46,9 @@ gulp.task('ts-vet', function () {
         .pipe($.tslint.report(reporter));
 });
 
+/**
+ * Creates the app.d.ts file with all references to *.ts files
+ */
 gulp.task('ts-create-refs', function () {
     var source = gulp.src(config.ts.allts, { read: false });
     var injectOptions = {
@@ -65,6 +68,10 @@ gulp.task('ts-create-refs', function () {
         .pipe(gulp.dest(config.ts.typings));
 });
 
+/**
+ * Compiles *.js files, sourcemaps, 
+ * and optionally d.ts files (if passed --dts)
+ */
 gulp.task('ts-compile', ['ts-vet', 'ts-clean'], function () {
     var source = [].concat(config.ts.allts, config.ts.defs, config.ts.refs);
 
@@ -73,7 +80,7 @@ gulp.task('ts-compile', ['ts-vet', 'ts-clean'], function () {
         .pipe($.typescript(config.ts.tscOptions));
 
     return merge([
-        //ts.dts.pipe(gulp.dest(config.ts.appRefs)),
+        ts.dts.pipe($.if(args.dts, gulp.dest(config.ts.appRefs))),
         ts.js
             //.pipe($.concat('somefile.js')) // concat to 1 js file and 1 map file
             .pipe($.if(args.verbose, $.print()))
@@ -680,12 +687,12 @@ function bytediffFormatter(data) {
 /**
  * Log an error message and emit the end of a task
  */
-function errorLogger(error) {
-    log('*** Start of Error ***');
-    log(error);
-    log('*** End of Error ***');
-    this.emit('end');
-}
+//function errorLogger(error) {
+//    log('*** Start of Error ***');
+//    log(error);
+//    log('*** End of Error ***');
+//    this.emit('end');
+//}
 
 /**
  * Format a number as a percentage

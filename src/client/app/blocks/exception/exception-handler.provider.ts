@@ -15,7 +15,7 @@ module blocks.exception {
             appErrorPrefix: undefined
         }
 
-        configure(appErrorPrefix) {
+        configure(appErrorPrefix: any) {
             this.config.appErrorPrefix = appErrorPrefix;
         }
         $get: () => { config: IExceptionHandlerConfig } = () => { return { config: this.config }; }
@@ -35,9 +35,9 @@ module blocks.exception {
      * @return {Function} the decorated $exceptionHandler service
      */
     function extendExceptionHandler($delegate: ng.IExceptionHandlerService,
-        exceptionHandler ,
+        exceptionHandler: any ,
         logger: blocks.logger.Logger) {
-        return function (exception, cause) {
+        return function (exception: any, cause: any) {
 //            var appErrorPrefix = '[Error] ';
             var appErrorPrefix = exceptionHandler.config.appErrorPrefix || '';
             var errorData = {exception: exception, cause: cause};

@@ -10,7 +10,7 @@ module blocks.router {
 
     export class RouterHelper implements IRouterHelper {
         static $inject: Array<string> = ['$location', '$rootScope', '$state', 'logger'];
-        constructor(private $location, private $rootScope, private $state, private logger) {
+        constructor(private $location: any, private $rootScope: any, private $state: any, private logger: any) {
             this.handleRoutingErrors();
             this.handleStateChanges();
         }
@@ -25,7 +25,7 @@ module blocks.router {
             // On routing error, go to the dashboard.
             // Provide an exit clause if it tries to do it twice.
             this.$rootScope.$on('$stateChangeError',
-                (event, toState, toParams, fromState, fromParams, error) => {
+                (event: any, toState: any, toParams: any, fromState: any, fromParams: any, error: any) => {
                     if (this.handlingStateChangeError) {
                         return;
                     }
@@ -45,7 +45,7 @@ module blocks.router {
 
         private handleStateChanges() {
             this.$rootScope.$on('$stateChangeSuccess',
-                (event, toState, toParams, fromState, fromParams) => {
+                (event: any, toState: any, toParams: any, fromState: any, fromParams: any, error: any) => {
                     this.stateCounts.changes++;
                     this.handlingStateChangeError = false;
                     //var title = config.docTitle + ' ' + (toState.title || '');

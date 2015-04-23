@@ -16,7 +16,7 @@ module app.layout {
         navRoutes: IStateExtra[];
         states: IStateExtra[] = <IStateExtra[]>this.$state.get();
 
-        isCurrent(route) {
+        isCurrent(route: { title: string }) {
             var currentState: any = this.$state.current;
             if (!route.title || !currentState || !currentState.title) {
                 return '';

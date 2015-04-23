@@ -18,7 +18,9 @@ module app.core {
 
     configureStates.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
     /* @ngInject */
-    function configureStates($stateProvider, $locationProvider, $urlRouterProvider) {
+    function configureStates($stateProvider: ng.ui.IStateProvider,
+        $locationProvider: ng.ILocationProvider,
+        $urlRouterProvider: ng.ui.IUrlRouterProvider) {
         var otherwise = '/404';
         var states = getStates();
         states.forEach(function (state) {

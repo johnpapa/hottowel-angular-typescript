@@ -28,13 +28,13 @@ module app.layout {
             whenDoneAnimating: '&?'
         };
 
-        private linkFn(scope, element, attrs) {
+        private linkFn(scope: any, element: any, attrs: any) {
             var $sidebarInner = element.find('.sidebar-inner');
             var $dropdownElement = element.find('.sidebar-dropdown a');
             element.addClass('sidebar');
             $dropdownElement.click(dropdown);
 
-            function dropdown(e) {
+            function dropdown(e: any) {
                 var dropClass = 'dropy';
                 e.preventDefault();
                 if (!$dropdownElement.hasClass(dropClass)) {

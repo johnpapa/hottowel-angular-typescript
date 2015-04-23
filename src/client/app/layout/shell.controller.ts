@@ -7,7 +7,7 @@ module app.layout {
         static $inject: Array<string> = ['$rootScope', '$timeout', 'config', 'logger'];
         constructor(private $rootScope: any,
             private $timeout: ng.ITimeoutService,
-            private config,
+            private config: {appTitle: string},
             private logger: blocks.logger.Logger) {
             this.logger.success(config.appTitle + ' loaded!', null);
             this.hideSplash();

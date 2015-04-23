@@ -10,7 +10,7 @@ module app.dashboard {
 
     configureStates.$inject = ['$stateProvider'];
     /* @ngInject */
-    function configureStates($stateProvider) {
+    function configureStates($stateProvider: ng.ui.IStateProvider) {
         var states = getStates();
         states.forEach(function (state) {
             $stateProvider.state(state.state, state.config);

@@ -23,9 +23,9 @@ module app.core {
                 .then(this.success)
                 .catch(this.fail);
 
-        private success: (any) => {} = (response) => response.data;
+        private success: (response: any) => {} = (response) => response.data;
 
-        private fail: (any) => {} = (error) => {
+        private fail: (error: any) => {} = (error) => {
             var msg = error.data.description;
             var reason = 'query for people failed.';
             this.exception.catcher(msg)(reason);

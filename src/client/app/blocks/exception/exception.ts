@@ -4,15 +4,14 @@ module blocks.exception {
     'use strict';
 
     export interface IException {
-        catcher: (string) => (string) => void;
+        catcher: (message: string) => (reason: string) => void;
     }
 
     export class Exception implements IException {
         static $inject: Array<string> = ['logger'];
         constructor(private logger: blocks.logger.Logger) {}
 
-        catcher: (string) => (string) => void =
-            (message) => (reason) => this.logger.error(message, reason);
+        catcher = (message: string) => (reason: string) => this.logger.error(message, reason);
     }
 
     angular

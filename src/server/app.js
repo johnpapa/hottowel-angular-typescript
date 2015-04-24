@@ -4,9 +4,9 @@ var express = require('express');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-//import { send404 } from './utils/404';  // use latest TS 1.5, inspired from ES6
-var four0four = require('./utils/404');
-var send404 = four0four.send404;
+var notfound_1 = require('./utils/notfound'); // use latest TS 1.5, inspired from ES6
+//import four0four = require('./utils/notfound');
+//var send404 = four0four.send404;
 var app = express();
 var port = process.env.PORT || 8001;
 var environment = process.env.NODE_ENV;
@@ -24,7 +24,7 @@ switch (environment) {
         app.use(express.static('./build/'));
         // Any invalid calls for templateUrls are under app/* and should return 404
         app.use('/app/*', function (req, res, next) {
-            send404(req, res);
+            notfound_1.send404(req, res);
         });
         // Any deep link calls should return index.html
         app.use('/*', express.static('./build/index.html'));
@@ -36,7 +36,7 @@ switch (environment) {
         app.use(express.static('./tmp'));
         // Any invalid calls for templateUrls are under app/* and should return 404
         app.use('/app/*', function (req, res, next) {
-            send404(req, res);
+            notfound_1.send404(req, res);
         });
         // Any deep link calls should return index.html
         app.use('/*', express.static('./src/client/index.html'));

@@ -6,16 +6,16 @@ import express = require('express');
 import favicon = require('serve-favicon');
 import logger = require('morgan');
 import bodyParser = require('body-parser');
-//import { send404 } from './utils/404';  // use latest TS 1.5, inspired from ES6
-import four0four = require('./utils/404');
+import { send404 } from './utils/notfound';  // use latest TS 1.5, inspired from ES6
+//import four0four = require('./utils/notfound');
 
-var send404 = four0four.send404;
+//var send404 = four0four.send404;
 
-var app = express();
+var app: express.Express = express();
 var port: number = process.env.PORT || 8001;
 var environment: string = process.env.NODE_ENV;
 
-app.use(favicon(__dirname + '/favicon.ico'));
+app.use(favicon(__dirname + '/favicon.ico'))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(logger('dev'));

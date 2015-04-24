@@ -1,5 +1,4 @@
 /*jshint node:true*/
-/// <reference path="../../typings/tsd.d.ts" />
 'use strict';
 function getPeople() {
     return [
@@ -14,5 +13,4 @@ function getPeople() {
     ];
 }
 exports.getPeople = getPeople;
-
-//# sourceMappingURL=../server/data.js.map
+//# sourceMappingURL=data.js.map

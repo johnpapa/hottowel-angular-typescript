@@ -9,6 +9,7 @@ var glob = require('glob');
 var gulp = require('gulp');
 var merge = require('merge2');
 var path = require('path');
+var cp = require('child_process');
 var _ = require('lodash');
 var $ = require('gulp-load-plugins')({lazy: true});
 
@@ -72,28 +73,34 @@ gulp.task('ts-create-refs', function () {
  * Compiles *.js files, sourcemaps, 
  * and optionally d.ts files (if passed --dts)
  */
-gulp.task('ts-compile', ['ts-vet', 'ts-clean'], function () {
-    var source = [].concat(config.ts.allts, config.ts.defs, config.ts.refs);
+gulp.task('ts-compile', ['ts-compile-client', 'ts-compile-server']);
 
-    var ts = gulp.src(source)
-        .pipe($.sourcemaps.init())
-        .pipe($.typescript(config.ts.tscOptions));
-
-    return merge([
-        ts.dts.pipe($.if(args.dts, gulp.dest(config.ts.appRefs))),
-        ts.js
-            //.pipe($.concat('somefile.js')) // concat to 1 js file and 1 map file
-            .pipe($.if(args.verbose, $.print()))
-            .pipe($.sourcemaps.write('.'))
-            .pipe(gulp.dest('./src/'))
-    ]);
+gulp.task('ts-compile-client', function(cb) {    
+    runTSC('src/client', cb);
 });
+
+gulp.task('ts-compile-server', function(cb) {
+    runTSC('src/server', cb);
+});
+
+function runTSC(directory, cb) {
+    var childProcess = cp.spawn('node', [path.join(process.cwd(), 'node_modules/typescript/bin/tsc.js'), '-p', directory], { cwd: process.cwd() });
+    childProcess.stdout.on('data', function(data) {
+       console.log(data.toString()); 
+    });
+    childProcess.stderr.on('data', function(data) {
+        console.log(data.toString());
+    });
+    childProcess.on('close', function() {
+        cb();
+    });
+}
 
 /**
  * vet the code and create coverage report
  * @return {Stream}
  */
-gulp.task('vet', ['ts-vet'], function() {
+gulp.task('vet', function() {
     log('Analyzing source with TSLint, JSHint and JSCS');
 
     return gulp
@@ -166,8 +173,14 @@ gulp.task('less-watcher', function() {
 /**
  * Watch TypeScript and recompile and create refs
  */
-gulp.task('ts-watcher', function() {
-    gulp.watch(config.ts.allts, ['ts-compile', 'ts-create-refs']);
+gulp.task('ts-watcher', ['ts-watcher-client', 'ts-watcher-server']);
+
+gulp.task('ts-watcher-client', function() {
+    gulp.watch(config.ts.clientts, ['ts-compile-client']);
+});
+
+gulp.task('ts-watcher-server', function() {
+    gulp.watch(config.ts.serverts, ['ts-compile-server']);
 });
 
 /**
@@ -376,7 +389,7 @@ gulp.task('clean-code', function(done) {
  *    gulp test --startServers
  * @return {Stream}
  */
-gulp.task('test', ['vet', 'templatecache'], function(done) {
+gulp.task('test', ['vet', 'ts-compile', 'templatecache'], function(done) {
     startTests(true /*singleRun*/ , done);
 });
 

@@ -1,4 +1,3 @@
-/// <reference path="../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     'use strict';
@@ -10,5 +9,4 @@ var app;
         'app.layout'
     ]);
 })(app || (app = {}));
-
-//# sourceMappingURL=../../client/app/app.module.js.map
+//# sourceMappingURL=app.module.js.map

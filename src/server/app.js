@@ -1,5 +1,4 @@
 /*jshint node:true*/
-/// <reference path="../../typings/tsd-server.d.ts" />
 'use strict';
 var express = require('express');
 var favicon = require('serve-favicon');
@@ -21,7 +20,7 @@ console.log('PORT=' + port);
 console.log('NODE_ENV=' + environment);
 switch (environment) {
     case 'build':
-        console.log('** BUILD **');
+        console.loog('** BUILD **');
         app.use(express.static('./build/'));
         // Any invalid calls for templateUrls are under app/* and should return 404
         app.use('/app/*', function (req, res, next) {
@@ -45,7 +44,8 @@ switch (environment) {
 }
 app.listen(port, function () {
     console.log('Express server listening on port ' + port);
-    console.log('env = ' + app.get('env') + '\n__dirname = ' + __dirname + '\nprocess.cwd = ' + process.cwd());
+    console.log('env = ' + app.get('env') +
+        '\n__dirname = ' + __dirname +
+        '\nprocess.cwd = ' + process.cwd());
 });
-
-//# sourceMappingURL=../server/app.js.map
+//# sourceMappingURL=app.js.map

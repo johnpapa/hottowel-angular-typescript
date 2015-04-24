@@ -28,6 +28,12 @@ module.exports = function() {
                 './src/**/*.ts',
                 './*.ts'
             ],
+            clientts: [
+                './src/client/**/*.ts'
+            ],
+            serverts: [
+                './src/server/**/*.ts'
+            ],
             defs: typings + '**/*.ts',
             output: '.tmp',
             refs: typings + 'app.d.ts',
@@ -49,7 +55,7 @@ module.exports = function() {
 
         // all javascript that we want to vet
         alljs: [
-            './src/**/*.js',
+            './src/test-helpers/*.js',
             './*.js'
         ],
         build: './build/',

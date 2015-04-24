@@ -1,4 +1,3 @@
-/// <reference path="../../../../../typings/tsd.d.ts" />
 var blocks;
 (function (blocks) {
     var exception;
@@ -14,8 +13,9 @@ var blocks;
             return Exception;
         })();
         exception.Exception = Exception;
-        angular.module('blocks.exception').service('exception', Exception);
+        angular
+            .module('blocks.exception')
+            .service('exception', Exception);
     })(exception = blocks.exception || (blocks.exception = {}));
 })(blocks || (blocks = {}));
-
-//# sourceMappingURL=../../../../client/app/blocks/exception/exception.js.map
+//# sourceMappingURL=exception.js.map

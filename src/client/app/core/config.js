@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var core;
@@ -8,7 +7,11 @@ var app;
             appErrorPrefix: '[helloworld Error] ',
             appTitle: 'helloworld'
         };
-        angular.module('app.core').config(toastrConfig).config(configure).value('config', config);
+        angular
+            .module('app.core')
+            .config(toastrConfig)
+            .config(configure)
+            .value('config', config);
         toastrConfig.$inject = ['toastr'];
         /* @ngInject */
         function toastrConfig(toastr) {
@@ -25,5 +28,4 @@ var app;
         }
     })(core = app.core || (app.core = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/core/config.js.map
+//# sourceMappingURL=config.js.map

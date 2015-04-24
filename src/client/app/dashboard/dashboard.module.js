@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var dashboard;
@@ -10,5 +9,4 @@ var app;
         ]);
     })(dashboard = app.dashboard || (app.dashboard = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/dashboard/dashboard.module.js.map
+//# sourceMappingURL=dashboard.module.js.map

@@ -1,10 +1,9 @@
 // Include in index.html so that app level exceptions are handled.
 // Exclude from testRunner.html which should run exactly what it wants to run
-/// <reference path="../../../../../typings/tsd.d.ts" />
 var blocks;
 (function (blocks) {
     var exception;
-    (function (_exception) {
+    (function (exception_1) {
         'use strict';
         var ExceptionHandlerProvider = (function () {
             function ExceptionHandlerProvider() {
@@ -12,9 +11,7 @@ var blocks;
                 this.config = {
                     appErrorPrefix: undefined
                 };
-                this.$get = function () {
-                    return { config: _this.config };
-                };
+                this.$get = function () { return { config: _this.config }; };
             }
             ExceptionHandlerProvider.prototype.configure = function (appErrorPrefix) {
                 this.config.appErrorPrefix = appErrorPrefix;
@@ -22,7 +19,7 @@ var blocks;
             ExceptionHandlerProvider.$inject = [];
             return ExceptionHandlerProvider;
         })();
-        _exception.ExceptionHandlerProvider = ExceptionHandlerProvider;
+        exception_1.ExceptionHandlerProvider = ExceptionHandlerProvider;
         config.$inject = ['$provide'];
         function config($provide) {
             $provide.decorator('$exceptionHandler', extendExceptionHandler);
@@ -54,8 +51,10 @@ var blocks;
                 logger.error(exception.message, errorData);
             };
         }
-        angular.module('blocks.exception').provider('exceptionHandler', ExceptionHandlerProvider).config(config);
+        angular
+            .module('blocks.exception')
+            .provider('exceptionHandler', ExceptionHandlerProvider)
+            .config(config);
     })(exception = blocks.exception || (blocks.exception = {}));
 })(blocks || (blocks = {}));
-
-//# sourceMappingURL=../../../../client/app/blocks/exception/exception-handler.provider.js.map
+//# sourceMappingURL=exception-handler.provider.js.map

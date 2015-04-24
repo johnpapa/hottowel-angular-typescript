@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var widgets;
@@ -27,8 +26,9 @@ var app;
             HtWidgetHeader.$inject = [''];
             return HtWidgetHeader;
         })();
-        angular.module('app.widgets').directive('htWidgetHeader', HtWidgetHeader.instance);
+        angular
+            .module('app.widgets')
+            .directive('htWidgetHeader', HtWidgetHeader.instance);
     })(widgets = app.widgets || (app.widgets = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/widgets/ht-widget-header.directive.js.map
+//# sourceMappingURL=ht-widget-header.directive.js.map

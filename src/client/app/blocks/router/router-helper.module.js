@@ -1,4 +1,3 @@
-/// <reference path="../../../../../typings/tsd.d.ts" />
 var blocks;
 (function (blocks) {
     var router;
@@ -7,5 +6,4 @@ var blocks;
         angular.module('blocks.router', []);
     })(router = blocks.router || (blocks.router = {}));
 })(blocks || (blocks = {}));
-
-//# sourceMappingURL=../../../../client/app/blocks/router/router-helper.module.js.map
+//# sourceMappingURL=router-helper.module.js.map

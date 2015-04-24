@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var core;
@@ -9,10 +8,12 @@ var app;
         // When: Use when you have no TypeScript components to export
         // Less function wrapping
         'use strict';
-        angular.module('app.core').config(configureStates).run(appRun);
+        angular
+            .module('app.core')
+            .config(configureStates)
+            .run(appRun);
         appRun.$inject = ['RouterHelper'];
-        function appRun(RouterHelper) {
-        }
+        function appRun(RouterHelper) { }
         configureStates.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
         /* @ngInject */
         function configureStates($stateProvider, $locationProvider, $urlRouterProvider) {
@@ -38,5 +39,4 @@ var app;
         }
     })(core = app.core || (app.core = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/core/core.route.js.map
+//# sourceMappingURL=core.route.js.map

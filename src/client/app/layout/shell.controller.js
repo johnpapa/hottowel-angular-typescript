@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var layout;
@@ -24,16 +23,15 @@ var app;
             ShellController.prototype.hideSplash = function () {
                 var _this = this;
                 //Force a 1 second delay so we can see the splash.
-                this.$timeout(function () {
-                    _this.$rootScope.showSplash = false;
-                }, 1000);
+                this.$timeout(function () { _this.$rootScope.showSplash = false; }, 1000);
             };
             ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger'];
             return ShellController;
         })();
         layout.ShellController = ShellController;
-        angular.module('app.layout').controller('ShellController', ShellController);
+        angular
+            .module('app.layout')
+            .controller('ShellController', ShellController);
     })(layout = app.layout || (app.layout = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/layout/shell.controller.js.map
+//# sourceMappingURL=shell.controller.js.map

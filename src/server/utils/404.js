@@ -1,5 +1,4 @@
 /*jshint node:true*/
-/// <reference path="../../../typings/tsd-server.d.ts" />
 'use strict';
 //TODO EG type next argument
 function notFoundMiddleware(req, res, next) {
@@ -13,8 +12,9 @@ function send404(req, res, description) {
         description: description,
         url: req.url
     };
-    res.status(data.status).send(data).end();
+    res.status(data.status)
+        .send(data)
+        .end();
 }
 exports.send404 = send404;
-
-//# sourceMappingURL=../../server/utils/404.js.map
+//# sourceMappingURL=404.js.map

@@ -14,20 +14,20 @@
             "problemMatcher": [
                 "$lessCompile",
                 "$tsc",
-                "$gulp-tsc",
-                "$jshint",
-                {
-                    "owner": "typescript",
-                    "pattern": {
-                        //   Failed to lint: client/app/admin/admin.controller.ts[6, 12]: missing semicolon.
-                        "regexp": "^.*:\\s+(.*)\\[(\\d+,\\s*\\d+)\\]:\\s*(.*)$",
-                        "file": 1,
-                        "location": 2,
-                        "message": 3
-                    },
-                    "fileLocation": ["relative", "${workspaceRoot}/src"]
-                }
+                "$jshint"
             ]
+        },
+        {
+            "taskName": "ts-compile",
+            "problemMatcher": "$tsc"
+        },
+        {
+            "taskName": "ts-compile-client",
+            "problemMatcher": "$tsc"
+        },
+        {
+            "taskName": "ts-compile-server",
+            "problemMatcher": "$tsc"
         },
         {
             "taskName": "serve-specs",

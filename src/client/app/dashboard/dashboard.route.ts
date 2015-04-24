@@ -1,6 +1,3 @@
-
-/// <reference path="../../../../typings/tsd.d.ts" />
-
 module app.dashboard {
     'use strict';
 

@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var applayout;
 (function (applayout) {
     'use strict';
@@ -24,7 +23,8 @@ var applayout;
         }
         return TopNavController;
     })();
-    angular.module('app.layout').directive('htTopNav', HtTopNav.instance);
+    angular
+        .module('app.layout')
+        .directive('htTopNav', HtTopNav.instance);
 })(applayout || (applayout = {}));
-
-//# sourceMappingURL=../../../client/app/layout/ht-top-nav.directive.js.map
+//# sourceMappingURL=ht-top-nav.directive.js.map

@@ -7,7 +7,7 @@
     ],
     "tasks": [
         {
-            "taskName": "build",
+            "taskName": "serve-dev",
             "args": [],
             "isBuildCommand": true,
             "isWatching": false,
@@ -28,6 +28,10 @@
                     "fileLocation": ["relative", "${workspaceRoot}/src"]
                 }
             ]
+        },
+        {
+            "taskName": "serve-specs",
+            "args": []
         },
         {
             "taskName": "test",

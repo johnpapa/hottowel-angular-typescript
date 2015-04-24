@@ -1,10 +1,11 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var dashboard;
     (function (dashboard) {
         'use strict';
-        angular.module('app.dashboard').config(configureStates);
+        angular
+            .module('app.dashboard')
+            .config(configureStates);
         configureStates.$inject = ['$stateProvider'];
         /* @ngInject */
         function configureStates($stateProvider) {
@@ -33,5 +34,4 @@ var app;
         }
     })(dashboard = app.dashboard || (app.dashboard = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/dashboard/dashboard.route.js.map
+//# sourceMappingURL=dashboard.route.js.map

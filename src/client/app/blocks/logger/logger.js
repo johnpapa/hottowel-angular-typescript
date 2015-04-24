@@ -1,4 +1,3 @@
-/// <reference path="../../../../../typings/tsd.d.ts" />
 var blocks;
 (function (blocks) {
     var logger;
@@ -37,8 +36,9 @@ var blocks;
             return Logger;
         })();
         logger.Logger = Logger;
-        angular.module('blocks.logger').service('logger', Logger);
+        angular
+            .module('blocks.logger')
+            .service('logger', Logger);
     })(logger = blocks.logger || (blocks.logger = {}));
 })(blocks || (blocks = {}));
-
-//# sourceMappingURL=../../../../client/app/blocks/logger/logger.js.map
+//# sourceMappingURL=logger.js.map

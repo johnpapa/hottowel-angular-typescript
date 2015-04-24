@@ -1,4 +1,3 @@
-/// <reference path="../../../../../typings/tsd.d.ts" />
 var blocks;
 (function (blocks) {
     var logger;
@@ -7,5 +6,4 @@ var blocks;
         angular.module('blocks.logger', []);
     })(logger = blocks.logger || (blocks.logger = {}));
 })(blocks || (blocks = {}));
-
-//# sourceMappingURL=../../../../client/app/blocks/logger/logger.module.js.map
+//# sourceMappingURL=logger.module.js.map

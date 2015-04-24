@@ -1,10 +1,11 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var admin;
     (function (admin) {
         'use strict';
-        angular.module('app.admin').config(configureStates);
+        angular
+            .module('app.admin')
+            .config(configureStates);
         configureStates.$inject = ['$stateProvider'];
         /* @ngInject */
         function configureStates($stateProvider) {
@@ -33,5 +34,4 @@ var app;
         }
     })(admin = app.admin || (app.admin = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/admin/admin.route.js.map
+//# sourceMappingURL=admin.route.js.map

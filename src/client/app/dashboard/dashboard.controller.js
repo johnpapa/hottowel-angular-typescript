@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var dashboard;
@@ -39,8 +38,9 @@ var app;
             return DashboardController;
         })();
         dashboard.DashboardController = DashboardController;
-        angular.module('app.dashboard').controller('DashboardController', DashboardController);
+        angular
+            .module('app.dashboard')
+            .controller('DashboardController', DashboardController);
     })(dashboard = app.dashboard || (app.dashboard = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/dashboard/dashboard.controller.js.map
+//# sourceMappingURL=dashboard.controller.js.map

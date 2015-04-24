@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var admin;
@@ -14,8 +13,9 @@ var app;
             return AdminController;
         })();
         admin.AdminController = AdminController;
-        angular.module('app.admin').controller('AdminController', AdminController);
+        angular
+            .module('app.admin')
+            .controller('AdminController', AdminController);
     })(admin = app.admin || (app.admin = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/admin/admin.controller.js.map
+//# sourceMappingURL=admin.controller.js.map

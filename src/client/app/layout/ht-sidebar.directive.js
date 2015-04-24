@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var layout;
@@ -43,8 +42,9 @@ var app;
             HtSidebar.$inject = [''];
             return HtSidebar;
         })();
-        angular.module('app.layout').directive('htSidebar', HtSidebar.instance);
+        angular
+            .module('app.layout')
+            .directive('htSidebar', HtSidebar.instance);
     })(layout = app.layout || (app.layout = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/layout/ht-sidebar.directive.js.map
+//# sourceMappingURL=ht-sidebar.directive.js.map

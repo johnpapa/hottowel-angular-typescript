@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var core;
@@ -12,7 +11,11 @@ var app;
                 this.exception = exception;
                 this.logger = logger;
                 this.getMessageCount = function () { return _this.$q.when(72); };
-                this.getPeople = function () { return _this.$http.get('/api/people').then(_this.success).catch(_this.fail); };
+                this.getPeople = function () {
+                    return _this.$http.get('/api/people')
+                        .then(_this.success)
+                        .catch(_this.fail);
+                };
                 this.success = function (response) { return response.data; };
                 this.fail = function (error) {
                     var msg = error.data.description;
@@ -25,8 +28,9 @@ var app;
             return DataService;
         })();
         core.DataService = DataService;
-        angular.module('app.core').service('dataservice', DataService);
+        angular
+            .module('app.core')
+            .service('dataservice', DataService);
     })(core = app.core || (app.core = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/core/dataservice.js.map
+//# sourceMappingURL=dataservice.js.map

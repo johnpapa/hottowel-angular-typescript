@@ -1,5 +1,4 @@
 /*jshint node:true*/
-/// <reference path="../../../typings/tsd-server.d.ts" />
 
 'use strict';
 

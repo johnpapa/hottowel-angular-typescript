@@ -1,5 +1,4 @@
 /*jshint node:true*/
-/// <reference path="../../typings/tsd-server.d.ts" />
 'use strict';
 var express = require('express');
 var favicon = require('serve-favicon');
@@ -45,7 +44,8 @@ switch (environment) {
 }
 app.listen(port, function () {
     console.log('Express server listening on port ' + port);
-    console.log('env = ' + app.get('env') + '\n__dirname = ' + __dirname + '\nprocess.cwd = ' + process.cwd());
+    console.log('env = ' + app.get('env') +
+        '\n__dirname = ' + __dirname +
+        '\nprocess.cwd = ' + process.cwd());
 });
-
-//# sourceMappingURL=../server/app.js.map
+//# sourceMappingURL=app.js.map

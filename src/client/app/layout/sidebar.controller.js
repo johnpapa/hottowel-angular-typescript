@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var layout;
@@ -19,14 +18,17 @@ var app;
                 return currentState.title.substr(0, menuName.length) === menuName ? 'current' : '';
             };
             SidebarController.prototype.getNavRoutes = function () {
-                this.navRoutes = this.states.filter(function (state) { return state.settings && state.settings.nav; }).sort(function (state1, state2) { return state1.settings.nav - state2.settings.nav; });
+                this.navRoutes = this.states
+                    .filter(function (state) { return state.settings && state.settings.nav; })
+                    .sort(function (state1, state2) { return state1.settings.nav - state2.settings.nav; });
             };
             SidebarController.$inject = ['$state'];
             return SidebarController;
         })();
         layout.SidebarController = SidebarController;
-        angular.module('app.layout').controller('SidebarController', SidebarController);
+        angular
+            .module('app.layout')
+            .controller('SidebarController', SidebarController);
     })(layout = app.layout || (app.layout = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/layout/sidebar.controller.js.map
+//# sourceMappingURL=sidebar.controller.js.map

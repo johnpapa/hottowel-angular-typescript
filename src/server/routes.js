@@ -1,5 +1,4 @@
 /*jshint node:true*/
-/// <reference path="../../typings/tsd-server.d.ts" />
 'use strict';
 var express = require('express');
 var router = express.Router();
@@ -26,5 +25,4 @@ function getPerson(req, res, next) {
         four0four.send404(req, res, 'person ' + id + ' not found');
     }
 }
-
-//# sourceMappingURL=../server/routes.js.map
+//# sourceMappingURL=routes.js.map

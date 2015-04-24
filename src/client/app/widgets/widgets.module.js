@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
 var app;
 (function (app) {
     var widgets;
@@ -7,5 +6,4 @@ var app;
         angular.module('app.widgets', []);
     })(widgets = app.widgets || (app.widgets = {}));
 })(app || (app = {}));
-
-//# sourceMappingURL=../../../client/app/widgets/widgets.module.js.map
+//# sourceMappingURL=widgets.module.js.map

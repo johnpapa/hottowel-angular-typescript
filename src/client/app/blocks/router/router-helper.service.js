@@ -1,4 +1,3 @@
-/// <reference path="../../../../../typings/tsd.d.ts" />
 var blocks;
 (function (blocks) {
     var router;
@@ -27,8 +26,12 @@ var blocks;
                     }
                     _this.stateCounts.errors++;
                     _this.handlingStateChangeError = true;
-                    var destination = (toState && (toState.title || toState.name || toState.loadedTemplateUrl)) || 'unknown target';
-                    var msg = 'Error routing to ' + destination + '. ' + (error.data || '') + '. <br/>' + (error.statusText || '') + ': ' + (error.status || '');
+                    var destination = (toState &&
+                        (toState.title || toState.name || toState.loadedTemplateUrl)) ||
+                        'unknown target';
+                    var msg = 'Error routing to ' + destination + '. ' +
+                        (error.data || '') + '. <br/>' + (error.statusText || '') +
+                        ': ' + (error.status || '');
                     _this.logger.warning(msg, [toState]);
                     _this.$location.path('/');
                 });
@@ -47,8 +50,9 @@ var blocks;
             return RouterHelper;
         })();
         router.RouterHelper = RouterHelper;
-        angular.module('blocks.router').service('RouterHelper', RouterHelper);
+        angular
+            .module('blocks.router')
+            .service('RouterHelper', RouterHelper);
     })(router = blocks.router || (blocks.router = {}));
 })(blocks || (blocks = {}));
-
-//# sourceMappingURL=../../../../client/app/blocks/router/router-helper.service.js.map
+//# sourceMappingURL=router-helper.service.js.map

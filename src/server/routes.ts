@@ -5,12 +5,13 @@
 import express = require('express');
 
 var router = express.Router();
-import four0four = require('./utils/404');
+import { send404, notFoundMiddleware } from './utils/notfound';  // use latest TS 1.5, inspired from ES6
+//import four0four = require('./utils/404');
 import data = require('./data');
 
 router.get('/people', getPeople);
 router.get('/person/:id', getPerson);
-router.get('/*', four0four.notFoundMiddleware);
+router.get('/*', notFoundMiddleware);
 
 module.exports = router;
 
@@ -30,6 +31,6 @@ function getPerson(req: express.Request, res: express.Response, next: any) {
     if (person) {
         res.status(200).send(person);
     } else {
-        four0four.send404(req, res, 'person ' + id + ' not found');
+        send404(req, res, 'person ' + id + ' not found');
     }
 }

@@ -34,18 +34,18 @@ var port = process.env.PORT || config.defaultPort;
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
 
-gulp.task('ts-clean', function(done) {
-    clean(config.ts.output, done);
-});
-
-gulp.task('ts-vet', function () {
-    var reporter = args.verbose ? 'verbose' : 'prose'; 
-    return gulp
-        .src(config.ts.allts)
-        .pipe($.if(args.verbose, $.print()))
-        .pipe($.tslint())
-        .pipe($.tslint.report(reporter));
-});
+//gulp.task('ts-clean', function(done) {
+//    clean(config.ts.output, done);
+//});
+//
+//gulp.task('ts-vet', function () {
+//    var reporter = args.verbose ? 'verbose' : 'prose'; 
+//    return gulp
+//        .src(config.ts.allts)
+//        .pipe($.if(args.verbose, $.print()))
+//        .pipe($.tslint())
+//        .pipe($.tslint.report(reporter));
+//});
 
 /**
  * Creates the app.d.ts file with all references to *.ts files

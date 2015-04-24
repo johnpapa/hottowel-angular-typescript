@@ -49,24 +49,38 @@ gulp.task('default', ['help']);
 
 /**
  * Creates the app.d.ts file with all references to *.ts files
+ * Not needed if we use the `files: undefined` in tsconfig.json 
  */
-gulp.task('ts-create-refs', function () {
-    var source = gulp.src(config.ts.allts, { read: false });
-    var injectOptions = {
-        starttag: '//{',
-        endtag: '//}',
-        transform: config.ts.transformFn
-    };
-    
-    fs.writeFile(config.ts.refs, '//{\n//}', function(err) {
-        if(err) { return log(err); }
-        log('The file was saved!');
-    });
-     
-    return gulp.src(config.ts.refs)
-        .pipe($.inject(source, injectOptions))
-        .pipe($.if(args.verbose, $.print()))
-        .pipe(gulp.dest(config.ts.typings));
+//gulp.task('ts-create-refs', function () {
+//    var source = gulp.src(config.ts.allts, { read: false });
+//    var injectOptions = {
+//        starttag: '//{',
+//        endtag: '//}',
+//        transform: config.ts.transformFn
+//    };
+//    
+//    fs.writeFile(config.ts.refs, '//{\n//}', function(err) {
+//        if(err) { return log(err); }
+//        log('The file was saved!');
+//    });
+//     
+//    return gulp.src(config.ts.refs)
+//        .pipe($.inject(source, injectOptions))
+//        .pipe($.if(args.verbose, $.print()))
+//        .pipe(gulp.dest(config.ts.typings));
+//});
+
+/**
+ * Watch TypeScript and recompile and create refs
+ */
+gulp.task('ts-watcher', ['ts-watcher-client', 'ts-watcher-server']);
+
+gulp.task('ts-watcher-client', function() {
+    gulp.watch(config.ts.clientts, ['ts-compile-client']);
+});
+
+gulp.task('ts-watcher-server', function() {
+    gulp.watch(config.ts.serverts, ['ts-compile-server']);
 });
 
 /**
@@ -172,19 +186,6 @@ gulp.task('images', ['clean-images'], function() {
  */
 gulp.task('less-watcher', function() {
     gulp.watch([config.less], ['styles']);
-});
-
-/**
- * Watch TypeScript and recompile and create refs
- */
-gulp.task('ts-watcher', ['ts-watcher-client', 'ts-watcher-server']);
-
-gulp.task('ts-watcher-client', function() {
-    gulp.watch(config.ts.clientts, ['ts-compile-client']);
-});
-
-gulp.task('ts-watcher-server', function() {
-    gulp.watch(config.ts.serverts, ['ts-compile-server']);
 });
 
 /**

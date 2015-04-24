@@ -75,24 +75,28 @@ gulp.task('ts-create-refs', function () {
  */
 gulp.task('ts-compile', ['ts-compile-client', 'ts-compile-server']);
 
-gulp.task('ts-compile-client', function(cb) {    
-    runTSC('src/client', cb);
+gulp.task('ts-compile-client', function(done) {    
+    runTSC('src/client', done);
 });
 
-gulp.task('ts-compile-server', function(cb) {
-    runTSC('src/server', cb);
+gulp.task('ts-compile-server', function(done) {
+    runTSC('src/server', done);
 });
 
-function runTSC(directory, cb) {
-    var childProcess = cp.spawn('node', [path.join(process.cwd(), 'node_modules/typescript/bin/tsc.js'), '-p', directory], { cwd: process.cwd() });
-    childProcess.stdout.on('data', function(data) {
-       console.log(data.toString()); 
+function runTSC(directory, done) {
+    var tscjs = path.join(process.cwd(), 'node_modules/typescript/bin/tsc.js');
+    var childProcess = cp.spawn('node', [tscjs, '-p', directory], { cwd: process.cwd() });
+    childProcess.stdout.on('data', function (data) {
+        log('Compiled via TSC');
+        log(data.toString());
     });
-    childProcess.stderr.on('data', function(data) {
-        console.log(data.toString());
+    childProcess.stderr.on('data', function (data) {
+        log('Error running TSC');
+        log(data.toString());
     });
-    childProcess.on('close', function() {
-        cb();
+    childProcess.on('close', function () {
+        log('Finishing TSC');
+        done();
     });
 }
 

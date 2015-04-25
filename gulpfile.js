@@ -101,15 +101,14 @@ function runTSC(directory, done) {
     var tscjs = path.join(process.cwd(), 'node_modules/typescript/bin/tsc.js');
     var childProcess = cp.spawn('node', [tscjs, '-p', directory], { cwd: process.cwd() });
     childProcess.stdout.on('data', function (data) {
-        log('Compiled via TSC');
-        log(data.toString());
+        // Ticino will read the output
+        console.log(data.toString());
     });
     childProcess.stderr.on('data', function (data) {
-        log('Error running TSC');
-        log(data.toString());
+        // Ticino will read the output
+        console.log(data.toString());
     });
     childProcess.on('close', function () {
-        log('Finishing TSC');
         done();
     });
 }

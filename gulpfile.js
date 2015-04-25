@@ -417,6 +417,11 @@ gulp.task('serve-dev', ['inject'], function() {
     serve(true /*isDev*/);
 });
 
+gulp.task('debug', ['inject'], function () {
+    args.debug = true;
+    serve(true /*isDev*/);
+});
+
 /**
  * serve the build environment
  * --debug-brk or --debug

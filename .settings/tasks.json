@@ -9,6 +9,16 @@
         {
             "taskName": "serve-dev",
             "args": [],
+            "isWatching": false,
+            "problemMatcher": [
+                "$lessCompile",
+                "$tsc",
+                "$jshint"
+            ]
+        },
+        {
+            "taskName": "debug",
+            "args": [],
             "isBuildCommand": true,
             "isWatching": false,
             "problemMatcher": [

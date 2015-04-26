@@ -517,14 +517,15 @@ function orderSrc (src, order) {
  * @param  {Boolean} specRunner - server spec runner html
  */
 function serve(isDev, specRunner) {
-    var debug = args.debug || args.debugBrk;
-    var debugMode = args.debug ? '--debug' : args.debugBrk ? '--debug-brk' : '';
+//    var debug = args.debug || args.debugBrk;
+//    var debugMode = args.debug ? '--debug' : args.debugBrk ? '--debug-brk' : '';
+    var debugMode = '--debug';
     var nodeOptions = getNodeOptions(isDev);
 
-    if (debug) {
-        runNodeInspector();
+//    if (debug) {
+//        runNodeInspector();
         nodeOptions.nodeArgs = [debugMode + '=5858'];
-    }
+//    }
 
     if (args.verbose) {
         console.log(nodeOptions);

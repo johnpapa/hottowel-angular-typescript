@@ -76,7 +76,6 @@ This is context sensitive so in code it may categorize by property or function. 
 
 ![symbol by name](symbolsearch.png)
 
-
 ### Show Errors or Warnings
 
 `CMD+O` then type `!` shows all of the current warnings or errors.
@@ -112,7 +111,6 @@ Tired of losing changes? Or are you like me wher eyou hit `CMD+S` all day long? 
 
 ![sidebyside](sidebyside.png) 
 
-
 ### Toggle Sidebar
 
 `CMD+B` will toggle the sidebar to be shown or hidden. This is great when you need more real estate on your screen.
@@ -120,6 +118,38 @@ Tired of losing changes? Or are you like me wher eyou hit `CMD+S` all day long? 
 ### Intellisense 
 - Visual Studio Code provides excellent intellisense for JavaScript, TypeScript, and C#. Whether you are running ASP.NET vNext or node or client side code, you'll see a new level of intellisense here.
 - You can also hit `CTRL+SPACE` and get intellisense. 
+
+### JavaScript Intellisense
+Out of the box we get basic intellisense for what the editor can determine on its own about the JavaScript code. vsCode will tell you a function's signature or what variables are available in scope.
+
+![js-hint1](js-hint1.png) 
+
+#### Quick Fix
+Now let's assume you want more than that. Perhaps you are using Angular and you want intellisense on it. Notice the green squiggly line under `angular`? Put your cursor on it then click the light bulb ( or `CMD+.` ) and choose `Add /// reference to angularjs/angular.d.ts`.
+
+![js-hint2](js-hint2.png) 
+
+vsCode will go and get the typings definition file for Angular and add it to your project, reference it in the file and you instantly have intellisense for Angular!
+
+![js-hint3](js-hint3.png) 
+
+We can now repeat this by adding jQuery code to a file. Put the cursor on the `$`, click `CMD+.`, and pull down the typings file. Now we have jQuery intellisense, too. 
+
+#### Consolidating into a tsd.d.ts
+
+Do you see the 2 `///` references and how the can accumulate? You can make a single `tsd.d.ts` with the npm package named `tsd`.
+
+``` 
+npm install tsd -g
+# cd to your project folder
+tsd query -r -o -a install angular jquery
+```
+
+This produces a `tsd.d.ts` file which you can reference in your JavaScript files to get intellisense. Now you have 1 place to put all of you typings for JavaScript projects. 
+
+>I think the story for this will get even better too, since vsCode uses TypeScript under the covers for its tooling. It may be able to provide this without the `///` ... but I'm just guessing at this point.
+
+### TypeScript Intellisense
 
 #### JSON Intellisense
 
@@ -132,7 +162,6 @@ Here you can see it finding all npm packages that match `gulp`.
 Here you can see it finding the most appropriate versions and showing a message about what the versions mean.
 
 ![jsonintellisense2.png](jsonintellisense2.png)
-
 
 ### goto definition ( `F12` )
 
@@ -153,7 +182,6 @@ Here you can see it finding the most appropriate versions and showing a message 
 ### save ... or enable auto save
 
 ## Compiling to TS
-
 
 ## Debugging
 
@@ -211,8 +239,3 @@ ticino from command line ... create file /usr/local/bin/ticino
 #!/bin/bash
 /Applications/Ticino.app/Contents/MacOS/Atom $@ 2>/dev/null &
 ```
-
-
-
-
-

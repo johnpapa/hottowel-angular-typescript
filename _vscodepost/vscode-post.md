@@ -149,6 +149,11 @@ This produces a `tsd.d.ts` file which you can reference in your JavaScript files
 
 >I think the story for this will get even better too, since vsCode uses TypeScript under the covers for its tooling. It may be able to provide this without the `///` ... but I'm just guessing at this point.
 
+#### Additional Hints
+If you try to create a type in a JavaScript file, vsCode will warn you that it is not valid.
+
+![js-hint4](js-hint4.png) 
+
 ### TypeScript Intellisense
 
 #### JSON Intellisense

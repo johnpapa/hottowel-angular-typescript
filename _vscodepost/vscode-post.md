@@ -188,11 +188,30 @@ Here you can see it finding the most appropriate versions and showing a message 
 
 ### Find all references ( `SHIFT F12` )
 
-### Rename symbols in all files ( `F2` )
+### Change All Occurrences
+Put your cursor in a variable or function and click `CMD+F2` then begin typing. This will find all occurences in the open file and change them as you type, which is ideal for local refactoring. 
 
-### Change all occurrence in same file ( `CMD F2` )
+![change-occurrences.png](change-occurrences.png)
+
+### Rename symbols in all files ( `F2` )
+Sometimes you want to rename in 1 file, and other times you want to rename across multiple files. For example, you may want to rename a publicly accessible function on an Angular service and have everywhere that uses it get updated.
+
+First put your cursor on the member and click `F2`. 
+
+![rename1.png](rename1.png)
+
+Then type the new name and hit the `Enter` key. This will rename all of the occurences in every file in your project.
+
+This shows the newly renamed `getThePeople` method in the `dataservice.ts` file.
+![rename2.png](rename2.png)
+
+This shows the newly renamed `getThePeople` method in the `dashboard.controller.ts` file.
+![rename3.png](rename3.png)
+
 
 ## Compiling to TS
+
+	//TODO
 
 ## Debugging
 There are various ways you can debug server side code with vsCode. You may have a simple node server to crank up. Perhaps you use TypeScript and need to compile it to JavaScript before starting the server. You may also be using task automation with gulp or grunt and want to start the server and then attach vsCode's debugger to it.

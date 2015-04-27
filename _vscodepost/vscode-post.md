@@ -182,11 +182,19 @@ Here you can see it finding the most appropriate versions and showing a message 
 
 ### goto definition ( `F12` )
 
+	//TODO
+
 ### peek definition ( `OPTION F12` )
+
+	//TODO
 
 ### rename symbol across files 
 
+	//TODO
+
 ### Find all references ( `SHIFT F12` )
+
+	//TODO
 
 ### Change All Occurrences
 Put your cursor in a variable or function and click `CMD+F2` then begin typing. This will find all occurences in the open file and change them as you type, which is ideal for local refactoring. 
@@ -288,6 +296,9 @@ To try this out, run the task `serve-dev`, set a breakpoint in `app.ts`, then go
 
 - git integration with green and red bar
 
+	//TODO
+
+
 ## Preferences
 You can adjust the setting sin vsCode by visiting the preferences and then overriding the default values with your own settings. You can access vsCode's preferences by either using the menu or via `CMD+,`.
  
@@ -322,11 +333,3 @@ You will see 2 files again: 1 for the default keybindings and 1 for the override
 While in the keybindings you will enjoy intellisense and auto completion. 
 
 Be sure not to set 2 key combinations to the same action.
-
-## Running 
-ticino from command line ... create file /usr/local/bin/ticino
-
-```
-#!/bin/bash
-/Applications/Ticino.app/Contents/MacOS/Atom $@ 2>/dev/null &
-```

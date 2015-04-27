@@ -105,6 +105,12 @@ Tired of losing changes? Or are you like me wher eyou hit `CMD+S` all day long? 
 
 ![autosave](autosave.png) 
 
+If you enable auto save and you have watchers on your files, those watchers will execute every time you change a file. 
+
+If you disable auto save and you make changes to a file, you will see dots next to the files in the Working Files list.
+
+![dirtyfiles](dirtyfiles.png) 
+
 ### Split the Editor
 
 `CMD+\` will split the editor. This is great for opening sna viewing multiple files side by side. Especially helpful for markdown and markdown preview. Even more helpful when transpiling LESS to CSS or TypeScript to JavaScript.
@@ -118,6 +124,10 @@ Tired of losing changes? Or are you like me wher eyou hit `CMD+S` all day long? 
 ### Intellisense 
 - Visual Studio Code provides excellent intellisense for JavaScript, TypeScript, and C#. Whether you are running ASP.NET vNext or node or client side code, you'll see a new level of intellisense here.
 - You can also hit `CTRL+SPACE` and get intellisense. 
+
+If you hover over a variable vsCode shows the signature of a function or the type of a variable, if it can be determined.
+
+![hover](hover.png)
 
 ### JavaScript Intellisense
 Out of the box we get basic intellisense for what the editor can determine on its own about the JavaScript code. vsCode will tell you a function's signature or what variables are available in scope.
@@ -156,6 +166,8 @@ If you try to create a type in a JavaScript file, vsCode will warn you that it i
 
 ### TypeScript Intellisense
 
+// TODO
+
 #### JSON Intellisense
 
 Intellisense works in well known JSON files too, including `package.json` and `bower.json`. It uses schema information and looks up values to find likely matches, where possible.
@@ -179,12 +191,6 @@ Here you can see it finding the most appropriate versions and showing a message 
 ### Rename symbols in all files ( `F2` )
 
 ### Change all occurrence in same file ( `CMD F2` )
-
-### hover !
-
-### dots next to files, when dirty
-
-### save ... or enable auto save
 
 ## Compiling to TS
 

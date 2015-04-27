@@ -168,7 +168,7 @@ If you try to create a type in a JavaScript file, vsCode will warn you that it i
 
 // TODO
 
-#### JSON Intellisense
+### JSON Intellisense
 
 Intellisense works in well known JSON files too, including `package.json` and `bower.json`. It uses schema information and looks up values to find likely matches, where possible.
 
@@ -196,7 +196,34 @@ Here you can see it finding the most appropriate versions and showing a message 
 
 ## Debugging
 
-### Here is what WORKS for me for debugging:
+### Debugging JavaScript
+You can debug server side JavaScript in right ni vsCode. Just create a debug launch task and go. First, click on the debug icon in the sidebar. Then click on the gear icon next to the debug button in the upper left. This opens the debug configuration settings (in `.settings/launch.json`).
+
+![js-debug0.png](js-debug0.png)
+
+Here you can define a launch configuration for debugging. Notice the type is set to node and the program to start is set to `/src/server/app.js` (choose your path accordingly). It will also stop upon entry, so you can debug on the first entrypoint to the `app.js`. This is important when you want to see how the node server is being started.
+
+Once the debug configuration is established you can choose your configuration form the dropdown and click the green button, or alternatively press `F5` to begin debugging.
+
+![js-debug1.png](js-debug1.png)
+
+The node server will start and stop at the first line of code in `app.js`. You can then set watchers, breakpoints (or disable them), see the call stack, or examine local variables.
+
+You can also step through the code using the debug menu in the top middle of vsCode. 
+
+![js-debug2.png](js-debug2.png)
+
+The buttons have keyboard mappings for:
+
+- `F5` continue
+- `F10` step over
+- `F11` step into
+- `SHIFT+F11` step out
+- `SHIFT+F5` stop
+
+> I often will set breakpoints in my routes and then go use the app in the browser. When the route is hit, the browser will wait and vsCode will show the breakpoint. This workflow is ideal for debugging calls between the browser and the server.
+
+### Debugging from Gulp
 
 - In Ticino, I the debug window, run the "Launch app.ts” and set a breakpoint in app.ts. This is fine if you have no gulp or grunt automation. Basic node.
 

@@ -15,35 +15,16 @@
                 "$tsc",
                 "$jshint"
             ]
-        },
-        {
-            "taskName": "debug",
-            "args": [],
-            "isBuildCommand": true,
-            "isWatching": false,
-            "problemMatcher": [
-                "$lessCompile",
-                "$tsc",
-                "$jshint"
-            ]
-        },
-        {
+        },{
             "taskName": "ts-compile",
             "problemMatcher": "$tsc"
-        },
-        {
+        },{
             "taskName": "ts-compile-client",
             "problemMatcher": "$tsc"
-        },
-        {
+        },{
             "taskName": "ts-compile-server",
             "problemMatcher": "$tsc"
-        },
-        {
-            "taskName": "serve-specs",
-            "args": []
-        },
-        {
+        },{
             "taskName": "test",
             "args": [],
             "isTestCommand": true

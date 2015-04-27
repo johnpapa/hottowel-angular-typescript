@@ -195,19 +195,22 @@ Here you can see it finding the most appropriate versions and showing a message 
 ## Compiling to TS
 
 ## Debugging
+There are various ways you can debug server side code with vsCode. You may have a simple node server to crank up. Perhaps you use TypeScript and need to compile it to JavaScript before starting the server. You may also be using task automation with gulp or grunt and want to start the server and then attach vsCode's debugger to it.
 
 ### Debugging JavaScript
 You can debug server side JavaScript in right ni vsCode. Just create a debug launch task and go. First, click on the debug icon in the sidebar. Then click on the gear icon next to the debug button in the upper left. This opens the debug configuration settings (in `.settings/launch.json`).
 
 ![js-debug0.png](js-debug0.png)
 
-Here you can define a launch configuration for debugging. Notice the type is set to node and the program to start is set to `/src/server/app.js` (choose your path accordingly). It will also stop upon entry, so you can debug on the first entrypoint to the `app.js`. This is important when you want to see how the node server is being started.
+Here you can define a launch configuration for debugging. Notice the type is set to node and the `program to start` is set to `/src/server/app.js` (choose your path accordingly). It will also stop upon entry, so you can debug on the first entrypoint to the `app.js`. This is important when you want to see how the node server is being started.
 
 Once the debug configuration is established you can choose your configuration form the dropdown and click the green button, or alternatively press `F5` to begin debugging.
 
 ![js-debug1.png](js-debug1.png)
 
 The node server will start and stop at the first line of code in `app.js`. You can then set watchers, breakpoints (or disable them), see the call stack, or examine local variables.
+
+### Debugging Menu Options
 
 You can also step through the code using the debug menu in the top middle of vsCode. 
 
@@ -223,13 +226,44 @@ The buttons have keyboard mappings for:
 
 > I often will set breakpoints in my routes and then go use the app in the browser. When the route is hit, the browser will wait and vsCode will show the breakpoint. This workflow is ideal for debugging calls between the browser and the server.
 
-### Debugging from Gulp
+### Debugging TypeScript
 
-- In Ticino, I the debug window, run the "Launch app.ts” and set a breakpoint in app.ts. This is fine if you have no gulp or grunt automation. Basic node.
+Debugging TypeScript is just as easy as JavaScript. 
 
-- In Ticino, run the task `serve-dev` (which maps to `gulp serve-dev`), set a breakpoint in `app.ts`, and attach to it from Ticino.
+- Go to the debug configurations ( `CMD+SHIFT+L` )  
+- Set the `program to start` to `/src/server/app.ts` (or whatever your path is)
+- Run the `Launch app.ts` configuration 
+- Set a breakpoint in `app.ts`
 
-- In Terminal run `gulp serve-dev` (which adds the `--debug` flag to node), set a breakpoint in `app.ts`, and attach to it from Ticino.
+Enjoy debugging!
+
+### Running Gulp Tasks
+OK, that's great that you can debug if you have a simple node server, but what if you use Gulp or Grunt for task automation? Let's use the sample from the demo.
+
+You can run any gulp task directly from the palette by clicking `CMD+O` followed by `task` and a space. 
+
+![tasks](tasks.png)
+
+If you choose a task that starts the node server and sets the `--debug` flag, then you can attach the vsCode debugger to it. The sample app has a gulp task called `serve-dev` that starts the server and sets the `--debug` flag, so let's run that.
+
+Then go to the debug window by clicking the debug icon or `CMD+SHIFT+D`. Choose `Attach` from the dropdown and click the green arrow to start debugging.
+
+### Creating Tasks
+While you can run a gulp task from the command palette, sometimes it is beneficial to set up a a task configuration in vsCode to customize how you want to run the task. This is an abstraction that vsCode offers because there are a variety of task runners and this provides a consistent way to run them all. It also provides custom matchers which can be used to gather the ouput form the tasks and use them to fill in the errors or warnings in vsCode. (For example there may be some errors from a linting task.)
+
+To set up a task configuration click `CMD+P` to open the command palette and type `task`. Then select `task configuration`.
+
+![task-config-menu](task-config-menu.png)
+
+This opens the `.settings/tasks.json` file which is where you can define tasks to execute. The `command` should be set to whatever command you want to execute. In this case it is `gulp`. Then the `tasks` array is configured for every task you want to run. The image below shows several tasks including `gulp serve-dev`, `gulp tsc-compile`, and `gulp test`. 
+
+![tasks-json](tasks-json.png)
+
+One task may be assigned as the build command, which in this case is `gulp serve-dev`. One task may be assigned as the test command, which in this case is `gulp test`. This means when you click `CMD+SHIFT+B` to build it will run the `gulp serve-dev` task. Likewise, when you click `CMD+SHIFT+T` to run the tests, the `gulp test` command will execute.
+
+To try this out, run the task `serve-dev`, set a breakpoint in `app.ts`, then go to the debug window by clicking the debug icon or `CMD+SHIFT+D`, choose `Attach` from the dropdown and click the green arrow to start debugging.
+
+> You can also go to Terminal and run a gulp command. The sample code has a task `gulp serve-dev` which adds the `--debug` flag to node. Then you can set a breakpoint in `app.ts` and attach to it from vsCode.
 
 ## Git
 

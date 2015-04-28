@@ -1,3 +1,13 @@
+
+
+//TODO: Commentary on what I look for in a tool (refer to editor/IDE post)
+
+// TODO: what i like and dont like about direction of vsCode
+
+// TODO: credits to Chris, Erich, ASP.NET team (for their cross plat efforts), etc
+
+## Visual Studio Code
+
 Visual Studio Code (vsCode) is a lightweight, super fast, cross platform development tool for building Web applications. It works well with both Node and ASP.NET v5. 
 
 ![Visual Studio Code](vscode-icon-sm.png)

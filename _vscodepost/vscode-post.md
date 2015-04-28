@@ -136,7 +136,7 @@ If you disable auto save and you make changes to a file, you will see dots next 
 `CMD+B` will toggle the sidebar to be shown or hidden. This is great when you need more real estate on your screen.
 
 ### Intellisense 
-- Visual Studio Code provides excellent intellisense for JavaScript, TypeScript, and C#. Whether you are running ASP.NET vNext or node or client side code, you'll see a new level of intellisense here.
+- Visual Studio Code provides excellent intellisense for JavaScript, TypeScript, and C#. Whether you are running ASP.NET 5 or node or client side code, you'll see a new level of intellisense here.
 - You can also hit `CTRL+SPACE` and get intellisense. 
 
 If you hover over a variable VSCode shows the signature of a function or the type of a variable, if it can be determined.

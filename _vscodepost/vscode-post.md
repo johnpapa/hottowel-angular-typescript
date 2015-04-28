@@ -20,6 +20,10 @@ More from the docs:
 
 vsCode is folder and file based. You can open a folder and work on its files. No project file. No solution file. Just grab the code folder and go.
 
+## Installing
+[Read the docs here](https://ticino.azurewebsites.net/Docs#_setup) for more details on the prerequisites and how to install vsCode.
+
+
 ## Start with an App
 When playing with vsCode, it may be helpful to start with a project. Grab your own or use Hot Towel to generate. You can [install Hot Towel and generate a project quickly using these instructions](https://github.com/johnpapa/generator-hottowel#prerequisites).
 

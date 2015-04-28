@@ -74,6 +74,8 @@ You can also access this by `CMD+P` then delete the `>`.
 
 You can also access this by `CMD+P` then delete the `>` and type `@`. Or `CMD+O` then type `@`.
 
+VSCode is context aware when showing the symbols. This means it makes it easy to search for contextually appropriate symbols in various types of files. When in TypeScript, JavaScript or C# you can navigate to symbols. When in CSS, LESS or SASS you can navigate to rules. When in JSON files, you can navigate to arrays or objects. When in special files such as `keybindings.json`, you can navigate to the assigned key bindings (due to the awareness of a JSON schema).
+
 ### Go to Symbol by Category
 
 `CMD+SHIFT+O` opens the Go to Symbol palette, and typing an additional `:` allows you to search by category. 

@@ -310,6 +310,9 @@ To try this out, run the task `serve-dev`, set a breakpoint in `app.ts`, then go
 
 	//TODO
 
+## Snippets
+
+// TODO - coming soon
 
 ## Preferences
 You can adjust the setting sin vsCode by visiting the preferences and then overriding the default values with your own settings. You can access vsCode's preferences by either using the menu or via `CMD+,`.

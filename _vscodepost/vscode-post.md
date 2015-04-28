@@ -28,7 +28,7 @@ More from the docs:
 
 > It is a new class of tool, one which combines the speed of today's editors with rich code authoring and debugging, without the complexity that a full IDE can sometimes present to developers. While it focuses on the core edit-compile-debug cycle, it goes beyond those basic editor scenarios by providing helpful code completion, navigation, code understanding, refactoring, diagnostics, and deployment. 
 
-VSCode is folder and file based. You can open a folder and work on its files. No project file. No solution file. Just grab the code folder and go.
+VSCode is folder and file based. You can open a folder and work on its files. No project file. No solution file. Just grab the code folder and go. When there is a project context, such as with ASP.NET 5, and you open a folder (with an ASP.NET 5 project), VSCode detects the project context. 
 
 ## Installing
 [Read the docs here](https://ticino.azurewebsites.net/Docs#_setup) for more details on the prerequisites and how to install VSCode.
@@ -40,6 +40,8 @@ When playing with VSCode, it may be helpful to start with a project. Grab your o
 If you want to see the app from the [demo from //Build you can grab it here](http://jpapa.me/VSCodedemofrombuild).
 
 	// TODO: get link for demo
+	
+	// TODO: Quick summary of hot towel: Node.js on the server JS and angular on the client.
 
 ## Quick Access
 I find myself looking for a file, a variable, a function, a git command, or a task quite often. Especially when I do not know exactly where it is. VSCode provides quick access to these through quick access palettes and commands. 
@@ -47,6 +49,8 @@ I find myself looking for a file, a variable, a function, a git command, or a ta
 ### Command Palette
 
 `CMD+P` opens the command palette. You can type what you are looking for and perform that action easily. No need to remember menu items or where that button may be hiding. Want to change your theme? Configure debugging? Open keyboard mapping preferences? Run tasks? Open a new console/terminal? This is the place. It's also a great place to just scroll through the entire list of avaialble commands.
+
+> The name "Palette" and the idea is inspired by Sublime Text, which made this an immensely popular and useful feature.
 
 `CMD+P` is the most helpful keystroke you'll use in Visual Studio Code.  It also shows the keyboard mapping for each command.
 

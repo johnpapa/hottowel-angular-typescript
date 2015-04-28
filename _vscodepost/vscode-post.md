@@ -184,6 +184,14 @@ Here you can see it finding the most appropriate versions and showing a message 
 
 ![jsonintellisense2.png](jsonintellisense2.png)
 
+### Go to Next Marker ( `F8` )
+
+	//TODO - great for warnings/errors
+	
+### Move Line Up / Down ( `OPT+UPARROW/DOWNARROW` )
+
+	//TODO
+
 ### goto definition ( `F12` )
 
 	//TODO

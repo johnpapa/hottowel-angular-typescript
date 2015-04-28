@@ -247,7 +247,7 @@ This shows the newly renamed `getThePeople` method in the `dashboard.controller.
 There are various ways you can debug server side code with vsCode. You may have a simple node server to crank up. Perhaps you use TypeScript and need to compile it to JavaScript before starting the server. You may also be using task automation with gulp or grunt and want to start the server and then attach vsCode's debugger to it.
 
 ### Debugging JavaScript
-You can debug server side JavaScript in right ni vsCode. Just create a debug launch task and go. First, click on the debug icon in the sidebar. Then click on the gear icon next to the debug button in the upper left. This opens the debug configuration settings (in `.settings/launch.json`).
+You can debug server side JavaScript in right ni vsCode. Just create a debug launch task and go. First, click on the debug icon in the sidebar or `CMD+SHIFT+D`. Then click on the gear icon next to the debug button in the upper left. This opens the debug configuration settings (in `.settings/launch.json`).
 
 ![js-debug0.png](js-debug0.png)
 

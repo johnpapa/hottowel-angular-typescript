@@ -197,7 +197,7 @@ If you try to create a type in a JavaScript file, VSCode will warn you that it i
 ### TypeScript Intellisense
 The intellisense and editor experience is top notch when using TypeScript. VSCode provides intellisense across multiple files because TypeScript understands the `import` statement. 
 
-VSCode provides intellisense for third party libraries, if you include the typings `*.d.ts` files. This works the same as it does with JavaScript files. You can use the [Quick Fix](#Quick-Fix) feature to add a typing automatically.
+VSCode provides intellisense for third party libraries, if you include the typings `*.d.ts` files. This works the same as it does with JavaScript files. You can use the [Quick Fix](#quick-fix) feature to add a typing automatically.
 
 ### JSON Intellisense
 

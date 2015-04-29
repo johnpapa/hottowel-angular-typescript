@@ -60,11 +60,17 @@ I find myself looking for a file, a variable, a function, a git command, or a ta
 
 ### Navigate to File or Symbol
 
-`CMD+O` opens the generic command palette where you can type `?` to see the various ways you can find and navigate to what you want. Type `CMD+O` and then `?` to see a list.
+`CMD+O` opens the generic command palette wher eyou can search for any file or symbol in one place. You can also see recently opened files.
+
+![CMD+O](cmdo.png)
+
+# Palettes ? 
+
+Are you sensing a theme here? There are a few palettes to remember. But the good news here is that if you forget which command does what, you can always type `?` to see the various ways you can find and navigate to what you want. Type `CMD+O` and then `?` to see a list.
 
 You can also access this by `CMD+P` then delete the `>`.
 
-![CMD+O](cmdo.png)
+![palettes](palettes.png)
 
 ### Go to Symbol
 
@@ -191,7 +197,7 @@ If you try to create a type in a JavaScript file, VSCode will warn you that it i
 ### TypeScript Intellisense
 
 // TODO
-// since typescript understand the import statement it can provide intellisense across multiple files. For libraries you have to use .d.ts files, same as for JavaScript
+ since typescript understand the import statement it can provide intellisense across multiple files. For libraries you have to use .d.ts files, same as for JavaScript
 
 ### JSON Intellisense
 

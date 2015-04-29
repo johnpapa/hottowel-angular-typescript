@@ -211,7 +211,6 @@ Here you can see it finding the most appropriate versions and showing a message 
 
 ![jsonintellisense2.png](jsonintellisense2.png)
 
-
 ### Move Line Up / Down ( `OPT+UPARROW/DOWNARROW` )
 
 VSCode will move a line up when you use `OPT+UPARROW` or down when you use `OPT+DOWNARROW`.
@@ -222,17 +221,17 @@ When you have multiple errors or warnings, you can visit each of them in the cur
 	
 ![go to marker](gooto-marker.png)
 
-### goto definition ( `F12` )
+### Go to Definition ( `F12` )
 
-	//TODO
+When you are looking at your code and you want to find where a function or variable is defined, you can press `F12` to navigate to the definition. This works in the same file or to another file when using TypeScript.
 
-### peek definition ( `OPTION F12` )
+### Peek at Definition ( `OPTION F12` )
 
-	//TODO
+This is like the [Go to Definition](go-to-definition) except instead of navigating to the definition a window appears showing you a peek of the definition. Seeing is believing, so check this out below.
 
-### rename symbol across files 
+![peek1](peek1.png)
 
-	//TODO
+You can edit either file in this mode. I fyou want to navigate to the file, click on the file name in the header of the peek view. You can exit this mode and close the peek by clicking `ESC`.
 
 ### Find all references ( `SHIFT F12` )
 

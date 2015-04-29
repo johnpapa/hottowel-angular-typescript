@@ -266,10 +266,6 @@ This shows the newly renamed `getThePeople` method in the `dashboard.controller.
 ## Format Code
 VSCode makes it easy to format your code with the appropriate indentation and alignment through it's Format Code command. Just select the code block you want to format, use `CMD+P` to open the command palette, and type `format code`. You can also type part of the command as it will do partial matching. 
 
-## Compiling to TS
-
-	//TODO
-
 ## Debugging
 There are various ways you can debug server side code with VSCode. You may have a simple node server to crank up. Perhaps you use TypeScript and need to compile it to JavaScript before starting the server. You may also be using task automation with gulp or grunt and want to start the server and then attach VSCode's debugger to it.
 
@@ -342,14 +338,17 @@ To try this out, run the task `serve-dev`, set a breakpoint in `app.ts`, then go
 > You can also go to Terminal and run a gulp command. The sample code has a task `gulp serve-dev` which adds the `--debug` flag to node. Then you can set a breakpoint in `app.ts` and attach to it from VSCode.
 
 ## Git
+VSCode integrates well with git. When you make changes to your files you see red and green indicators in the left hand gutter of the editor. These markers show the changes you just made at those locations. Red indicates removed lines, green indicates added lines, and blue indicates changed lines.
 
-- git integration with green and red bar
+![git0](git0.png)
 
-	//TODO
+You can then click the git icon in the sidebar and see all of the changes. From here you can clean them (revert) one by one or as a group. You can also commit them all, add a commit message, and even push them right to the remote git repository.
 
-## Snippets
+![git1](git1.png)
 
-// TODO - coming soon
+If you click on the file in the git view, VSCode will show you a side by side of the current state of the file as ompared to its previos state.
+
+![git2](git2.png)
 
 ## Preferences
 You can adjust the setting sin VSCode by visiting the preferences and then overriding the default values with your own settings. You can access VSCode's preferences by either using the menu or via `CMD+,`.

@@ -2,7 +2,29 @@
 
 // TODO: Commentary on what I look for in a tool (refer to editor/IDE post)
 
-// TODO: what i like and dont like about direction of VSCode
+## What I Like
+
+Pretty much the entire direction makes me incredibly productive. I've been using early builds for a few weeks and I'm highly productive with it already. Are there bumps? Sure, but the engieering team behind Visual Studio Code have been amazing at course correcting (they use agile iterations) super fast.
+
+These posts outline a ton of features, but I though I'd list my top features that I am enjoying.
+
+### Top Features
+
+1. Fast - I love how fast this tool is. It opens fast. I can edit fast. I can debug fast. I can navigate fast ... have I said it's fast?
+2. Debugging - awesome, fat, and easy debugging of server side JavaScript and and C#
+3. Intellisense - C#, TypeScript and even for JavaScript and JSON ... not to mention autocomplete and hints
+4. Git integration - super helpful to be able to integrate with git, show diffs, stage, commit, clean
+5. Task running - I can run gulp and other tasks directly from VSCode
+ 
+Awesome Runner ups ...
+
+- Autosave - love it!
+- Go to symbol, file, task, whatever! - VSCode makes it a keystroke away to find anything you want to do
+- Customization - I can customize key bindings, tasks, editor settings - pretty much everything
+- Refactoring - tons of features that make refactoring easy and fast
+- Quick Fix - Learn `CMD+.` ... when you see a light bulb, VSCode is giving you a hint that you can refactor this, and it will offer suggestions on how!
+
+
 
 ## Credit 
 

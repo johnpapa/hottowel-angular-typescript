@@ -219,7 +219,7 @@ VSCode will move a line up when you use `OPT+UPARROW` or down when you use `OPT+
 
 When you have multiple errors or warnings, you can visit each of them in the current file using the Go to Next Marker feature. Press `F8` and you will see the first error or warning. Press `F8` again and you will see the next one.
 	
-![go to marker](gooto-marker.png)
+![go to marker](goto-marker.png)
 
 ### Go to Definition ( `F12` )
 

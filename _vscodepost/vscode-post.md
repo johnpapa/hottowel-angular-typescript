@@ -231,11 +231,17 @@ This is like the [Go to Definition](go-to-definition) except instead of navigati
 
 ![peek1](peek1.png)
 
-You can edit either file in this mode. I fyou want to navigate to the file, click on the file name in the header of the peek view. You can exit this mode and close the peek by clicking `ESC`.
+You can edit either file in this mode. If you want to navigate to the file, click on the file name in the header of the peek view. You can exit this mode and close the peek by clicking `ESC`.
 
-### Find all references ( `SHIFT F12` )
+### Find All References ( `SHIFT F12` )
 
-	//TODO
+VSCode help you find all references of a variable, everywhere it can be determined that it is being used. This works incredibly well with TypeScript. VSCode uses TypeScript to figure out how to find those references. As such, this feature works less great in JavaScript. 
+
+This is helpful when refactoring so you can find all of the places a function or property may be used before refactoring.
+
+Notice that the files are displayed ot the right. You can click on these to see each references. 
+
+![far](far.png)
 
 ### Change All Occurrences
 Put your cursor in a variable or function and click `CMD+F2` then begin typing. This will find all occurences in the open file and change them as you type, which is ideal for local refactoring. 

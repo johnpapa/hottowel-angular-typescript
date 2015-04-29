@@ -1,10 +1,12 @@
 
 
-//TODO: Commentary on what I look for in a tool (refer to editor/IDE post)
+// TODO: Commentary on what I look for in a tool (refer to editor/IDE post)
 
 // TODO: what i like and dont like about direction of VSCode
 
-// TODO: credits to Chris, Erich, ASP.NET team (for their cross plat efforts), etc
+## Credit 
+
+The innovative and creative thinkers at Microsoft have really come through here. I'd be mremiss if I did not mention some of the great people who turned words into action, and made it possible to deliver Visual Studio Code working on OSX, Linux and Windows. Scott Guthrie and Scott Hunter, as the thought leaders behind ASP.NET 5 and it's much publciized cross platform approach paved the way. Erich Gamma and Chris Dias turned the idea of a cross platform top of the line development into reality. 
 
 ## Visual Studio Code
 

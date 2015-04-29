@@ -1,44 +1,8 @@
 Today is a pretty darn, amazing, fantastical, uber-awesome-astical-game-changing day for Web developers. Microsoft, known for its great tooling, has entered the tooling story for cross platform developers with [Visual Studio Code](http://code.visualstudio.com/).
 
-Microsoft announced the launch of Visual Studio Code, a lightweight cross-platform code editor for writing modern web and cloud applications that will run on OS X, Linux and Windows at the //Build developer conference. Visual Studio Code is still officially in preview, but you can now download it here (this link is supposed to go live today, so keep trying).
+Microsoft announced the launch of Visual Studio Code, a lightweight cross-platform code editor for writing modern web and cloud applications that will run on OS X, Linux and Windows at the //Build developer conference. Visual Studio Code is still officially in preview, but you can now [download it here for OSX, Linux and Windows](http://code.visualstudio.com/).
 
-
-
-// TODO: Commentary on what I look for in a tool (refer to editor/IDE post)
-
-## What I Like
-
-Pretty much the entire direction makes me incredibly productive. I've been using early builds for a few weeks and I'm highly productive with it already. Are there bumps? Sure, but the engieering team behind Visual Studio Code have been amazing at course correcting (they use agile iterations) super fast.
-
-These posts outline a ton of features, but I though I'd list my top features that I am enjoying.
-
-### Top Features
-
-1. Fast - I love how fast this tool is. It opens fast. I can edit fast. I can debug fast. I can navigate fast ... have I said it's fast?
-2. Debugging - awesome, fat, and easy debugging of server side JavaScript and and C#
-3. Intellisense - C#, TypeScript and even for JavaScript and JSON ... not to mention autocomplete and hints
-4. Git integration - super helpful to be able to integrate with git, show diffs, stage, commit, clean
-5. Refactoring - tons of features that make refactoring easy and fast
- 
-Awesome Runner ups ...
-
-- Task running - I can run gulp and other tasks directly from VSCode
-- Autosave - love it!
-- Go to symbol, file, task, whatever! - VSCode makes it a keystroke away to find anything you want to do
-- Customization - I can customize key bindings, tasks, editor settings - pretty much everything
-- Quick Fix - Learn `CMD+.` ... when you see a light bulb, VSCode is giving you a hint that you can refactor this, and it will offer suggestions on how!
-- Multi instance - I can open many instanes and toggle between different projects
-
-## What I Miss Most
-
-
-
-I assume these are both coming. In fact, I expect them to be there.
-
-
-## Credit 
-
-The innovative and creative thinkers at Microsoft have really come through here. I'd be mremiss if I did not mention some of the great people who turned words into action, and made it possible to deliver Visual Studio Code working on OSX, Linux and Windows. Scott Guthrie and Scott Hunter, as the thought leaders behind ASP.NET 5 and it's much publciized cross platform approach paved the way. Erich Gamma and Chris Dias turned the idea of a cross platform top of the line development into reality. 
+You can also follow Visual Studio Code on Twitter at [@code](http://twitter.com/code).
 
 ## Visual Studio Code
 
@@ -65,364 +29,57 @@ More from the docs:
 VSCode is folder and file based. You can open a folder and work on its files. No project file. No solution file. Just grab the code folder and go. When there is a project context, such as with ASP.NET 5, and you open a folder (with an ASP.NET 5 project), VSCode detects the project context. 
 
 ## Installing
-[Read the docs here](https://ticino.azurewebsites.net/Docs#_setup) for more details on the prerequisites and how to install VSCode.
+Read the docs and see the links below for more details on the prerequisites and how to install and get up and running with VSCode.
 
+- [Get started](https://code.visualstudio.com)
+- [Download Visual Studio Code](https://code.visualstudio.com/Download)
 
-## Start with an App
-When playing with VSCode, it may be helpful to start with a project. Grab your own or use Hot Towel to generate. You can [install Hot Towel and generate a project quickly using these instructions](https://github.com/johnpapa/generator-hottowel#prerequisites).
+## Diving In
+Follow this series to learn more about what you can do with Visual Studio Code!
 
-If you want to see the app from the demo from //Build you can grab it **here soon**. 
+1. [Introducing Visual Studio Code](http://johnpapa.net/)
+2. [Getting Started with Visual Studio Code](http://johnpapa.net/)
+3. [Intellisense](http://johnpapa.net/)
+4. [Refactoring](http://johnpapa.net/)
+5. [Debugging](http://johnpapa.net/)
+6. [Git Integration](http://johnpapa.net/)
+7. [What Else?](http://johnpapa.net/)
 
-// TODO: Quick summary of hot towel: Node.js on the server JS and angular on the client.
+## See it in Action
+Thursday April 30 Chris Dias, Erih Gamma and I will be presenting Visual Studio Code at //Build. [You can check our presentation of Visual Studio Code out at the live stream at the Build web site](http://www.buildwindows.com/) or a [direct link here](http://channel9.msdn.com/Events/Build/2015/3-680). For those at Build, it is April 30, 2015 from 3:30PM to 4:30PM Day 2 Hall 1A 3-680.
 
-## Quick Access
-I find myself looking for a file, a variable, a function, a git command, or a task quite often. Especially when I do not know exactly where it is. VSCode provides quick access to these through quick access palettes and commands. 
+## What's an Editor? an IDE? 
+Ah, great question. But better questions might be why does this matter to me? Do you neeed to choose 1 tool? I explored this a bit in [this post here about editors and IDEs](http://johnpapa.net/web-dev-with-editors-and-ides).
 
-### Command Palette
+## What I Like
 
-`CMD+P` opens the command palette. You can type what you are looking for and perform that action easily. No need to remember menu items or where that button may be hiding. Want to change your theme? Configure debugging? Open keyboard mapping preferences? Run tasks? Open a new console/terminal? This is the place. It's also a great place to just scroll through the entire list of avaialble commands.
+Pretty much the entire direction makes me incredibly productive. I've been using early builds for a few weeks and I'm highly productive with it already. Are there bumps? Sure, but the engieering team behind Visual Studio Code have been amazing at course correcting (they use agile iterations) super fast.
 
-> The name "Palette" and the idea is inspired by Sublime Text, which made this an immensely popular and useful feature.
+These posts outline a ton of features, but I though I'd list my top features that I am enjoying.
 
-`CMD+P` is the most helpful keystroke you'll use in Visual Studio Code.  It also shows the keyboard mapping for each command.
+### Top Features
 
-![CMD+P](cmdp.png)
-
-> Notice that you can delete the `>` and you are at the Navigate to File or Symbol palette. This is a nice feature so you can move between the various palettes easily.
-
-### Navigate to File or Symbol
-
-`CMD+O` opens the generic command palette wher eyou can search for any file or symbol in one place. You can also see recently opened files.
-
-![CMD+O](cmdo.png)
-
-### Palettes ? 
-
-Are you sensing a theme here? There are a few palettes to remember. But the good news here is that if you forget which command does what, you can always type `?` to see the various ways you can find and navigate to what you want. Type `CMD+O` and then `?` to see a list.
-
-You can also access this by `CMD+P` then delete the `>`.
-
-![palettes](palettes.png)
-
-### Go to Symbol
-
-`CMD+SHIFT+O` opens the Go to Symbol palette. The `@` prefix tells VSCode that you are searching for a symbol. You can then search for a local variable or function.
-
-![CMD+SHIFT+O](gotosymbol1.png)
-
-You can also access this by `CMD+P` then delete the `>` and type `@`. Or `CMD+O` then type `@`.
-
-VSCode is context aware when showing the symbols. This means it makes it easy to search for contextually appropriate symbols in various types of files. When in TypeScript, JavaScript or C# you can navigate to symbols. When in CSS, LESS or SASS you can navigate to rules. When in JSON files, you can navigate to arrays or objects. When in special files such as `keybindings.json`, you can navigate to the assigned key bindings (due to the awareness of a JSON schema).
-
-### Go to Symbol by Category
-
-`CMD+SHIFT+O` opens the Go to Symbol palette, and typing an additional `:` allows you to search by category. 
-
-This is context sensitive so in code it may categorize by property or function.
-
-![symbol in code](gotosymbol2.png)
-
-While in json it may search by array, object or string.
-
-![symbol in json](gotosymbol3.png)
-
-### Open Symbol by Name
-
-`CMD+O` and type `#` so find a symbol by its name. 
-
-This is context sensitive so in code it may categorize by property or function. For example, you can search for a symbol across your entire project. It searches the beginning of each symbol and it is clever enough to search by the changes in camel case (as shown below).
-
-![symbol by name](symbolsearch.png)
-
-### Show Errors or Warnings
-
-`CMD+O` then type `!` shows all of the current warnings or errors in the Error palette. You can also open the Error palette by clicking on the error and warnings counter in the status bar. 
-
-![warnings](warnings.png)
-
-### Help for Commands
-
-`CMD+O` then type `?` shows all of the types of global and editor commands you can run.
-
-![question](question.png)
-
-> We'll take a look at the git and task commands later in this post.
-
-## Editor
-
-### New Instances
-I often want multiple instances of a tool open to work with different projects. VSCode makes this easy. Simply type `CMD+SHIFT+N` and a new instance of VSCode is opened.Here is show 2 instances (shrunken down a bit) with 2 different projects.
-
-![instances](instances.png)
-
-### New File
-The simple `CMD+N` opens a new file. From here you can save, name it,  and keep on rolling.
-
-### Autosave
-Tired of losing changes? Or are you like me wher eyou hit `CMD+S` all day long? VSCode let's you enable automatic saving of files through a menu option. Me? I turned this on and never looked back.
-
-![autosave](autosave.png) 
-
-If you enable auto save and you have watchers on your files, those watchers will execute every time you change a file. 
-
-If you disable auto save and you make changes to a file, you will see dots next to the files in the Working Files list.
-
-![dirtyfiles](dirtyfiles.png) 
-
-### Split the Editor
-
-`CMD+\` will split the editor. This is great for opening sna viewing multiple files side by side. Especially helpful for markdown and markdown preview. Even more helpful when transpiling LESS to CSS or TypeScript to JavaScript.
-
-![sidebyside](sidebyside.png) 
-
-You can also open the sidebar from `CMD+O` using the two rectangle icon. Or you can hold the `CMD` and click with the mouse on the file in the File Explorer to open it in a new side panel.
-
-VSCode allows you to have up to 3 code panels open in the editor.
-
-### Toggle Sidebar
-
-`CMD+B` will toggle the sidebar to be shown or hidden. This is great when you need more real estate on your screen.
-
-### Intellisense 
-- Visual Studio Code provides excellent intellisense for JavaScript, TypeScript, and C#. Whether you are running ASP.NET 5 or node or client side code, you'll see a new level of intellisense here.
-- You can also hit `CTRL+SPACE` and get intellisense. 
-
-If you hover over a variable VSCode shows the signature of a function or the type of a variable, if it can be determined.
-
-![hover](hover.png)
-
-### JavaScript Intellisense
-Out of the box we get basic intellisense for what the editor can determine on its own about the JavaScript code. VSCode will tell you a function's signature or what variables are available in scope.
-
-![js-hint1](js-hint1.png) 
-
-When working in node.js VSCode provides intellisense across all of your JavaScript modules (the ones you write).
-
-#### Quick Fix
-Now let's assume you want intellisense for the JavaScript libraries or mode modules you use on the client or server. Perhaps you are using Angular and you want intellisense on it. Notice the green squiggly line under `angular`? Put your cursor on it then click the light bulb ( or `CMD+.` ) and choose `Add /// reference to angularjs/angular.d.ts`.
-
-![js-hint2](js-hint2.png) 
-
-VSCode will go and get the typings definition file for Angular and add it to your project, reference it in the file and you instantly have intellisense for Angular! (VSCode grabs the typings files from the Definately Typed repository.)
-
-![js-hint3](js-hint3.png) 
-
-We can now repeat this by adding jQuery code to a file. Put the cursor on the `$`, click `CMD+.`, and pull down the typings file. Now we have jQuery intellisense, too. 
-
-#### Consolidating into a tsd.d.ts
-
-Do you see the 2 `///` references and how the can accumulate? You can make a single `tsd.d.ts` with the npm package named `tsd`.
-
-```bash 
-npm install tsd -g
-# cd to your project folder
-tsd query -r -o -a install angular jquery
-```
-
-This produces a `tsd.d.ts` file which you can reference in your JavaScript files to get intellisense. Now you have 1 place to put all of you typings for JavaScript projects. 
-
->I think the story for this will get even better too, since VSCode uses TypeScript under the covers for its tooling. 
-
-#### Additional Hints
-If you try to create a type in a JavaScript file, VSCode will warn you that it is not valid.
-
-![js-hint4](js-hint4.png) 
-
-### TypeScript Intellisense
-The intellisense and editor experience is top notch when using TypeScript. VSCode provides intellisense across multiple files because TypeScript understands the `import` statement. 
-
-VSCode provides intellisense for third party libraries, if you include the typings `*.d.ts` files. This works the same as it does with JavaScript files. You can use the [Quick Fix](#quick-fix) feature to add a typing automatically.
-
-### JSON Intellisense
-
-Intellisense works in well known JSON files too, including `package.json` and `bower.json`. It uses schema information and looks up values to find likely matches, where possible.
-
-Here you can see it finding all npm packages that match `gulp`.
-
-![jsonintellisense1.png](jsonintellisense1.png)
-
-Here you can see it finding the most appropriate versions and showing a message about what the versions mean.
-
-![jsonintellisense2.png](jsonintellisense2.png)
-
-### Move Line Up / Down ( `OPT+UPARROW/DOWNARROW` )
-
-VSCode will move a line up when you use `OPT+UPARROW` or down when you use `OPT+DOWNARROW`.
-
-### Go to Next Marker ( `F8` )
-
-When you have multiple errors or warnings, you can visit each of them in the current file using the Go to Next Marker feature. Press `F8` and you will see the first error or warning. Press `F8` again and you will see the next one.
-	
-![go to marker](goto-marker.png)
-
-### Go to Definition ( `F12` )
-
-When you are looking at your code and you want to find where a function or variable is defined, you can press `F12` to navigate to the definition. This works in the same file or to another file when using TypeScript.
-
-### Peek at Definition ( `OPTION F12` )
-
-This is like the [Go to Definition](go-to-definition) except instead of navigating to the definition a window appears showing you a peek of the definition. Seeing is believing, so check this out below.
-
-![peek1](peek1.png)
-
-You can edit either file in this mode. If you want to navigate to the file, click on the file name in the header of the peek view. You can exit this mode and close the peek by clicking `ESC`.
-
-### Find All References ( `SHIFT F12` )
-
-VSCode help you find all references of a variable, everywhere it can be determined that it is being used. This works incredibly well with TypeScript. VSCode uses TypeScript to figure out how to find those references. As such, this feature works less great in JavaScript. 
-
-This is helpful when refactoring so you can find all of the places a function or property may be used before refactoring.
-
-Notice that the files are displayed ot the right. You can click on these to see each references. 
-
-![far](far.png)
-
-### Change All Occurrences
-Put your cursor in a variable or function and click `CMD+F2` then begin typing. This will find all occurences in the open file and change them as you type, which is ideal for local refactoring. 
-
-![change-occurrences.png](change-occurrences.png)
-
-## Multi-Cursor
-
-Click + `OPTION` in your code. Then find another place in code and repeat, and repeat, and repeat. Now you have multiple cursors in the file and you can edit all of them at once!
-
-![multicursor1](multicursor1.png)
-
-I love this, but I really want to also be able to do this through search via keyboard so I can find all instances of a phrase and then edit. 
-
-### Rename symbols in all files ( `F2` )
-Sometimes you want to rename in 1 file, and other times you want to rename across multiple files. For example, you may want to rename a publicly accessible function on an Angular service and have everywhere that uses it get updated.
-
-First put your cursor on the member and click `F2`. 
-
-![rename1.png](rename1.png)
-
-Then type the new name and hit the `Enter` key. This will rename all of the occurences in every file in your project.
-
-This shows the newly renamed `getThePeople` method in the `dataservice.ts` file.
-![rename2.png](rename2.png)
-
-This shows the newly renamed `getThePeople` method in the `dashboard.controller.ts` file.
-![rename3.png](rename3.png)
-
-## Format Code
-VSCode makes it easy to format your code with the appropriate indentation and alignment through it's Format Code command. Just select the code block you want to format, use `CMD+P` to open the command palette, and type `format code`. You can also type part of the command as it will do partial matching. 
-
-## Debugging
-There are various ways you can debug server side code with VSCode. You may have a simple node server to crank up. Perhaps you use TypeScript and need to compile it to JavaScript before starting the server. You may also be using task automation with gulp or grunt and want to start the server and then attach VSCode's debugger to it.
-
-### Debugging JavaScript
-You can debug server side JavaScript in right ni VSCode. Just create a debug launch task and go. First, click on the debug icon in the sidebar or `CMD+SHIFT+D`. Then click on the gear icon next to the debug button in the upper left. This opens the debug configuration settings (in `.settings/launch.json`).
-
-![js-debug0.png](js-debug0.png)
-
-Here you can define a launch configuration for debugging. Notice the type is set to node and the `program to start` is set to `/src/server/app.js` (choose your path accordingly). It will also stop upon entry, so you can debug on the first entrypoint to the `app.js`. This is important when you want to see how the node server is being started.
-
-Once the debug configuration is established you can choose your configuration form the dropdown and click the green button, or alternatively press `F5` to begin debugging.
-
-![js-debug1.png](js-debug1.png)
-
-The node server will start and stop at the first line of code in `app.js`. You can then set watchers, breakpoints (or disable them), see the call stack, or examine local variables.
-
-### Debugging Menu Options
-
-You can also step through the code using the debug menu in the top middle of VSCode. 
-
-![js-debug2.png](js-debug2.png)
-
-The buttons have keyboard mappings for:
-
-- `F5` continue
-- `F10` step over
-- `F11` step into
-- `SHIFT+F11` step out
-- `SHIFT+F5` stop
-
-> I often will set breakpoints in my routes and then go use the app in the browser. When the route is hit, the browser will wait and VSCode will show the breakpoint. This workflow is ideal for debugging calls between the browser and the server.
-
-### Debugging TypeScript
-
-Debugging TypeScript is just as easy as JavaScript. 
-
-- Go to the debug configurations ( `CMD+SHIFT+L` )  
-- Set the `program to start` to `/src/server/app.ts` (or whatever your path is)
-- Run the `Launch app.ts` configuration 
-- Set a breakpoint in `app.ts`
-
-Enjoy debugging!
-
-### Running Gulp Tasks
-OK, that's great that you can debug if you have a simple node server, but what if you use Gulp or Grunt for task automation? Let's use the sample from the demo.
-
-You can run any gulp task directly from the palette by clicking `CMD+O` followed by `task` and a space. 
-
-![tasks](tasks.png)
-
-If you choose a task that starts the node server and sets the `--debug` flag, then you can attach the VSCode debugger to it. The sample app has a gulp task called `serve-dev` that starts the server and sets the `--debug` flag, so let's run that.
-
-Then go to the debug window by clicking the debug icon or `CMD+SHIFT+D`. Choose `Attach` from the dropdown and click the green arrow to start debugging.
-
-### Creating Tasks
-While you can run a gulp task from the command palette, sometimes it is beneficial to set up a a task configuration in VSCode to customize how you want to run the task. This is an abstraction that VSCode offers because there are a variety of task runners and this provides a consistent way to run them all. It also provides custom matchers which can be used to gather the ouput form the tasks and use them to fill in the errors or warnings in VSCode. (For example there may be some errors from a linting task.)
-
-To set up a task configuration click `CMD+P` to open the command palette and type `task`. Then select `task configuration`.
-
-![task-config-menu](task-config-menu.png)
-
-This opens the `.settings/tasks.json` file which is where you can define tasks to execute. The `command` should be set to whatever command you want to execute. In this case it is `gulp`. Then the `tasks` array is configured for every task you want to run. The image below shows several tasks including `gulp serve-dev`, `gulp tsc-compile`, and `gulp test`. 
-
-![tasks-json](tasks-json.png)
-
-One task may be assigned as the build command, which in this case is `gulp serve-dev`. One task may be assigned as the test command, which in this case is `gulp test`. This means when you click `CMD+SHIFT+B` to build it will run the `gulp serve-dev` task. Likewise, when you click `CMD+SHIFT+T` to run the tests, the `gulp test` command will execute.
-
-To try this out, run the task `serve-dev`, set a breakpoint in `app.ts`, then go to the debug window by clicking the debug icon or `CMD+SHIFT+D`, choose `Attach` from the dropdown and click the green arrow to start debugging.
-
-> You can also go to Terminal and run a gulp command. The sample code has a task `gulp serve-dev` which adds the `--debug` flag to node. Then you can set a breakpoint in `app.ts` and attach to it from VSCode.
-
-## Git
-VSCode integrates well with git. When you make changes to your files you see red and green indicators in the left hand gutter of the editor. These markers show the changes you just made at those locations. Red indicates removed lines, green indicates added lines, and blue indicates changed lines.
-
-![git0](git0.png)
-
-You can then click the git icon in the sidebar and see all of the changes. From here you can clean them (revert) one by one or as a group. You can also commit them all, add a commit message, and even push them right to the remote git repository.
-
-![git1](git1.png)
-
-If you click on the file in the git view, VSCode will show you a side by side of the current state of the file as ompared to its previos state.
-
-![git2](git2.png)
-
-## Preferences
-You can adjust the setting sin VSCode by visiting the preferences and then overriding the default values with your own settings. You can access VSCode's preferences by either using the menu or via `CMD+,`.
+1. Fast - I love how fast this tool is. It opens fast. I can edit fast. I can debug fast. I can navigate fast ... have I said it's fast?
+2. Debugging - awesome, fat, and easy debugging of server side JavaScript and and C#
+3. Intellisense - C#, TypeScript and even for JavaScript and JSON ... not to mention autocomplete and hints
+4. Git integration - super helpful to be able to integrate with git, show diffs, stage, commit, clean
+5. Refactoring - tons of features that make refactoring easy and fast
  
-![preferences menu](preferencesmenu.png)
+Awesome Runner ups ...
 
-When you open preferences you actuallu open 2 files. The default settings (which are read only) and the `settings.json` file, where you can adjust your own preferences.
+- Task running - I can run gulp and other tasks directly from VSCode
+- Autosave - love it!
+- Go to symbol, file, task, whatever! - VSCode makes it a keystroke away to find anything you want to do
+- Customization - I can customize key bindings, tasks, editor settings - pretty much everything
+- Quick Fix - Learn `CMD+.` ... when you see a light bulb, VSCode is giving you a hint that you can refactor this, and it will offer suggestions on how!
+- Multi instance - I can open many instanes and toggle between different projects
 
-Simply add your settings to the object in the `settings.json` and VSCode will use those instead of the defaults. These are stored in the `.settings` folder. I like push this file in github with my source control. 
+## What I Miss Most
 
-![preferences](preferences.png)
+Extensions ... oh those extensions. Missing a feature? Let the community create it. But even better, open the doors to companies to create awesome extensions for VSCode that can improev integration with other tools. This feature would put it over the top. I assume thisis coming. In fact, I expect it to be there.
 
-## Styling
-Light or dark theme? Zooming in? VSCode can do that too. I expect more to come when the rumored extensions are opened.
+Yes this is just one feature that is missing, but its a huge feature as it opens the doors to tons of other features.
 
-You can zoom in on the entire code window using `CMD++` or `CMD+-`, same as a browser.
+## Credit 
 
-You can swap between the light and dark themes from the menu `View` then `Theme` then `Light Theme` or `Dark Theme`.
-
-![theme-light](theme-light.png)
- 
-![theme-dark](theme-dark.png)
-
-## Keyboard Mapping
-You can override the keyboard mappings for VSCode, too. These are exposed in a `keyboard.json` file and can be accessed via the `Code` menu and then selecting `Preferences` and `Keyboard Shortcuts`.
-
-![keyboard menu](keyboardmenu.png)
-
-You will see 2 files again: 1 for the default keybindings and 1 for the overrides (`keybindings.json`). Unmapped actions appear as comments at the bottom of the default list of key bindings.
-
-![keyboardbindings](keybindings.png)
-
-While in the keybindings you will enjoy intellisense and auto completion. 
-
-Be sure not to set 2 key combinations to the same action.
+The innovative and creative thinkers at Microsoft have really come through here. I'd be mremiss if I did not mention some of the great people who turned words into action, and made it possible to deliver Visual Studio Code working on OSX, Linux and Windows. Scott Guthrie and Scott Hunter, as the thought leaders behind ASP.NET 5 and it's much publciized cross platform approach paved the way. Erich Gamma and Chris Dias turned the idea of a cross platform top of the line development into reality. 

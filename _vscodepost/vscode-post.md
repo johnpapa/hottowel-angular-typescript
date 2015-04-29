@@ -37,11 +37,9 @@ VSCode is folder and file based. You can open a folder and work on its files. No
 ## Start with an App
 When playing with VSCode, it may be helpful to start with a project. Grab your own or use Hot Towel to generate. You can [install Hot Towel and generate a project quickly using these instructions](https://github.com/johnpapa/generator-hottowel#prerequisites).
 
-If you want to see the app from the [demo from //Build you can grab it here](http://jpapa.me/VSCodedemofrombuild).
+If you want to see the app from the demo from //Build you can grab it **here soon**. 
 
-	// TODO: get link for demo
-	
-	// TODO: Quick summary of hot towel: Node.js on the server JS and angular on the client.
+// TODO: Quick summary of hot towel: Node.js on the server JS and angular on the client.
 
 ## Quick Access
 I find myself looking for a file, a variable, a function, a git command, or a task quite often. Especially when I do not know exactly where it is. VSCode provides quick access to these through quick access palettes and commands. 
@@ -64,7 +62,7 @@ I find myself looking for a file, a variable, a function, a git command, or a ta
 
 ![CMD+O](cmdo.png)
 
-# Palettes ? 
+### Palettes ? 
 
 Are you sensing a theme here? There are a few palettes to remember. But the good news here is that if you forget which command does what, you can always type `?` to see the various ways you can find and navigate to what you want. Type `CMD+O` and then `?` to see a list.
 
@@ -145,6 +143,8 @@ If you disable auto save and you make changes to a file, you will see dots next 
 
 You can also open the sidebar from `CMD+O` using the two rectangle icon. Or you can hold the `CMD` and click with the mouse on the file in the File Explorer to open it in a new side panel.
 
+VSCode allows you to have up to 3 code panels open in the editor.
+
 ### Toggle Sidebar
 
 `CMD+B` will toggle the sidebar to be shown or hidden. This is great when you need more real estate on your screen.
@@ -179,7 +179,7 @@ We can now repeat this by adding jQuery code to a file. Put the cursor on the `$
 
 Do you see the 2 `///` references and how the can accumulate? You can make a single `tsd.d.ts` with the npm package named `tsd`.
 
-``` 
+```bash 
 npm install tsd -g
 # cd to your project folder
 tsd query -r -o -a install angular jquery
@@ -195,9 +195,9 @@ If you try to create a type in a JavaScript file, VSCode will warn you that it i
 ![js-hint4](js-hint4.png) 
 
 ### TypeScript Intellisense
+The intellisense and editor experience is top notch when using TypeScript. VSCode provides intellisense across multiple files because TypeScript understands the `import` statement. 
 
-// TODO
- since typescript understand the import statement it can provide intellisense across multiple files. For libraries you have to use .d.ts files, same as for JavaScript
+VSCode provides intellisense for third party libraries, if you include the typings `*.d.ts` files. This works the same as it does with JavaScript files. You can use the [Quick Fix](#Quick-Fix) feature to add a typing automatically.
 
 ### JSON Intellisense
 

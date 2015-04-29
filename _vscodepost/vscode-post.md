@@ -255,6 +255,8 @@ This shows the newly renamed `getThePeople` method in the `dataservice.ts` file.
 This shows the newly renamed `getThePeople` method in the `dashboard.controller.ts` file.
 ![rename3.png](rename3.png)
 
+## Format Code
+VSCode makes it easy to format your code with the appropriate indentation and alignment through it's Format Code command. Just select the code block you want to format, use `CMD+P` to open the command palette, and type `format code`. You can also type part of the command as it will do partial matching. 
 
 ## Compiling to TS
 

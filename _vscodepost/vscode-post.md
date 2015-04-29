@@ -12,7 +12,7 @@ Visual Studio Code (VSCode) is a lightweight, super fast, cross platform develop
 
 ![Visual Studio Code](vscode-icon-sm.png)
 
-From their download page they describe Visual Studio Code succunctly as:
+From their download page they describe Visual Studio Code succinctly as:
 
 > Code focused development, evolved
 
@@ -98,7 +98,7 @@ This is context sensitive so in code it may categorize by property or function. 
 
 ### Show Errors or Warnings
 
-`CMD+O` then type `!` shows all of the current warnings or errors.
+`CMD+O` then type `!` shows all of the current warnings or errors in the Error palette. You can also open the Error palette by clicking on the error and warnings counter in the status bar. 
 
 ![warnings](warnings.png)
 
@@ -137,6 +137,8 @@ If you disable auto save and you make changes to a file, you will see dots next 
 
 ![sidebyside](sidebyside.png) 
 
+You can also open the sidebar from `CMD+O` using the two rectangle icon. Or you can hold the `CMD` and click with the mouse on the file in the File Explorer to open it in a new side panel.
+
 ### Toggle Sidebar
 
 `CMD+B` will toggle the sidebar to be shown or hidden. This is great when you need more real estate on your screen.
@@ -154,12 +156,14 @@ Out of the box we get basic intellisense for what the editor can determine on it
 
 ![js-hint1](js-hint1.png) 
 
+When working in node.js VSCode provides intellisense across all of your JavaScript modules (the ones you write).
+
 #### Quick Fix
-Now let's assume you want more than that. Perhaps you are using Angular and you want intellisense on it. Notice the green squiggly line under `angular`? Put your cursor on it then click the light bulb ( or `CMD+.` ) and choose `Add /// reference to angularjs/angular.d.ts`.
+Now let's assume you want intellisense for the JavaScript libraries or mode modules you use on the client or server. Perhaps you are using Angular and you want intellisense on it. Notice the green squiggly line under `angular`? Put your cursor on it then click the light bulb ( or `CMD+.` ) and choose `Add /// reference to angularjs/angular.d.ts`.
 
 ![js-hint2](js-hint2.png) 
 
-VSCode will go and get the typings definition file for Angular and add it to your project, reference it in the file and you instantly have intellisense for Angular!
+VSCode will go and get the typings definition file for Angular and add it to your project, reference it in the file and you instantly have intellisense for Angular! (VSCode grabs the typings files from the Definately Typed repository.)
 
 ![js-hint3](js-hint3.png) 
 
@@ -177,7 +181,7 @@ tsd query -r -o -a install angular jquery
 
 This produces a `tsd.d.ts` file which you can reference in your JavaScript files to get intellisense. Now you have 1 place to put all of you typings for JavaScript projects. 
 
->I think the story for this will get even better too, since VSCode uses TypeScript under the covers for its tooling. It may be able to provide this without the `///` ... but I'm just guessing at this point.
+>I think the story for this will get even better too, since VSCode uses TypeScript under the covers for its tooling. 
 
 #### Additional Hints
 If you try to create a type in a JavaScript file, VSCode will warn you that it is not valid.
@@ -187,6 +191,7 @@ If you try to create a type in a JavaScript file, VSCode will warn you that it i
 ### TypeScript Intellisense
 
 // TODO
+// since typescript understand the import statement it can provide intellisense across multiple files. For libraries you have to use .d.ts files, same as for JavaScript
 
 ### JSON Intellisense
 

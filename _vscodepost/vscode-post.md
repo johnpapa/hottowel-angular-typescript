@@ -1,3 +1,7 @@
+Today is a pretty darn, amazing, fantastical, uber-awesome-astical-game-changing day for Web developers. Microsoft, known for its great tooling, has entered the tooling story for cross platform developers with [Visual Studio Code](http://code.visualstudio.com/).
+
+Microsoft announced the launch of Visual Studio Code, a lightweight cross-platform code editor for writing modern web and cloud applications that will run on OS X, Linux and Windows at the //Build developer conference. Visual Studio Code is still officially in preview, but you can now download it here (this link is supposed to go live today, so keep trying).
+
 
 
 // TODO: Commentary on what I look for in a tool (refer to editor/IDE post)
@@ -14,16 +18,22 @@ These posts outline a ton of features, but I though I'd list my top features tha
 2. Debugging - awesome, fat, and easy debugging of server side JavaScript and and C#
 3. Intellisense - C#, TypeScript and even for JavaScript and JSON ... not to mention autocomplete and hints
 4. Git integration - super helpful to be able to integrate with git, show diffs, stage, commit, clean
-5. Task running - I can run gulp and other tasks directly from VSCode
+5. Refactoring - tons of features that make refactoring easy and fast
  
 Awesome Runner ups ...
 
+- Task running - I can run gulp and other tasks directly from VSCode
 - Autosave - love it!
 - Go to symbol, file, task, whatever! - VSCode makes it a keystroke away to find anything you want to do
 - Customization - I can customize key bindings, tasks, editor settings - pretty much everything
-- Refactoring - tons of features that make refactoring easy and fast
 - Quick Fix - Learn `CMD+.` ... when you see a light bulb, VSCode is giving you a hint that you can refactor this, and it will offer suggestions on how!
+- Multi instance - I can open many instanes and toggle between different projects
 
+## What I Miss Most
+
+
+
+I assume these are both coming. In fact, I expect them to be there.
 
 
 ## Credit 
@@ -271,6 +281,14 @@ Notice that the files are displayed ot the right. You can click on these to see 
 Put your cursor in a variable or function and click `CMD+F2` then begin typing. This will find all occurences in the open file and change them as you type, which is ideal for local refactoring. 
 
 ![change-occurrences.png](change-occurrences.png)
+
+## Multi-Cursor
+
+Click + `OPTION` in your code. Then find another place in code and repeat, and repeat, and repeat. Now you have multiple cursors in the file and you can edit all of them at once!
+
+![multicursor1](multicursor1.png)
+
+I love this, but I really want to also be able to do this through search via keyboard so I can find all instances of a phrase and then edit. 
 
 ### Rename symbols in all files ( `F2` )
 Sometimes you want to rename in 1 file, and other times you want to rename across multiple files. For example, you may want to rename a publicly accessible function on an Angular service and have everywhere that uses it get updated.

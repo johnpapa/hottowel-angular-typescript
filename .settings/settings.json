@@ -1,14 +1,3 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-	// Controls the font family.
-	"editor.fontFamily": "",
-
-	// Controls the font size.
-	"editor.fontSize": 14,
-
-	// Controls after how many characters the editor will wrap to the next line. Setting this to 0 turns on viewport width wrapping
-	"editor.wrappingColumn": 0,
-		
-	// Controls if the editor should automatically format the line after typing
-	"editor.formatOnType": false
 }

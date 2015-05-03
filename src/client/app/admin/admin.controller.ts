@@ -1,7 +1,10 @@
 module app.admin {
     'use strict';
 
-    export class AdminController {
+    interface IAdminVm {
+        title: string;
+    }    
+    export class AdminController implements IAdminVm {
         title: string = 'Admin';
 
         static $inject: Array<string> = ['logger'];

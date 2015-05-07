@@ -5,6 +5,9 @@
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
   "installed": {
+    "gulp/gulp.d.ts": {
+      "commit": "52fa2b9ce36f2c5843204e9bfbaada7cded9b47a"
+    },
     "jquery/jquery.d.ts": {
       "commit": "52fa2b9ce36f2c5843204e9bfbaada7cded9b47a"
     },

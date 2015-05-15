@@ -29,7 +29,6 @@ var app;
             };
             DashboardController.prototype.getPeople = function () {
                 var _this = this;
-                var y = this.dataservice.tester(9);
                 return this.dataservice.getPeople().then(function (data) {
                     _this.people = data;
                     return _this.people;

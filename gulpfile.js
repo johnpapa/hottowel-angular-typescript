@@ -1,4 +1,4 @@
-/// <reference path="typings/gulp/gulp.d.ts" />
+/// <reference path="src/server/tsd-server.d.ts"/>
 
 var args = require('yargs').argv;
 var browserSync = require('browser-sync');

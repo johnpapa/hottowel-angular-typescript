@@ -11,7 +11,7 @@ var merge = require('merge2');
 var path = require('path');
 var cp = require('child_process');
 var _ = require('lodash');
-var $ = require('gulp-load-plugins')({lazy: true});
+var $ = require('gulp-load-plugins')({ lazy: true });
 
 var colors = $.util.colors;
 var envenv = $.util.env;

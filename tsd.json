@@ -21,7 +21,7 @@
       "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
     },
     "node/node.d.ts": {
-      "commit": "609c6a7a11a79e0e831a301f1def7b581853216f"
+      "commit": "68114f9ff37de0f92c94126b6e0164e026a1737a"
     },
     "express/express.d.ts": {
       "commit": "609c6a7a11a79e0e831a301f1def7b581853216f"
@@ -55,6 +55,9 @@
     },
     "body-parser/body-parser.d.ts": {
       "commit": "609c6a7a11a79e0e831a301f1def7b581853216f"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "68114f9ff37de0f92c94126b6e0164e026a1737a"
     }
   }
 }

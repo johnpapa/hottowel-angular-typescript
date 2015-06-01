@@ -16,7 +16,7 @@ var port: number = process.env.PORT || 8001;
 var environment: string = process.env.NODE_ENV;
 
 app.use(favicon(__dirname + '/favicon.ico'))
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
@@ -43,7 +43,7 @@ switch (environment) {
         app.use(express.static('./'));
         app.use(express.static('./tmp'));
         // Any invalid calls for templateUrls are under app/* and should return 404
-        app.use('/app/*', (req: express.Request, res: express.Response, next: any) =>  {
+        app.use('/app/*', (req: express.Request, res: express.Response, next: any) => {
             send404(req, res);
         });
         // Any deep link calls should return index.html
@@ -54,6 +54,6 @@ switch (environment) {
 app.listen(port, () => {
     console.log('Express server listening on port ' + port);
     console.log('env = ' + app.get('env') +
-        '\n__dirname = ' + __dirname  +
+        '\n__dirname = ' + __dirname +
         '\nprocess.cwd = ' + process.cwd());
 });

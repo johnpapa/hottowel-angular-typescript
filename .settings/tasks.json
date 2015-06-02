@@ -7,8 +7,12 @@
     ],
     "tasks": [
         {
-            "taskName": "serve-dev",
-            "args": [],
+            "taskName": "serve-dev-debug",
+            "args": [
+                "serve-dev", 
+                "--debug"
+            ],
+            "suppressTaskName": true,
             "isWatching": false,
             "problemMatcher": [
                 "$lessCompile",

@@ -1,15 +1,20 @@
-'use strict';
+module app.dashboard {
+    'use strict';
 
-class DashboardRoute {
-    static $inject: Array<string> = ['stateProvider'];
-    configureStates($stateProvider: ng.ui.IStateProvider) {
-        var states = this.getStates();
-        states.forEach(function(state) {
+    angular
+        .module('app.dashboard')
+        .config(configureStates);
+
+    configureStates.$inject = ['$stateProvider'];
+    /* @ngInject */
+    function configureStates($stateProvider: ng.ui.IStateProvider) {
+        var states = getStates();
+        states.forEach(function (state) {
             $stateProvider.state(state.state, state.config);
         });
     }
 
-    getStates() {
+    function getStates() {
         return [
             {
                 state: 'dashboard',
@@ -28,7 +33,3 @@ class DashboardRoute {
         ];
     }
 }
-
-angular
-    .module('app.dashboard')
-    .config(new DashboardRoute().configureStates);

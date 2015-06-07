@@ -1,3 +1,5 @@
-'use strict';
+module blocks.router {
+    'use strict';
 
-angular.module('blocks.router', []);
+    angular.module('blocks.router', []);
+}

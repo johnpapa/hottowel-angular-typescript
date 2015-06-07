@@ -1,5 +1,5 @@
-// import { angular } from 'angular';
+module blocks.exception {
+    'use strict';
 
-'use strict';
-
-angular.module('blocks.exception', ['blocks.logger']);
+    angular.module('blocks.exception', ['blocks.logger']);
+}

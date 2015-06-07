@@ -1,35 +1,23 @@
-module app.core {
 // ((): void => {
 // })();
 // What: Creates an IIFE
 // When: Use when you have no TypeScript components to export
 // Less function wrapping
-    'use strict';
 
-    angular
-        .module('app.core')
-        .config(configureStates)
-        .run(appRun);
+import { IRouterHelper } from '../blocks/router/router-helper.service';
 
-    appRun.$inject = ['RouterHelper'];
-    function appRun(RouterHelper: blocks.router.IRouterHelper) { }
+'use strict';
 
-    configureStates.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
-    /* @ngInject */
-    function configureStates($stateProvider: ng.ui.IStateProvider,
+class CoreRoute {
+
+    appRun(RouterHelper: IRouterHelper) { }
+
+    static $inject: Array<string> = ['stateProvider', '$locationProvider', '$urlRouterProvider'];
+    configureStates($stateProvider: ng.ui.IStateProvider,
         $locationProvider: ng.ILocationProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider) {
         var otherwise = '/404';
-        var states = getStates();
-        states.forEach(function (state) {
-            $stateProvider.state(state.state, state.config);
-        });
-        $locationProvider.html5Mode(true);
-        $urlRouterProvider.otherwise(otherwise);
-    }
-
-    function getStates() {
-        return [
+        let states = [
             {
                 state: '404',
                 config: {
@@ -39,5 +27,18 @@ module app.core {
                 }
             }
         ];
+        states.forEach(function(state) {
+            $stateProvider.state(state.state, state.config);
+        });
+        $locationProvider.html5Mode(true);
+        $urlRouterProvider.otherwise(otherwise);
     }
 }
+
+let coreRoute = new CoreRoute();
+
+angular
+    .module('app.core')
+    .config(coreRoute.configureStates)
+    .run(coreRoute.appRun);
+

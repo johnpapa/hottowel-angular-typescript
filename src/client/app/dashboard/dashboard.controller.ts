@@ -3,7 +3,7 @@ import { IDataService } from '../core/dataservice';
 
 'use strict';
 
-interface IDashboardVm {
+export interface IDashboardVm {
     news: { title: string, description: string };
     messageCount: number;
     people: Array<any>;
@@ -12,7 +12,7 @@ interface IDashboardVm {
     getPeople: () => ng.IPromise<Array<any>>;
 }
 
-class DashboardController implements IDashboardVm {
+export class DashboardController implements IDashboardVm {
     static $inject: Array<string> = ['$q', 'dataservice', 'logger'];
     constructor(private $q: ng.IQService,
         private dataservice: IDataService,

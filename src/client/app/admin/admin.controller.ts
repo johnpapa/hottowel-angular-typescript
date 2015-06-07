@@ -2,7 +2,7 @@ import { Logger } from '../blocks/logger/logger';
 
 'use strict';
 
-interface IAdminVm {
+export interface IAdminVm {
     title: string;
 }
 export class AdminController implements IAdminVm {

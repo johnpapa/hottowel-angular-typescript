@@ -1,6 +1,7 @@
 'use strict';
 var AdminRoute = (function () {
     function AdminRoute($stateProvider) {
+        this.$stateProvider = $stateProvider;
         this.states = [
             {
                 state: 'admin',
@@ -19,16 +20,26 @@ var AdminRoute = (function () {
         ];
         this.configureStates();
     }
+    AdminRoute.prototype.$get = function () {
+        var _this = this;
+        return {
+            getStates: function () { return _this.states; }
+        };
+    };
     AdminRoute.prototype.configureStates = function () {
-        // var states: any[] = this.states;
+        var sp = this.$stateProvider;
         this.states.forEach(function (state) {
-            this.$stateProvider.state(state.state, state.config);
+            sp.state(state.state, state.config);
         });
     };
-    AdminRoute.$inject = ['stateProvider'];
+    AdminRoute.$inject = ['$stateProvider'];
     return AdminRoute;
 })();
+exports.AdminRoute = AdminRoute;
 angular
     .module('app.admin')
-    .config(AdminRoute);
+    .provider('AdminRoute', AdminRoute)
+    .config(function (AdminRouteProvider) {
+    //AdminRouteProvider.configureStates();
+});
 //# sourceMappingURL=admin.route.js.map

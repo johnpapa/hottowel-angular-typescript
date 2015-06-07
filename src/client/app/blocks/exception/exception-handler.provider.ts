@@ -1,46 +1,47 @@
 // Include in index.html so that app level exceptions are handled.
 // Exclude from testRunner.html which should run exactly what it wants to run
 
-// import { angular } from 'angular';
-import { Logger } from '../logger/logger';
+module blocks.exception {
+    'use strict';
 
-'use strict';
+    export interface IExceptionHandlerConfig {
+        appErrorPrefix: string
+    }
+    export class ExceptionHandlerProvider {
+        static $inject: Array<string> = [];
+        constructor() { }
+        config: IExceptionHandlerConfig = {
+            appErrorPrefix: undefined
+        }
 
-export interface IExceptionHandlerConfig {
-    appErrorPrefix: string
-}
-export class ExceptionHandlerProvider {
-    static $inject: Array<string> = [];
-    constructor() { }
-    config: IExceptionHandlerConfig = {
-        appErrorPrefix: undefined
+        configure(appErrorPrefix: any) {
+            this.config.appErrorPrefix = appErrorPrefix;
+        }
+        $get: () => { config: IExceptionHandlerConfig } = () => { return { config: this.config }; }
     }
 
-    configure(appErrorPrefix: any) {
-        this.config.appErrorPrefix = appErrorPrefix;
+    config.$inject = ['$provide'];
+    function config($provide: ng.auto.IProvideService) {
+        $provide.decorator('$exceptionHandler', extendExceptionHandler);
     }
-    $get: () => { config: IExceptionHandlerConfig } = () => { return { config: this.config }; }
-}
 
-class ExceptionHandlerConfig {
-    static $inject: Array<string> = ['$delegate', '$provide', 'exceptionHandler', 'logger'];
-    
-    constructor($provide: ng.auto.IProvideService, $delegate: ng.IExceptionHandlerService,
-        exceptionHandler: any,
-        logger: Logger) {
-        $provide.decorator('$exceptionHandler', this.extendedExceptionHandler);
-    }
-    
-    // configure() {
-    //     this.$provide.decorator('$exceptionHandler', this.extendedExceptionHandler);
-    // }
-    
-    extendedExceptionHandler() {
-        return function(exception: any, cause: any) {
-            var appErrorPrefix = this.exceptionHandler.config.appErrorPrefix || '';
-            var errorData = { exception: exception, cause: cause };
+    extendExceptionHandler.$inject = ['$delegate', 'exceptionHandler', 'logger'];
+    /**
+     * Extend the $exceptionHandler service to also display a toast.
+     * @param  {Object} $delegate
+     * @param  {Object} exceptionHandler
+     * @param  {Object} logger
+     * @return {Function} the decorated $exceptionHandler service
+     */
+    function extendExceptionHandler($delegate: ng.IExceptionHandlerService,
+        exceptionHandler: any ,
+        logger: blocks.logger.Logger) {
+        return function (exception: any, cause: any) {
+//            var appErrorPrefix = '[Error] ';
+            var appErrorPrefix = exceptionHandler.config.appErrorPrefix || '';
+            var errorData = {exception: exception, cause: cause};
             exception.message = appErrorPrefix + exception.message;
-            this.$delegate(exception, cause);
+            $delegate(exception, cause);
             /**
              * Could add the error to a service's collection,
              * add errors to $rootScope, log errors to remote web server,
@@ -50,14 +51,12 @@ class ExceptionHandlerConfig {
              * @example
              *     throw { message: 'error message we added' };
              */
-            this.logger.error(exception.message, errorData);
+            logger.error(exception.message, errorData);
         };
-    }    
+    }
+
+    angular
+        .module('blocks.exception')
+        .provider('exceptionHandler', ExceptionHandlerProvider)
+        .config(config);
 }
-
-
-
-angular
-    .module('blocks.exception')
-    .provider('exceptionHandler', ExceptionHandlerProvider)
-    .config(ExceptionHandlerConfig);

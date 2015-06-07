@@ -1,36 +1,35 @@
-'use strict';
+module app.admin {
+    'use strict';
 
+    angular
+        .module('app.admin')
+        .config(configureStates);
 
-class AdminRoute {
-    static $inject: Array<string> = ['stateProvider'];
-    constructor($stateProvider: ng.ui.IStateProvider) {
-        this.configureStates()
-    }
-    configureStates() {
-        // var states: any[] = this.states;
-        this.states.forEach(function(state) {
-            this.$stateProvider.state(state.state, state.config);
+    configureStates.$inject = ['$stateProvider'];
+    /* @ngInject */
+    function configureStates($stateProvider: ng.ui.IStateProvider) {
+        var states: any[] = getStates();
+        states.forEach(function (state) {
+            $stateProvider.state(state.state, state.config);
         });
     }
 
-    states: any[] = [
-        {
-            state: 'admin',
-            config: {
-                url: '/admin',
-                templateUrl: 'app/admin/admin.html',
-                controller: 'AdminController',
-                controllerAs: 'vm',
-                title: 'Admin',
-                settings: {
-                    nav: 2,
-                    content: '<i class="fa fa-lock"></i> Admin'
+    function getStates(): any[] {
+        return [
+            {
+                state: 'admin',
+                config: {
+                    url: '/admin',
+                    templateUrl: 'app/admin/admin.html',
+                    controller: 'AdminController',
+                    controllerAs: 'vm',
+                    title: 'Admin',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Admin'
+                    }
                 }
             }
-        }
-    ];
+        ];
+    }
 }
-
-angular
-    .module('app.admin')
-    .config(AdminRoute);

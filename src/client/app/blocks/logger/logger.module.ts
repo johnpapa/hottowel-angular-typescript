@@ -1,5 +1,5 @@
-// import { angular } from 'angular';
+module blocks.logger {
+    'use strict';
 
-'use strict';
-
-angular.module('blocks.logger', []);
+    angular.module('blocks.logger', []);
+}

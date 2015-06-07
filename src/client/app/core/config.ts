@@ -2,30 +2,33 @@ import { ExceptionHandlerProvider } from '../blocks/exception/exception-handler.
 
 'use strict';
 
-var config = {
-    appErrorPrefix: '[helloworld Error] ',
-    appTitle: 'helloworld'
-};
+export interface ICoreConfig {
+    appErrorPrefix: string,
+    appTitle: string
+}
+
+export class CoreConfig implements ng.IServiceProvider {
+    config: ICoreConfig;
+    static $inject: Array<string> = ['toastr', '$logProvider', 'exceptionHandlerProvider'];
+    constructor(toastr: Toastr, $logProvider: ng.ILogProvider, exceptionHandlerProvider: ExceptionHandlerProvider) {
+        toastr.options.timeOut = 4000;
+        toastr.options.positionClass = 'toast-bottom-right';
+        this.config = {
+            appErrorPrefix: '[helloworld Error] ',
+            appTitle: 'helloworld'
+        }
+        if ($logProvider.debugEnabled) {
+            $logProvider.debugEnabled(true);
+        }
+        exceptionHandlerProvider.configure(this.config.appErrorPrefix);
+    }
+
+    $get = () => {
+        this.config;
+    }
+}
 
 angular
     .module('app.core')
-    .config(toastrConfig)
-    .config(configure)
-    .value('config', config);
-
-toastrConfig.$inject = ['toastr'];
-/* @ngInject */
-function toastrConfig(toastr: Toastr) {
-    toastr.options.timeOut = 4000;
-    toastr.options.positionClass = 'toast-bottom-right';
-}
-
-configure.$inject = ['$logProvider']; //, 'exceptionHandlerProvider'];
-/* @ngInject */
-function configure($logProvider: ng.ILogProvider) { //,
-    // exceptionHandlerProvider: ExceptionHandlerProvider) {
-    if ($logProvider.debugEnabled) {
-        $logProvider.debugEnabled(true);
-    }
-//    exceptionHandlerProvider.configure(config.appErrorPrefix);
-}
+    .provider('CoreConfig', CoreConfig)
+    .value('config', (CoreConfig: ICoreConfig) => CoreConfig);

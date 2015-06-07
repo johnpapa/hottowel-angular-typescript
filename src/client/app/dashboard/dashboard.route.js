@@ -1,15 +1,8 @@
 'use strict';
 var DashboardRoute = (function () {
-    function DashboardRoute() {
-    }
-    DashboardRoute.prototype.configureStates = function ($stateProvider) {
-        var states = this.getStates();
-        states.forEach(function (state) {
-            $stateProvider.state(state.state, state.config);
-        });
-    };
-    DashboardRoute.prototype.getStates = function () {
-        return [
+    function DashboardRoute($stateProvider) {
+        this.$stateProvider = $stateProvider;
+        this.states = [
             {
                 state: 'dashboard',
                 config: {
@@ -25,11 +18,26 @@ var DashboardRoute = (function () {
                 }
             }
         ];
+        this.configureStates();
+    }
+    DashboardRoute.prototype.$get = function () {
+        var _this = this;
+        return {
+            getStates: function () { return _this.states; }
+        };
     };
-    DashboardRoute.$inject = ['stateProvider'];
+    DashboardRoute.prototype.configureStates = function () {
+        var sp = this.$stateProvider;
+        this.states.forEach(function (state) {
+            sp.state(state.state, state.config);
+        });
+    };
+    DashboardRoute.$inject = ['$stateProvider'];
     return DashboardRoute;
 })();
+exports.DashboardRoute = DashboardRoute;
 angular
     .module('app.dashboard')
-    .config(new DashboardRoute().configureStates);
+    .provider('DashboardRoute', DashboardRoute)
+    .config(function (DashboardRouteProvider) { });
 //# sourceMappingURL=dashboard.route.js.map

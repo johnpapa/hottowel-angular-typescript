@@ -1,16 +1,17 @@
 'use strict';
 
-class DashboardRoute {
-    static $inject: Array<string> = ['stateProvider'];
-    configureStates($stateProvider: ng.ui.IStateProvider) {
-        var states = this.getStates();
-        states.forEach(function(state) {
-            $stateProvider.state(state.state, state.config);
-        });
-    }
+interface IDashboardRoute {
+    getStates: () => Array<any>;
+}
 
-    getStates() {
-        return [
+export class DashboardRoute implements ng.IServiceProvider {
+    states: Array<any>;
+    $stateProvider: ng.ui.IStateProvider;
+
+    static $inject: Array<string> = ['$stateProvider'];
+    constructor($stateProvider: ng.ui.IStateProvider) {
+        this.$stateProvider = $stateProvider;
+        this.states = [
             {
                 state: 'dashboard',
                 config: {
@@ -26,9 +27,24 @@ class DashboardRoute {
                 }
             }
         ];
+        this.configureStates();
+    }
+
+    $get(): IDashboardRoute {
+        return {
+            getStates: () => { return this.states; }
+        };
+    }
+
+    configureStates() {
+        var sp = this.$stateProvider;
+        this.states.forEach((state) => {
+            sp.state(state.state, state.config);
+        });
     }
 }
 
 angular
     .module('app.dashboard')
-    .config(new DashboardRoute().configureStates);
+    .provider('DashboardRoute', DashboardRoute)
+    .config((DashboardRouteProvider: DashboardRoute) => { });

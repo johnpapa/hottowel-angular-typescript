@@ -1,5 +1,8 @@
 'use strict';
 
+interface IAdminRoute {
+    getStates: () => Array<any>;
+}
 
 export class AdminRoute implements ng.IServiceProvider {
     states: Array<any>;
@@ -27,7 +30,7 @@ export class AdminRoute implements ng.IServiceProvider {
         this.configureStates();
     }
     
-    $get() : any {
+    $get() : IAdminRoute {
         return {
             getStates: () => { return this.states; }
         };

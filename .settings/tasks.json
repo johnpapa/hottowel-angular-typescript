@@ -9,7 +9,7 @@
         {
             "taskName": "serve-dev-debug",
             "args": [
-                "serve-dev", 
+                "serve-dev",
                 "--debug"
             ],
             "suppressTaskName": true,

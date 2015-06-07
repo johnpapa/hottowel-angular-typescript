@@ -23,19 +23,16 @@ export class ExceptionHandlerProvider {
 }
 
 class ExceptionHandlerConfig {
-    static $inject: Array<string> = ['$delegate', '$provide', 'exceptionHandler', 'logger'];
-    
-    constructor($provide: ng.auto.IProvideService, $delegate: ng.IExceptionHandlerService,
-        exceptionHandler: any,
-        logger: Logger) {
-        $provide.decorator('$exceptionHandler', this.extendedExceptionHandler);
+    static $inject: Array<string> = ['$provide'];
+
+    constructor($provide: ng.auto.IProvideService) {
+        $provide.decorator('$exceptionHandler', ExtendedExceptionHandler);
     }
-    
-    // configure() {
-    //     this.$provide.decorator('$exceptionHandler', this.extendedExceptionHandler);
-    // }
-    
-    extendedExceptionHandler() {
+}
+
+class ExtendedExceptionHandler {
+    static $inject: Array<string> = ['$delegate', 'exceptionHandler', 'logger'];
+    constructor($delegate: ng.IExceptionHandlerService, exceptionHandler: any, logger: Logger) {
         return function(exception: any, cause: any) {
             var appErrorPrefix = this.exceptionHandler.config.appErrorPrefix || '';
             var errorData = { exception: exception, cause: cause };
@@ -52,10 +49,9 @@ class ExceptionHandlerConfig {
              */
             this.logger.error(exception.message, errorData);
         };
-    }    
+    }
+
 }
-
-
 
 angular
     .module('blocks.exception')

@@ -17,13 +17,14 @@ var ExceptionHandlerProvider = (function () {
 })();
 exports.ExceptionHandlerProvider = ExceptionHandlerProvider;
 var ExceptionHandlerConfig = (function () {
-    function ExceptionHandlerConfig($provide, $delegate, exceptionHandler, logger) {
-        $provide.decorator('$exceptionHandler', this.extendedExceptionHandler);
+    function ExceptionHandlerConfig($provide) {
+        $provide.decorator('$exceptionHandler', ExtendedExceptionHandler);
     }
-    // configure() {
-    //     this.$provide.decorator('$exceptionHandler', this.extendedExceptionHandler);
-    // }
-    ExceptionHandlerConfig.prototype.extendedExceptionHandler = function () {
+    ExceptionHandlerConfig.$inject = ['$provide'];
+    return ExceptionHandlerConfig;
+})();
+var ExtendedExceptionHandler = (function () {
+    function ExtendedExceptionHandler($delegate, exceptionHandler, logger) {
         return function (exception, cause) {
             var appErrorPrefix = this.exceptionHandler.config.appErrorPrefix || '';
             var errorData = { exception: exception, cause: cause };
@@ -40,9 +41,9 @@ var ExceptionHandlerConfig = (function () {
              */
             this.logger.error(exception.message, errorData);
         };
-    };
-    ExceptionHandlerConfig.$inject = ['$delegate', '$provide', 'exceptionHandler', 'logger'];
-    return ExceptionHandlerConfig;
+    }
+    ExtendedExceptionHandler.$inject = ['$delegate', 'exceptionHandler', 'logger'];
+    return ExtendedExceptionHandler;
 })();
 angular
     .module('blocks.exception')

@@ -6,4 +6,5 @@ angular.module('app', [
     'app.dashboard',
     'app.layout'
 ]);
+var exports = {};
 //# sourceMappingURL=app.module.js.map

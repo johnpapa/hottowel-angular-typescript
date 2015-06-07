@@ -1,37 +1,35 @@
-var app;
-(function (app) {
-    var dashboard;
-    (function (dashboard) {
-        'use strict';
-        angular
-            .module('app.dashboard')
-            .config(configureStates);
-        configureStates.$inject = ['$stateProvider'];
-        /* @ngInject */
-        function configureStates($stateProvider) {
-            var states = getStates();
-            states.forEach(function (state) {
-                $stateProvider.state(state.state, state.config);
-            });
-        }
-        function getStates() {
-            return [
-                {
-                    state: 'dashboard',
-                    config: {
-                        url: '/',
-                        templateUrl: 'app/dashboard/dashboard.html',
-                        controller: 'DashboardController',
-                        controllerAs: 'vm',
-                        title: 'dashboard',
-                        settings: {
-                            nav: 1,
-                            content: '<i class="fa fa-dashboard"></i> Dashboard'
-                        }
+'use strict';
+var DashboardRoute = (function () {
+    function DashboardRoute() {
+    }
+    DashboardRoute.prototype.configureStates = function ($stateProvider) {
+        var states = this.getStates();
+        states.forEach(function (state) {
+            $stateProvider.state(state.state, state.config);
+        });
+    };
+    DashboardRoute.prototype.getStates = function () {
+        return [
+            {
+                state: 'dashboard',
+                config: {
+                    url: '/',
+                    templateUrl: 'app/dashboard/dashboard.html',
+                    controller: 'DashboardController',
+                    controllerAs: 'vm',
+                    title: 'dashboard',
+                    settings: {
+                        nav: 1,
+                        content: '<i class="fa fa-dashboard"></i> Dashboard'
                     }
                 }
-            ];
-        }
-    })(dashboard = app.dashboard || (app.dashboard = {}));
-})(app || (app = {}));
+            }
+        ];
+    };
+    DashboardRoute.$inject = ['stateProvider'];
+    return DashboardRoute;
+})();
+angular
+    .module('app.dashboard')
+    .config(new DashboardRoute().configureStates);
 //# sourceMappingURL=dashboard.route.js.map

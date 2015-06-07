@@ -1,8 +1,6 @@
-module app.dashboard {
-    'use strict';
+'use strict';
 
-    angular.module('app.dashboard', [
-        'app.core',
-        'app.widgets'
-      ]);
-}
+angular.module('app.dashboard', [
+    'app.core',
+    'app.widgets'
+]);

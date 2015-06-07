@@ -1,5 +1,3 @@
-module app.widgets {
-    'use strict';
+'use strict';
 
-    angular.module('app.widgets', []);
-}
+angular.module('app.widgets', []);

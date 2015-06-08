@@ -19,7 +19,6 @@ var CoreConfig = (function () {
     CoreConfig.$inject = ['toastr', '$logProvider', 'exceptionHandlerProvider'];
     return CoreConfig;
 })();
-exports.CoreConfig = CoreConfig;
 angular
     .module('app.core')
     .provider('CoreConfig', CoreConfig)

@@ -4,7 +4,7 @@ interface IAdminRoute {
     getStates: () => Array<any>;
 }
 
-export class AdminRoute implements ng.IServiceProvider {
+class AdminRoute implements ng.IServiceProvider {
     states: Array<any>;
     $stateProvider: ng.ui.IStateProvider;
     

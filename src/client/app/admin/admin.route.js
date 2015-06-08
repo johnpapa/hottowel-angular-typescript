@@ -35,7 +35,6 @@ var AdminRoute = (function () {
     AdminRoute.$inject = ['$stateProvider'];
     return AdminRoute;
 })();
-exports.AdminRoute = AdminRoute;
 angular
     .module('app.admin')
     .provider('AdminRoute', AdminRoute)

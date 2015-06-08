@@ -2,10 +2,10 @@ import { ILogger } from '../blocks/logger/logger';
 
 'use strict';
 
-export interface IAdminVm {
+interface IAdminVm {
     title: string;
 }
-export class AdminController implements IAdminVm {
+class AdminController implements IAdminVm {
     title: string = 'Admin';
 
     static $inject: Array<string> = ['logger'];

@@ -8,7 +8,6 @@ var AdminController = (function () {
     AdminController.$inject = ['logger'];
     return AdminController;
 })();
-exports.AdminController = AdminController;
 angular
     .module('app.admin')
     .controller('AdminController', AdminController);

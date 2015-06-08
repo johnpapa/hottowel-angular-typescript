@@ -31,7 +31,6 @@ var Logger = (function () {
     Logger.$inject = ['$log', 'toastr'];
     return Logger;
 })();
-exports.Logger = Logger;
 angular
     .module('blocks.logger')
     .service('logger', Logger);

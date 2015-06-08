@@ -7,7 +7,7 @@ export interface ICoreConfig {
     appTitle: string
 }
 
-export class CoreConfig implements ng.IServiceProvider {
+class CoreConfig implements ng.IServiceProvider {
     config: ICoreConfig;
     static $inject: Array<string> = ['toastr', '$logProvider', 'exceptionHandlerProvider'];
     constructor(toastr: Toastr, $logProvider: ng.ILogProvider, exceptionHandlerProvider: IExceptionHandlerProvider) {

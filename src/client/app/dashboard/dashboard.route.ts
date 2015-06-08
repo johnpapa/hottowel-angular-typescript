@@ -4,7 +4,7 @@ interface IDashboardRoute {
     getStates: () => Array<any>;
 }
 
-export class DashboardRoute implements ng.IServiceProvider {
+class DashboardRoute implements ng.IServiceProvider {
     states: Array<any>;
     $stateProvider: ng.ui.IStateProvider;
 

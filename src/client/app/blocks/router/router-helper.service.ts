@@ -4,7 +4,7 @@ export interface IRouterHelper {
     stateCounts: { errors: number; changes: number };
 }
 
-export class RouterHelper implements IRouterHelper {
+class RouterHelper implements IRouterHelper {
     static $inject: Array<string> = ['$location', '$rootScope', '$state', 'logger'];
     constructor(private $location: any, private $rootScope: any, private $state: any, private logger: any) {
         this.handleRoutingErrors();

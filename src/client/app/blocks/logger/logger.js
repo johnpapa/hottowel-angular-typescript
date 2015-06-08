@@ -1,4 +1,3 @@
-// import { angular } from 'angular';
 'use strict';
 var Logger = (function () {
     function Logger($log, toastr) {

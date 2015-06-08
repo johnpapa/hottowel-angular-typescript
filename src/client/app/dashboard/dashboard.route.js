@@ -35,7 +35,6 @@ var DashboardRoute = (function () {
     DashboardRoute.$inject = ['$stateProvider'];
     return DashboardRoute;
 })();
-exports.DashboardRoute = DashboardRoute;
 angular
     .module('app.dashboard')
     .provider('DashboardRoute', DashboardRoute)

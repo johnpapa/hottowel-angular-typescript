@@ -21,7 +21,6 @@ var SidebarController = (function () {
     SidebarController.$inject = ['$state'];
     return SidebarController;
 })();
-exports.SidebarController = SidebarController;
 angular
     .module('app.layout')
     .controller('SidebarController', SidebarController);

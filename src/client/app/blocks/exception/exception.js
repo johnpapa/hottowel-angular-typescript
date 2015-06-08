@@ -8,7 +8,6 @@ var Exception = (function () {
     Exception.$inject = ['logger'];
     return Exception;
 })();
-exports.Exception = Exception;
 angular
     .module('blocks.exception')
     .service('exception', Exception);

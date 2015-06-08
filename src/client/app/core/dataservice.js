@@ -23,7 +23,6 @@ var DataService = (function () {
     DataService.$inject = ['$http', '$q', 'exception', 'logger'];
     return DataService;
 })();
-exports.DataService = DataService;
 angular
     .module('app.core')
     .service('dataservice', DataService);

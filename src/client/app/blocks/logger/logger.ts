@@ -1,5 +1,3 @@
-// import { angular } from 'angular';
-
 'use strict';
 
 export interface ILogger {

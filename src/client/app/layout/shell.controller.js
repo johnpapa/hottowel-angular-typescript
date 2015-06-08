@@ -24,7 +24,6 @@ var ShellController = (function () {
     ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger'];
     return ShellController;
 })();
-exports.ShellController = ShellController;
 angular
     .module('app.layout')
     .controller('ShellController', ShellController);

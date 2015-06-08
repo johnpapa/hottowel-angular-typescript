@@ -1,4 +1,4 @@
-import { Logger } from '../blocks/logger/logger';
+import { ILogger } from '../blocks/logger/logger';
 
 'use strict';
 
@@ -9,7 +9,7 @@ export class AdminController implements IAdminVm {
     title: string = 'Admin';
 
     static $inject: Array<string> = ['logger'];
-    constructor(private logger: Logger) {
+    constructor(private logger: ILogger) {
         this.logger.info('Activated Admin View');
     }
 }

@@ -1,4 +1,4 @@
-import { Logger } from '../blocks/logger/logger';
+import { ILogger } from '../blocks/logger/logger';
 import { IDataService } from '../core/dataservice';
 
 'use strict';
@@ -12,11 +12,11 @@ export interface IDashboardVm {
     getPeople: () => ng.IPromise<Array<any>>;
 }
 
-export class DashboardController implements IDashboardVm {
+class DashboardController implements IDashboardVm {
     static $inject: Array<string> = ['$q', 'dataservice', 'logger'];
     constructor(private $q: ng.IQService,
         private dataservice: IDataService,
-        private logger: Logger) {
+        private logger: ILogger) {
         var promises = [this.getMessageCount(), this.getPeople()];
         this.$q.all(promises).then(function() {
             logger.info('Activated Dashboard View');
@@ -32,14 +32,14 @@ export class DashboardController implements IDashboardVm {
     title: string = 'Dashboard';
 
     getMessageCount() {
-        return this.dataservice.getMessageCount().then((data) => {
+        return this.dataservice.getMessageCount().then((data: any) => {
             this.messageCount = data;
             return this.messageCount;
         });
     }
 
     getPeople() {
-        return this.dataservice.getPeople().then((data) => {
+        return this.dataservice.getPeople().then((data: any) => {
             this.people = data;
             return this.people;
         });

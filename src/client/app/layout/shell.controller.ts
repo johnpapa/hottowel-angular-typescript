@@ -1,13 +1,20 @@
-import { Logger } from '../blocks/logger/logger';
+import { ILogger } from '../blocks/logger/logger';
 
 'use strict';
 
-export class ShellController {
+interface IShellController {
+    busyMessage: string;
+    isBusy: boolean;
+    navline: { title: string, text: string, link: string };
+    hideSplash: () => void;
+}
+
+class ShellController implements IShellController {
     static $inject: Array<string> = ['$rootScope', '$timeout', 'config', 'logger'];
     constructor(private $rootScope: any,
         private $timeout: ng.ITimeoutService,
         private config: { appTitle: string },
-        private logger: Logger) {
+        private logger: ILogger) {
         this.logger.success(config.appTitle + ' loaded!', null);
         this.hideSplash();
         this.$rootScope.showSplash = true;

@@ -2,7 +2,7 @@
 // Exclude from testRunner.html which should run exactly what it wants to run
 
 // import { angular } from 'angular';
-import { Logger } from '../logger/logger';
+import { ILogger } from '../logger/logger';
 
 'use strict';
 
@@ -39,7 +39,7 @@ class ExceptionHandlerConfig {
 
 class ExtendedExceptionHandler {
     static $inject: Array<string> = ['$delegate', 'exceptionHandler', 'logger'];
-    constructor($delegate: ng.IExceptionHandlerService, exceptionHandler: any, logger: Logger) {
+    constructor($delegate: ng.IExceptionHandlerService, exceptionHandler: any, logger: ILogger) {
         return function(exception: any, cause: any) {
             var appErrorPrefix = this.exceptionHandler.config.appErrorPrefix || '';
             var errorData = { exception: exception, cause: cause };

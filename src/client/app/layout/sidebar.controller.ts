@@ -4,14 +4,20 @@ export interface IStateExtra extends ng.ui.IState {
     settings: any;
 }
 
-export class SidebarController {
+interface ISidebarController {
+    navRoutes: Array<IStateExtra>;
+    states: Array<IStateExtra>;
+    isCurrent: (route: { title: string}) => string;    
+}
+
+class SidebarController implements ISidebarController {
     static $inject: Array<string> = ['$state'];
     constructor(private $state: ng.ui.IStateService) {
         this.getNavRoutes();
     }
 
-    navRoutes: IStateExtra[];
-    states: IStateExtra[] = <IStateExtra[]>this.$state.get();
+    navRoutes: Array<IStateExtra>;
+    states: Array<IStateExtra> = <Array<IStateExtra>>this.$state.get();
 
     isCurrent(route: { title: string }) {
         var currentState: any = this.$state.current;

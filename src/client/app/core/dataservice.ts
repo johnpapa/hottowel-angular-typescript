@@ -1,4 +1,4 @@
-import { Logger } from '../blocks/logger/logger';
+import { ILogger } from '../blocks/logger/logger';
 import { IException } from '../blocks/exception/exception';
 
 'use strict';
@@ -8,12 +8,12 @@ export interface IDataService {
     getPeople: () => ng.IPromise<any>;
 }
 
-export class DataService implements IDataService {
+class DataService implements IDataService {
     static $inject: Array<string> = ['$http', '$q', 'exception', 'logger'];
     constructor(private $http: ng.IHttpService,
         private $q: ng.IQService,
         private exception: IException,
-        private logger: Logger) {
+        private logger: ILogger) {
     }
 
     getMessageCount: () => ng.IPromise<number> = () => this.$q.when(72);

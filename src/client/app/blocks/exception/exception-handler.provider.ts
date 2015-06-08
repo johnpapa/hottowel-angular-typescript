@@ -6,10 +6,17 @@ import { Logger } from '../logger/logger';
 
 'use strict';
 
-export interface IExceptionHandlerConfig {
+interface IExceptionHandlerConfig {
     appErrorPrefix: string
 }
-export class ExceptionHandlerProvider {
+
+export interface IExceptionHandlerProvider {
+    $get: () => { config: IExceptionHandlerConfig };
+    configure: (appErrorPrefix: any) => void;
+    config: IExceptionHandlerConfig;
+}
+
+class ExceptionHandlerProvider implements IExceptionHandlerProvider {
     static $inject: Array<string> = [];
     constructor() { }
     config: IExceptionHandlerConfig = {
@@ -50,7 +57,6 @@ class ExtendedExceptionHandler {
             this.logger.error(exception.message, errorData);
         };
     }
-
 }
 
 angular

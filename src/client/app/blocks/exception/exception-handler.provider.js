@@ -15,7 +15,6 @@ var ExceptionHandlerProvider = (function () {
     ExceptionHandlerProvider.$inject = [];
     return ExceptionHandlerProvider;
 })();
-exports.ExceptionHandlerProvider = ExceptionHandlerProvider;
 var ExceptionHandlerConfig = (function () {
     function ExceptionHandlerConfig($provide) {
         $provide.decorator('$exceptionHandler', ExtendedExceptionHandler);

@@ -1,4 +1,4 @@
-import { ExceptionHandlerProvider } from '../blocks/exception/exception-handler.provider';
+import { IExceptionHandlerProvider } from '../blocks/exception/exception-handler.provider';
 
 'use strict';
 
@@ -10,7 +10,7 @@ export interface ICoreConfig {
 export class CoreConfig implements ng.IServiceProvider {
     config: ICoreConfig;
     static $inject: Array<string> = ['toastr', '$logProvider', 'exceptionHandlerProvider'];
-    constructor(toastr: Toastr, $logProvider: ng.ILogProvider, exceptionHandlerProvider: ExceptionHandlerProvider) {
+    constructor(toastr: Toastr, $logProvider: ng.ILogProvider, exceptionHandlerProvider: IExceptionHandlerProvider) {
         toastr.options.timeOut = 4000;
         toastr.options.positionClass = 'toast-bottom-right';
         this.config = {

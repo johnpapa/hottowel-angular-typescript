@@ -13,6 +13,7 @@ node_modules
 bower_components
 build
 .tmp
+jspm_packages
 
 # Ignore Test reporters
 ###################

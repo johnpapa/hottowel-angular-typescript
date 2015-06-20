@@ -17,16 +17,16 @@ module app {
             private logger: ILogger) {
         }
 
-        getMessageCount: () => ng.IPromise<number> = () => this.$q.when(72);
+        getMessageCount = () => this.$q.when(72);
 
-        getPeople: () => ng.IPromise<any> = () =>
+        getPeople = () =>
             this.$http.get('/api/people')
                 .then(this.success)
                 .catch(this.fail);
 
-        private success: (response: any) => {} = (response) => response.data;
+        private success = (response: {data: any}) => response.data;
 
-        private fail: (error: any) => {} = (error) => {
+        private fail = (error: any) => {
             var msg = error.data.description;
             var reason = 'query for people failed.';
             this.exception.catcher(msg)(reason);

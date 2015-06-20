@@ -1,40 +1,42 @@
-'use strict';
-
 export interface IStateExtra extends ng.ui.IState {
     settings: any;
 }
 
-interface ISidebarController {
-    navRoutes: Array<IStateExtra>;
-    states: Array<IStateExtra>;
-    isCurrent: (route: { title: string}) => string;    
-}
+module app {
+    'use strict';
 
-class SidebarController implements ISidebarController {
-    static $inject: Array<string> = ['$state'];
-    constructor(private $state: ng.ui.IStateService) {
-        this.getNavRoutes();
+    interface ISidebarController {
+        navRoutes: Array<IStateExtra>;
+        states: Array<IStateExtra>;
+        isCurrent: (route: { title: string }) => string;
     }
 
-    navRoutes: Array<IStateExtra>;
-    states: Array<IStateExtra> = <Array<IStateExtra>>this.$state.get();
-
-    isCurrent(route: { title: string }) {
-        var currentState: any = this.$state.current;
-        if (!route.title || !currentState || !currentState.title) {
-            return '';
+    class SidebarController implements ISidebarController {
+        static $inject: Array<string> = ['$state'];
+        constructor(private $state: ng.ui.IStateService) {
+            this.getNavRoutes();
         }
-        var menuName: string = route.title;
-        return currentState.title.substr(0, menuName.length) === menuName ? 'current' : '';
+
+        navRoutes: Array<IStateExtra>;
+        states: Array<IStateExtra> = <Array<IStateExtra>>this.$state.get();
+
+        isCurrent(route: { title: string }) {
+            var currentState: any = this.$state.current;
+            if (!route.title || !currentState || !currentState.title) {
+                return '';
+            }
+            var menuName: string = route.title;
+            return currentState.title.substr(0, menuName.length) === menuName ? 'current' : '';
+        }
+
+        private getNavRoutes() {
+            this.navRoutes = this.states
+                .filter((state) => state.settings && state.settings.nav)
+                .sort((state1, state2) => state1.settings.nav - state2.settings.nav);
+        }
     }
 
-    private getNavRoutes() {
-        this.navRoutes = this.states
-            .filter((state) => state.settings && state.settings.nav)
-            .sort((state1, state2) => state1.settings.nav - state2.settings.nav);
-    }
+    angular
+        .module('app.layout')
+        .controller('SidebarController', SidebarController);
 }
-
-angular
-    .module('app.layout')
-    .controller('SidebarController', SidebarController);

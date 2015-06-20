@@ -19,14 +19,16 @@ module app {
 
         getMessageCount = () => this.$q.when(72);
 
-        getPeople = () =>
-            this.$http.get('/api/people')
+        getPeople() {
+            return this.$http
+                .get('/api/people')
                 .then(this.success)
                 .catch(this.fail);
-
+        }
+        
         private success = (response: {data: any}) => response.data;
 
-        private fail = (error: any) => {
+        private fail(error: any) {
             var msg = error.data.description;
             var reason = 'query for people failed.';
             this.exception.catcher(msg)(reason);

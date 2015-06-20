@@ -9,13 +9,15 @@ var app;
             this.exception = exception;
             this.logger = logger;
             this.getMessageCount = function () { return _this.$q.when(72); };
-            this.success = function (response) { return response.data; };
         }
         DataService.prototype.getPeople = function () {
             return this.$http
                 .get('/api/people')
                 .then(this.success)
                 .catch(this.fail);
+        };
+        DataService.prototype.success = function (response) {
+            return response.data;
         };
         DataService.prototype.fail = function (error) {
             var msg = error.data.description;

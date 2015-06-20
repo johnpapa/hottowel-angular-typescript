@@ -18,7 +18,7 @@ module app {
         }
 
         navRoutes: Array<IStateExtra>;
-        states: Array<IStateExtra> = <Array<IStateExtra>>this.$state.get();
+        states = <Array<IStateExtra>>this.$state.get();
 
         isCurrent(route: { title: string }) {
             var currentState: any = this.$state.current;

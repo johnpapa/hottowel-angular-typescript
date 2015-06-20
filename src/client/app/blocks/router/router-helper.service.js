@@ -13,26 +13,26 @@ var app;
             this.handleStateChanges();
         }
         RouterHelper.prototype.handleRoutingErrors = function () {
-            var _this = this;
             //TODO: must inject $state so we can kick off routing
             // Route cancellation:
             // On routing error, go to the dashboard.
             // Provide an exit clause if it tries to do it twice.
-            this.$rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
-                if (_this.handlingStateChangeError) {
-                    return;
-                }
-                _this.stateCounts.errors++;
-                _this.handlingStateChangeError = true;
-                var destination = (toState &&
-                    (toState.title || toState.name || toState.loadedTemplateUrl)) ||
-                    'unknown target';
-                var msg = 'Error routing to ' + destination + '. ' +
-                    (error.data || '') + '. <br/>' + (error.statusText || '') +
-                    ': ' + (error.status || '');
-                _this.logger.warning(msg, [toState]);
-                _this.$location.path('/');
-            });
+            this.$rootScope.$on('$stateChangeError', this.handleStateChangeError);
+        };
+        RouterHelper.prototype.handleStateChangeError = function (event, toState, toParams, fromState, fromParams, error) {
+            if (this.handlingStateChangeError) {
+                return;
+            }
+            this.stateCounts.errors++;
+            this.handlingStateChangeError = true;
+            var destination = (toState &&
+                (toState.title || toState.name || toState.loadedTemplateUrl)) ||
+                'unknown target';
+            var msg = 'Error routing to ' + destination + '. ' +
+                (error.data || '') + '. <br/>' + (error.statusText || '') +
+                ': ' + (error.status || '');
+            this.logger.warning(msg, [toState]);
+            this.$location.path('/');
         };
         RouterHelper.prototype.handleStateChanges = function () {
             var _this = this;

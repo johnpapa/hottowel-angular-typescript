@@ -5,14 +5,15 @@ var app;
     'use strict';
     var ExceptionHandlerProvider = (function () {
         function ExceptionHandlerProvider() {
-            var _this = this;
             this.config = {
                 appErrorPrefix: undefined
             };
-            this.$get = function () { return { config: _this.config }; };
         }
         ExceptionHandlerProvider.prototype.configure = function (appErrorPrefix) {
             this.config.appErrorPrefix = appErrorPrefix;
+        };
+        ExceptionHandlerProvider.prototype.$get = function () {
+            return { config: this.config };
         };
         ExceptionHandlerProvider.$inject = [];
         return ExceptionHandlerProvider;

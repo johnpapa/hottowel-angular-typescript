@@ -27,7 +27,10 @@ module app {
         configure(appErrorPrefix: any) {
             this.config.appErrorPrefix = appErrorPrefix;
         }
-        $get: () => { config: IExceptionHandlerConfig } = () => { return { config: this.config }; }
+
+        $get() { 
+            return { config: this.config };
+        }
     }
 
     class ExceptionHandlerConfig {

@@ -31,7 +31,7 @@ module app {
             this.configureStates();
         }
 
-        $get(): IAdminRoute {
+        $get() {
             return {
                 getStates: () => { return this.states; }
             };

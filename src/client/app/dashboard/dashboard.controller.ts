@@ -28,9 +28,9 @@ module app {
             title: 'helloworld',
             description: 'Hot Towel Angular is a SPA template for Angular developers.'
         };
-        messageCount: number = 0;
+        messageCount = 0;
         people: Array<any> = [];
-        title: string = 'Dashboard';
+        title = 'Dashboard';
 
         getMessageCount() {
             return this.dataservice.getMessageCount().then((data: any) => {

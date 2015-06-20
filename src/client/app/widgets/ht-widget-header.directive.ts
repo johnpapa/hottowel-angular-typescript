@@ -28,8 +28,8 @@ module app {
             'rightText': '@',
             'allowCollapse': '@'
         };
-        templateUrl: string = 'app/widgets/widget-header.html';
-        restrict: string = 'EA';
+        templateUrl = 'app/widgets/widget-header.html';
+        restrict = 'EA';
     }
 
     angular

@@ -31,7 +31,7 @@ module app {
             this.configureStates();
         }
 
-        $get(): IDashboardRoute {
+        $get() {
             return {
                 getStates: () => { return this.states; }
             };

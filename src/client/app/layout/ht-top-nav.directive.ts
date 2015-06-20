@@ -16,7 +16,6 @@ module app {
         bindToController: boolean = true;
         controller: TopNavController = TopNavController;
         controllerAs: string = 'vm';
-        link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void;
         restrict: string = 'EA';
         scope: IHtTopNavScope = {
             'navline': '='

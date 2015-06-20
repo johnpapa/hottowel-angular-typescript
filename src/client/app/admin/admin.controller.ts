@@ -6,6 +6,7 @@ module app {
     interface IAdminVm {
         title: string;
     }
+    
     class AdminController implements IAdminVm {
         title: string = 'Admin';
 

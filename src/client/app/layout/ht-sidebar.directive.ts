@@ -21,13 +21,13 @@ module app {
         }
 
         bindToController: boolean = true;
-        link: (scope: ng.IScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) => void = this.linkFn;
+        link = this.linkFn;
         restrict: string = 'EA';
         scope: IHtSidebarScope = {
             whenDoneAnimating: '&?'
         };
 
-        private linkFn(scope: any, element: any, attrs: any) {
+        private linkFn(scope: IHtSidebarScope, element: ng.IAugmentedJQuery, attrs: ng.IAttributes) {
             var $sidebarInner = element.find('.sidebar-inner');
             var $dropdownElement = element.find('.sidebar-dropdown a');
             element.addClass('sidebar');

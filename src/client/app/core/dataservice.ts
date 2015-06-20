@@ -26,7 +26,9 @@ module app {
                 .catch(this.fail);
         }
         
-        private success = (response: {data: any}) => response.data;
+        private success(response: { data: any }) {
+            return response.data;
+        }
 
         private fail(error: any) {
             var msg = error.data.description;

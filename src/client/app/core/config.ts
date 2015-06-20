@@ -24,7 +24,7 @@ module app {
             exceptionHandlerProvider.configure(this.config.appErrorPrefix);
         }
 
-        $get = () => {
+        $get() {
             this.config;
         }
     }

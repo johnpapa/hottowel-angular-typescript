@@ -14,7 +14,6 @@ module.exports = function() {
         ignorePath: '../..'
     };
     var nodeModules = 'node_modules';
-    var typings = './typings/';
 
     var config = {
         /**
@@ -24,33 +23,17 @@ module.exports = function() {
         // All typescript settings
         ts: {
             // all typescript that we want to vet
-            allts: [
-                './src/**/*.ts',
-                './*.ts'
-            ],
+            // allts: [
+            //     './src/**/*.ts',
+            //     './*.ts'
+            // ],
             clientts: [
                 './src/client/**/*.ts'
             ],
             serverts: [
                 './src/server/**/*.ts'
-            ],
-            defs: typings + '**/*.ts',
-            output: '.tmp',
-            refs: typings + 'app.d.ts',
-            appRefs: '.tmp/typings/app-dts/',
-            transformFn: function (filepath) {
-                return '/// <reference path="..' + filepath + '" />';
-            },
-            tscOptions: {
-                target: 'ES5',
-                declarationFiles: true,
-                noExternalResolve: true,
-                module: 'commonjs',
-                noImplicitAny: true,
-                removeComments: false,
-                sortOutput: true
-            },
-            typings: typings            
+            ]
+            // output: '.tmp'
         },
 
         // all javascript that we want to vet

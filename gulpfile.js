@@ -62,21 +62,20 @@ gulp.task('ts-watcher-server', function() {
 
 /**
  * Compiles *.js files, sourcemaps, 
- * and optionally d.ts files (if passed --dts)
  */
-gulp.task('ts-compile', ['ts-compile-client', 'ts-compile-server']);
+gulp.task('tsc', ['tsc-client', 'tsc-server']);
 
-gulp.task('ts-compile-client', function(done) {    
+gulp.task('tsc-client', function(done) {    
     runTSC('src/client', done);
 });
 
-gulp.task('ts-compile-server', function(done) {
+gulp.task('tsc-server', function(done) {
     runTSC('src/server', done);
 });
 
 function runTSC(directory, done) {
     var tscjs = path.join(process.cwd(), 'node_modules/typescript/bin/tsc.js');
-    var childProcess = cp.spawn('node', [tscjs, '-p', directory], { cwd: process.cwd() });
+    var childProcess = cp.spawn('node', [tscjs, '-p', '--target es6', directory], { cwd: process.cwd() });
     childProcess.stdout.on('data', function (data) {
         // Ticino will read the output
         console.log(data.toString());

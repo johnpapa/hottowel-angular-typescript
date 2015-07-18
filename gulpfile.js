@@ -75,7 +75,7 @@ gulp.task('tsc-server', function(done) {
 
 function runTSC(directory, done) {
     var tscjs = path.join(process.cwd(), 'node_modules/typescript/bin/tsc.js');
-    var childProcess = cp.spawn('node', [tscjs, '-p', '--target es6', directory], { cwd: process.cwd() });
+    var childProcess = cp.spawn('node', [tscjs, '-p', directory], { cwd: process.cwd() });
     childProcess.stdout.on('data', function (data) {
         // Ticino will read the output
         console.log(data.toString());

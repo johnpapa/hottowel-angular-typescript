@@ -48,30 +48,7 @@ gulp.task('default', ['help']);
 //});
 
 /**
- * Creates the app.d.ts file with all references to *.ts files
- * Not needed if we use the `files: undefined` in tsconfig.json 
- */
-//gulp.task('ts-create-refs', function () {
-//    var source = gulp.src(config.ts.allts, { read: false });
-//    var injectOptions = {
-//        starttag: '//{',
-//        endtag: '//}',
-//        transform: config.ts.transformFn
-//    };
-//    
-//    fs.writeFile(config.ts.refs, '//{\n//}', function(err) {
-//        if(err) { return log(err); }
-//        log('The file was saved!');
-//    });
-//     
-//    return gulp.src(config.ts.refs)
-//        .pipe($.inject(source, injectOptions))
-//        .pipe($.if(args.verbose, $.print()))
-//        .pipe(gulp.dest(config.ts.typings));
-//});
-
-/**
- * Watch TypeScript and recompile and create refs
+ * Watch TypeScript and recompile
  */
 gulp.task('ts-watcher', ['ts-watcher-client', 'ts-watcher-server']);
 
@@ -85,15 +62,14 @@ gulp.task('ts-watcher-server', function() {
 
 /**
  * Compiles *.js files, sourcemaps, 
- * and optionally d.ts files (if passed --dts)
  */
-gulp.task('ts-compile', ['ts-compile-client', 'ts-compile-server']);
+gulp.task('tsc', ['tsc-client', 'tsc-server']);
 
-gulp.task('ts-compile-client', function(done) {    
+gulp.task('tsc-client', function(done) {    
     runTSC('src/client', done);
 });
 
-gulp.task('ts-compile-server', function(done) {
+gulp.task('tsc-server', function(done) {
     runTSC('src/server', done);
 });
 
@@ -459,6 +435,11 @@ gulp.task('bump', function() {
         .pipe(gulp.dest(config.root));
 });
 
+/**
+ * Optimize the code and re-load browserSync
+ */
+gulp.task('browserSyncReload', ['optimize'], browserSync.reload);
+
 ////////////////
 
 /**
@@ -588,7 +569,7 @@ function startBrowserSync(isDev, specRunner) {
         gulp.watch([config.less], ['styles'])
             .on('change', changeEvent);
     } else {
-        gulp.watch([].concat(config.less, config.js, config.html), ['optimize', browserSync.reload])
+        gulp.watch([config.less, config.js, config.html], ['browserSyncReload'])
             .on('change', changeEvent);
     }
 

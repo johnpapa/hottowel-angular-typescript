@@ -1,4 +1,4 @@
-module applayout {
+namespace applayout {
     'use strict';
 
     interface IHtTopNavScope {

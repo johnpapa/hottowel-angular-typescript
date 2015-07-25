@@ -1,6 +1,6 @@
 /* global toastr:false, moment:false */
 
-module app.core {
+namespace app.core {
     'use strict';
 
     angular

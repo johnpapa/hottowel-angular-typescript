@@ -1,6 +1,6 @@
 /*jshint node:true*/
 
-module data {
+namespace data {
 
     'use strict';
 

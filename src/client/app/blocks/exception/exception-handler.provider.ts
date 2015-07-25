@@ -1,7 +1,7 @@
 // Include in index.html so that app level exceptions are handled.
 // Exclude from testRunner.html which should run exactly what it wants to run
 
-module blocks.exception {
+namespace blocks.exception {
     'use strict';
 
     export interface IExceptionHandlerConfig {

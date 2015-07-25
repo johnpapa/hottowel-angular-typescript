@@ -1,4 +1,4 @@
-module app.core {
+namespace app.core {
     'use strict';
 
     var config = {

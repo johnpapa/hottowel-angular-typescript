@@ -1,4 +1,4 @@
-module app {
+namespace app {
     'use strict';
 
     angular.module('app', [

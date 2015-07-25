@@ -1,4 +1,4 @@
-module app.dashboard {
+namespace app.dashboard {
     'use strict';
 
     interface IDashboardVm {
@@ -9,7 +9,7 @@ module app.dashboard {
         getMessageCount: () => ng.IPromise<number>;
         getPeople: () => ng.IPromise<Array<any>>;
     }
-    
+
     export class DashboardController implements IDashboardVm {
         static $inject: Array<string> = ['$q', 'dataservice', 'logger'];
         constructor(private $q: ng.IQService,

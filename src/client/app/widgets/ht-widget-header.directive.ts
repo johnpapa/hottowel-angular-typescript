@@ -1,4 +1,4 @@
-module app.widgets {
+namespace app.widgets {
     'use strict';
 
     interface IHtWidgetHeaderScope {

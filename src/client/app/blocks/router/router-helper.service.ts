@@ -1,4 +1,4 @@
-module blocks.router {
+namespace blocks.router {
     'use strict';
 
     export interface IRouterHelper {

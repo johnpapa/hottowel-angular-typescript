@@ -1,4 +1,4 @@
-module app.admin {
+namespace app.admin {
     'use strict';
 
     angular.module('app.admin', [

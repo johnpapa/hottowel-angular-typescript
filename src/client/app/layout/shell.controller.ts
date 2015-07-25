@@ -1,4 +1,4 @@
-module app.layout {
+namespace app.layout {
     'use strict';
 
     export class ShellController {

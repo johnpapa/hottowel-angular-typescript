@@ -1,4 +1,4 @@
-module app.core {
+namespace app.core {
 // ((): void => {
 // })();
 // What: Creates an IIFE

@@ -1,4 +1,4 @@
-module blocks.logger {
+namespace blocks.logger {
     'use strict';
 
     angular.module('blocks.logger', []);

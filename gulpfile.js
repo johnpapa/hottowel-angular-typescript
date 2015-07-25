@@ -27,7 +27,7 @@ var port = process.env.PORT || config.defaultPort;
  * --debug-brk: Launch with debugger support and break on 1st line
  * --startServers: Will start servers for midway tests on the test task.
  */
- 
+
 /**
  * List the available gulp tasks
  */
@@ -39,7 +39,7 @@ gulp.task('default', ['help']);
 //});
 //
 //gulp.task('ts-vet', function () {
-//    var reporter = args.verbose ? 'verbose' : 'prose'; 
+//    var reporter = args.verbose ? 'verbose' : 'prose';
 //    return gulp
 //        .src(config.ts.allts)
 //        .pipe($.if(args.verbose, $.print()))
@@ -52,20 +52,20 @@ gulp.task('default', ['help']);
  */
 gulp.task('ts-watcher', ['ts-watcher-client', 'ts-watcher-server']);
 
-gulp.task('ts-watcher-client', function() {
-    gulp.watch(config.ts.clientts, ['ts-compile-client']);
+gulp.task('ts-watcher', function() {
+    gulp.watch(config.ts.clientts, ['tsc-client']);
 });
 
 gulp.task('ts-watcher-server', function() {
-    gulp.watch(config.ts.serverts, ['ts-compile-server']);
+    gulp.watch(config.ts.serverts, ['tsc-server']);
 });
 
 /**
- * Compiles *.js files, sourcemaps, 
+ * Compiles *.js files, sourcemaps,
  */
 gulp.task('tsc', ['tsc-client', 'tsc-server']);
 
-gulp.task('tsc-client', function(done) {    
+gulp.task('tsc-client', function(done) {
     runTSC('src/client', done);
 });
 
@@ -186,7 +186,7 @@ gulp.task('templatecache', ['clean-code'], function() {
  * Wire-up the bower dependencies
  * @return {Stream}
  */
-gulp.task('wiredep', ['ts-compile'], function() {
+gulp.task('wiredep', ['tsc'], function() {
     log('Wiring the bower dependencies into the html');
 
     var wiredep = require('wiredep').stream;
@@ -369,7 +369,7 @@ gulp.task('clean-code', function(done) {
  *    gulp test --startServers
  * @return {Stream}
  */
-gulp.task('test', ['vet', 'ts-compile', 'templatecache'], function(done) {
+gulp.task('test', ['vet', 'tsc', 'templatecache'], function(done) {
     startTests(true /*singleRun*/ , done);
 });
 

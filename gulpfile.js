@@ -50,13 +50,13 @@ gulp.task('default', ['help']);
 /**
  * Watch TypeScript and recompile
  */
-gulp.task('ts-watcher', ['ts-watcher-client', 'ts-watcher-server']);
+gulp.task('tsc-watcher', ['tsc-watcher-client', 'tsc-watcher-server']);
 
-gulp.task('ts-watcher', function() {
+gulp.task('tsc-watcher', function() {
     gulp.watch(config.ts.clientts, ['tsc-client']);
 });
 
-gulp.task('ts-watcher-server', function() {
+gulp.task('tsc-watcher-server', function() {
     gulp.watch(config.ts.serverts, ['tsc-server']);
 });
 

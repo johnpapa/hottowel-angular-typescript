@@ -9,7 +9,7 @@ var notfound_1 = require('./utils/notfound'); // use latest TS 1.5, inspired fro
 //var send404 = four0four.send404;
 var app = express();
 var port = process.env.PORT || 8001;
-var environment = process.env.NODE_ENV;
+var environment = process.env.NODE_ENV || 'DEV';
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

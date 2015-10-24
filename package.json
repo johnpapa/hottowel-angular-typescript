@@ -76,7 +76,7 @@
     "q": "^1.0.1",
     "sinon": "^1.12.2",
     "sinon-chai": "^2.6.0",
-    "typescript": "^1.5.0-alpha",
+    "typescript": "^1.6.2",
     "wiredep": "^2.1.0",
     "yargs": "^1.3.3"
   }

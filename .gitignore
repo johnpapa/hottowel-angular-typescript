@@ -13,6 +13,8 @@ node_modules
 bower_components
 build
 .tmp
+src/**/*.map
+src/**/*.js
 
 # Ignore Test reporters
 ###################

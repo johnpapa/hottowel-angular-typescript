@@ -52,7 +52,7 @@ gulp.task('default', ['help']);
  */
 gulp.task('tsc-watcher', ['tsc-watcher-client', 'tsc-watcher-server']);
 
-gulp.task('tsc-watcher', function() {
+gulp.task('ts-watcher-client', function() {
     gulp.watch(config.ts.clientts, ['tsc-client']);
 });
 

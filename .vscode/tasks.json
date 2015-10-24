@@ -20,13 +20,13 @@
                 "$jshint"
             ]
         },{
-            "taskName": "ts-compile",
+            "taskName": "tsc",
             "problemMatcher": "$tsc"
         },{
-            "taskName": "ts-compile-client",
+            "taskName": "tsc-client",
             "problemMatcher": "$tsc"
         },{
-            "taskName": "ts-compile-server",
+            "taskName": "tsc-server",
             "problemMatcher": "$tsc"
         },{
             "taskName": "test",

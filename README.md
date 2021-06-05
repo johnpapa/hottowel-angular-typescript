@@ -1,6 +1,6 @@
 # Visual Studio Code Demo with Angular, TypeScript, Node, and HotTowel
 
-As seen at [//Build 2015](http://channel9.msdn.com/Events/Build/2015/3-680) presented by Erich Gamma, Chris Dias and John Papa.
+As seen at [//Build 2015](https://channel9.msdn.com/Events/Build/2015/3-680?WT.mc_id=javascript-0000-jopapa) presented by Erich Gamma, Chris Dias and John Papa.
 
 ## Prerequisites
 
